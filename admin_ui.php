@@ -17,10 +17,18 @@
         <p>This is an admin login</p>
         <a href="login_form.php" class="btn">login</a>
         <a href="register_form.php" class="btn">register</a>
-        <a href="logout.php" class="btn">logout</a>
+        <span style="cursor: pointer;" onclick = "logout_check();" class="btn">logout</span>
     </div>
 </div>
-
+<script>
+    function logout_check()
+    {
+        if( confirm("Are U sure to logout?") )
+        {
+            window.location.href = "login_form.php" ;
+        }
+    }
+</script>
 </body>
 
 </html>
