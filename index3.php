@@ -160,9 +160,9 @@ margin-top:300px;
 							$password=$_POST['password'];
 							
 								
-								$result = mysqli_query($conn,"SELECT * FROM users WHERE department like '%ADMIN%' and username ='$username' AND password = '$password'") or die(mysqli_error());
-								$row = mysqli_fetch_array($result);
-								$numberOfRows = mysqli_num_rows($result);	
+								$result = $conn -> query("SELECT * FROM users WHERE department like '%ADMIN%' and username ='$username' AND password = '$password'") or die(mysqli_error());
+								$row = $result -> fetch( PDO::FETCH_OBJ);
+								$numberOfRows = $result -> rowCount();	
 						
 																	
 																
@@ -173,7 +173,7 @@ margin-top:300px;
 																else if ($numberOfRows > 0)
 																	{
 																	session_start();
-																	$_SESSION['id'] = $row['userid'];
+																	$_SESSION['id'] = ((array)$row)['userid'];
 																header("location:home3.php");
 																
 															}

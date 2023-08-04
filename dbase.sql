@@ -27,7 +27,7 @@ SET time_zone = "+00:00";
 -- Table structure for table `subject`
 --
 
-CREATE TABLE `subject` (
+CREATE TABLE IF NOT EXISTS subject (
   `subjectid` int(255) NOT NULL,
   `subject_code` varchar(255) NOT NULL,
   `subject_title` varchar(255) NOT NULL,
@@ -50,7 +50,7 @@ INSERT INTO `subject` (`subjectid`, `subject_code`, `subject_title`, `subject_ca
 -- Table structure for table `users`
 --
 
-CREATE TABLE `users` (
+CREATE TABLE IF NOT EXISTS users (
   `userid` int(255) NOT NULL,
   `name` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
