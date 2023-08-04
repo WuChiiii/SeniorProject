@@ -61,15 +61,16 @@
                                 <tbody>
                                     <?php include ('connect.php');
                                     // add mysqli_query here
-										
-
-                                        ?>
+                                        $sql = "insert into subject values( NULL , '" . $_POST['subject_code'] . "' , '" . $_POST['subject_title'] . "' , '" . $_POST['subject_category'] . "' , '" . $_POST['semester'] . "' , '" . $_POST['department'] . "');" ;
+                                        echo $sql ; 
+                                        $conn -> query( $sql );
+                                     ?>
                                         <tr class="warning">
                                             <!-- add 'subject_code' here -->
                                             <!-- add 'subject_title' here -->
                                             <!-- add 'subject_category' here -->
-                                            <!-- add 'semester' here -->									
-                                           
+                                            <!-- add 'semester' here -->	
+
                                             <td width="160">
                                                 <a href="#delete_subject<?php echo $id; ?>" role="button"  data-target = "#delete_product<?php echo $id;?>"data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
                                                 <a href="edit_subject.php<?php echo '?id=' . $id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
