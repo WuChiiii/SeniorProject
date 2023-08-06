@@ -57,49 +57,30 @@
                                         <th>Action</th>
                                         
                                     </tr>
+                                    
                                 </thead>
                                 <tbody>
-                                    <?php include ('connect.php');
-                                    // add mysqli_query here
-                                    if (isset($_POST['subject_code'], $_POST['subject_title'], $_POST['subject_category'], $_POST['semester'], $_POST['department'])) {
-                                        $subject_code = $_POST['subject_code'];
-                                        $subject_title = $_POST['subject_title'];
-                                        $subject_category = $_POST['subject_category'];
-                                        $semester = $_POST['semester'];
-                                        $department = $_POST['department'];
-                                        
-                                        $subject_code = $_POST['subject_code'];
-                                        $subject_title = $_POST['subject_title'];
-                                        $subject_category = $_POST['subject_category'];
-                                        $semester = $_POST['semester'];
-                                        $department = $_POST['department'];
-
-                                        $sql = "INSERT INTO subject VALUES (NULL, '$subject_code', '$subject_title', '$subject_category', '$semester', '$department');";
-                                        echo $sql ; 
-                                        $conn -> query( $sql );
-                                    }
-                                     ?>
-                                        <tr class="warning">
-                                            <!-- add 'subject_code' here -->
-                                            <!-- add 'subject_title' here -->
-                                            <!-- add 'subject_category' here -->
-                                            <!-- add 'semester' here -->	
-                                            <td><?php echo isset($row['subject_code']) ? $row['subject_code'] : ''; ?></td>
-                                            <td><?php echo isset($row['subject_title']) ? $row['subject_title'] : ''; ?></td>
-                                            <td><?php echo isset($row['subject_category']) ? $row['subject_category'] : ''; ?></td>
-                                            <td><?php echo isset($row['semester']) ? $row['semester'] : ''; ?></td>
-
-                                            
-
-                                            <td width="160">
-                                                <a href="#delete_subject<?php echo $id; ?>" role="button"  data-target = "#delete_product<?php echo $id;?>"data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a href="edit_subject.php<?php echo '?id=' . $id; ?>" class="btn btn-success"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                    <?php include('connect.php');
+                                    //display the data of subjects from database
+                                        $query = $conn -> query( "select * from subject" ) ; 
+                                        $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
+                                        foreach( $r as $data ):
+                                    ?>
+                                        <tr class="warning"> 
+                                            <td><?php echo $data['subject_code'] ?></td>
+                                            <td><?php echo $data['subject_title'] ?></td>
+                                            <td><?php echo $data['subject_category'] ?></td>
+                                            <td><?php echo $data['semester'] ?></td>    
+                                            <td width="160" >
+                                                <h1><?php echo $data['subjectid'] ?></h1>
+                                                <a id = "delete_subject" onclick="delete_subject();" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</botton>
+                                                <a class="btn btn-success" role="botton" action="edit_subject_database.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
-                                            <!-- IGNORE product delete mode -->
-                                   <?php include ('delete_subject_mode.php');?>
-                                    <!-- IGNORE end delete mode -->
-
                                     </tr>
+                                    <?php endforeach;
+                                    //end of display
+                                    ?>
+
                                 <?php ?>
                                 </tbody>
                             </table>
@@ -115,5 +96,18 @@
         </div>
      <!-- /. WRAPPER  -->
    <?php include ('script.php');?>
+    <script>
+        function delete_subject()
+        {
+            if( confirm('Are you sure to delete this subject?\n') )
+                location.href='delete_subject_database.php?id=<?php echo $data['subjectid'];?>';
+            else{
+                alert('deletion is canceled') ; 
+                location.herf = "forsubject.php" ; 
+            }
+
+        }
+    </script>
 </body>
+
 </html>

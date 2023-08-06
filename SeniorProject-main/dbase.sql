@@ -27,23 +27,22 @@ SET time_zone = "+00:00";
 -- Table structure for table `subject`
 --
 
+
 CREATE TABLE IF NOT EXISTS subject (
-  `subjectid` int(255) NOT NULL,
-  `subject_code` varchar(255) NOT NULL,
+  `subjectid` int(255) NOT NULL PRIMARY KEY AUTO_INCREMENT ,
+  `subject_code` varchar(255) NOT NULL  ,
   `subject_title` varchar(255) NOT NULL,
   `subject_category` varchar(255) NOT NULL,
-  `semester` varchar(255) NOT NULL,
-  `department` varchar(255) NOT NULL
+  `semester` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `subject`
 --
-
-INSERT INTO `subject` (`subjectid`, `subject_code`, `subject_title`, `subject_category`, `semester`, `department`) VALUES
-(332, 'GC__65040', 'Art and Life', 'GC', '', 'Humanities'),
-(333, 'CSIEB0130', 'Probability', 'Required', '2B', 'CSIE');
-
+/*
+INSERT INTO subject values
+(NULL, 'GC__65040', 'Art and Life', 'GC', ''),
+(NULL, 'CSIEB0130', 'Probability', 'Required', '2B');*/
 -- --------------------------------------------------------
 
 --
@@ -62,8 +61,9 @@ CREATE TABLE IF NOT EXISTS users (
 -- Dumping data for table `users`
 --
 
-INSERT INTO `users` (`userid`, `name`, `department`, `username`, `password`) VALUES
-(1, 'main', 'Admin', 'ADMIN', 'admin');
+
+INSERT INTO users (`userid`, `name`, `department`, `username`, `password`) VALUES
+(1, 'main', 'Admin', 'ADMIN', 'admin'); 
 
 --
 -- Indexes for dumped tables
@@ -72,8 +72,8 @@ INSERT INTO `users` (`userid`, `name`, `department`, `username`, `password`) VAL
 --
 -- Indexes for table `subject`
 --
-ALTER TABLE `subject`
-  ADD PRIMARY KEY (`subjectid`);
+-- ALTER TABLE `subject`
+  -- ADD PRIMARY KEY (`subjectid`);
 
 --
 -- Indexes for table `users`
@@ -88,8 +88,8 @@ ALTER TABLE `users`
 --
 -- AUTO_INCREMENT for table `subject`
 --
-ALTER TABLE `subject`
-  MODIFY `subjectid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
+-- ALTER TABLE `subject`
+  -- MODIFY `subjectid` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=334;
 
 --
 -- AUTO_INCREMENT for table `users`
