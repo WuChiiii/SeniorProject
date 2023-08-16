@@ -3,35 +3,35 @@
         <div class="modal-content">
             <!-- header -->
             <div class="modal-header">  
-                <div class="alert alert-info"><strong><center>Add Subject</center></strong></div>
+                <div class="alert alert-info"><strong><center>Add Teacher</center></strong></div>
             </div>
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
-                <form  method="post" enctype="multipart/form-data" action="add_subject_database.php"> <hr>			
+                <form  method="post" enctype="multipart/form-data" action="add_teacher_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Subject Code</label>
-                        <input type="text" name="subject_code" class = "form-control" placeholder="GC__10000">       
+                        <label class="control-label" for="inputEmail">Name</label>
+                        <input type="text" name="name" class = "form-control" placeholder="Brian Koo">       
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Subject Title</label>
+                        <label class="control-label" for="inputPassword">Email</label>
                         <div class="controls">
-                            <input type="text" class = "form-control"  name="subject_title"  placeholder="Art" >
+                            <input type="text" class = "form-control"  name="email"  placeholder="abc123@gmail.com" >
                         </div>
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Category</label>
+                        <label class="control-label" for="inputPassword">Position</label>
                             <div class="controls">
-                                <input type="text" name="subject_category" class = "form-control" placeholder="Elective">
+                                <input type="text" name="position" class = "form-control" placeholder="Prof.">
                             </div>
                     </div>
 
 					<div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester</label>
+                        <label class="control-label" for="inputPassword">Department</label>
                         <div class="controls">
-                        <input type="text" name="sub_semester" class = "form-control" placeholder="2B">
+                        <input type="text" name="department" class = "form-control" placeholder="CSIE">
                         </div>              
                      </div>
 

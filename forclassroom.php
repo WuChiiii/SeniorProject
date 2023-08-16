@@ -12,7 +12,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#	">Subject</a>
+                <a class="navbar-brand" href="#	">Classroom</a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -38,24 +38,24 @@
                         <h1 class="page-header">
                            
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                              Add Subject
+                              Add Classroom
                             </button>
 							
 						
                         </h1>
-						<?php include ('add_subject_mode.php');?>
+						<?php include ('add_classroom_mode.php');?>
 						
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <div class="alert alert-info">
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Subject Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Classroom Table</strong>
                                 </div>
                                 <thead>
                                     <tr>
-                                        <th>Subject Code</th>
-                                        <th>Subject Title</th>
-										<th>Category</th>
-										<th>Semester</th>
+
+                                        <th>Classroom no.</th>
+                                        <th>Department</th>
+                                        <th>Description</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -63,20 +63,19 @@
                                 </thead>
                                 <tbody>
                                     <?php include('connect.php');
-                                    //display the data of subjects from database
-                                        $query = $conn -> query( "select * from subject" ) ; 
+                                    //display the data of classroom from database
+                                        $query = $conn -> query( "select * from classroom" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>
                                         <tr class="warning"> 
-                                            <td><?php echo $data['subject_code'] ?></td>
-                                            <td><?php echo $data['subject_title'] ?></td>
-                                            <td><?php echo $data['subject_category'] ?></td>
-                                            <td><?php echo $data['semester'] ?></td>    
+                                            <td><?php echo $data['classroom_no'] ?></td>
+                                            <td><?php echo $data['classroom_dept'] ?></td>
+                                            <td><?php echo $data['classroom_desc'] ?></td>
                                             <td width="160" >
-                                                <!-- <h1><?php echo $data['subjectid'] ?></h1> -->
-                                                <a value = "<?php echo $data['subjectid'] ?>" onclick="delete_subject(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a class="btn btn-success" role="botton" action="edit_subject_database.php" href="edit_subject.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
+                                                <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
+                                                <a class="btn btn-success" role="botton" action="edit_classroom_database.php" href="edit_classroom.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                     </tr>
                                     <?php endforeach;
@@ -99,16 +98,16 @@
      <!-- /. WRAPPER  -->
    <?php include ('script.php');?>
     <script>
-        function delete_subject(elem)
+        function delete_classroom(elem)
         {
             //console.log( elem.getAttribute( 'value' ) ) ; 
-            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_subject_id='+subject_id; 
-            if( confirm('Are you sure to delete this subject?\n') )
-                location.href='delete_subject_database.php';
+            var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            document.cookie='delete_classroom_id='+teacher_id; 
+            if( confirm('Are you sure to delete this classroom?\n') )
+                location.href='delete_classroom_database.php';
             else{
                 //alert('deletion is canceled') ; 
-                location.herf = "forsubject.php" ; 
+                location.herf = "forclassroom.php" ; 
             }
         }
     </script>

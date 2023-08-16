@@ -1,5 +1,7 @@
 <?php include ('session.php');?>	
 <?php include ('header.php');?>	
+<link href="img/ndhu1.png" rel="icon" type="image"> 
+
 <body>
     <div id="wrapper">
         <nav class="navbar navbar-default top-navbar" role="navigation">
