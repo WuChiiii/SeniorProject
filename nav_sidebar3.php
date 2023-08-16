@@ -14,7 +14,7 @@
                         <a href="forsubject.php"><i class="fa fa-th"></i> Subject</a>
                     </li>
                     <li>
-                        <a href=".php"><i class="fa fa-inbox"></i> Classroom</a>
+                        <a href="forclassroom.php"><i class="fa fa-inbox"></i> Classroom</a>
                     </li>
                     </li>
 					<li>

@@ -14,7 +14,7 @@ $get_id = $_GET['id'];
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">subject </a>
+                <a class="navbar-brand" href="index.html">classroom </a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -43,32 +43,27 @@ $get_id = $_GET['id'];
                             // get data from database
                             ?>
                             <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Edit Subject</strong> </div>
+                                <div class="alert alert-info"><strong>Edit Classroom</strong> </div>
                                 <hr>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Code</label>
+                                    <label class="control-label" for="inputPassword">Classroom No.</label>
                                     <div class="controls">
-                                        <input type="text" name="subject_code" class ="form-control" value="">
+                                        <input type="text" name="classroom_no" class ="form-control" value="">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Title</label>
+                                    <label class="control-label" for="inputPassword">Department</label>
                                     <div class="controls">
-                                        <input type="text"  name="subject_title"  class ="form-control" value="">
+                                        <input type="text"  name="classroom_dept"  class ="form-control" value="">
                                     </div>
                                 </div>
-								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Category</label>
+                                <div class="control-group">
+                                    <label class="control-label" for="inputPassword">Description</label>
                                     <div class="controls">
-                                        <input type="text"  name="subject_category"  class ="form-control" value="">
+                                        <input type="text"  name="classroom_desc"  class ="form-control" value="">
                                     </div>
                                 </div>
-								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Semester</label>
-                                    <div class="controls">
-                                        <input type="text"  name="semester"  class ="form-control" value="">
-                                    </div>
-                                </div>
+								
                                
 								
 									<hr/>
@@ -77,7 +72,7 @@ $get_id = $_GET['id'];
                                     <div class="controls">
 
                                         <button type="submit" name="update" class="btn btn-success"><i class="icon-save icon-large"></i>&nbsp;Update</button>
-										<span><a href = "forsubject.php" class = "btn btn-danger"> Back</a></span>
+										<span><a href = "forclassroom.php" class = "btn btn-danger"> Back</a></span>
                                     </div>
                                 </div>
                             </form>
@@ -85,13 +80,12 @@ $get_id = $_GET['id'];
                             <?php
                             if (isset($_POST['update'])) {
 
-                                $subject_code = $_POST['subject_code'];
-                                $subject_title = $_POST['subject_title'];
-							    $subject_category = $_POST['subject_category'];
-								$semester = $_POST['semester'];
+                                $classroom_no = $_POST['classroom_no'];
+                                $classroom_dept = $_POST['classroom_dept'];
+							    $classroom_desc = $_POST['classroom_desc'];
 									
-                                mysqli_query($conn,"update subject set subject_code='$subject_code',subject_title='$subject_title',subject_category='$subject_category',semester='$semester' where subjectid='$get_id'") or die(mysqli_error());
-                             echo"Saved";
+                            //     mysqli_query($conn,"update subject set subject_code='$subject_code',subject_title='$subject_title',subject_category='$subject_category',semester='$semester' where subjectid='$get_id'") or die(mysqli_error());
+                            //  echo"Saved";
                             }
 									
                             ?>

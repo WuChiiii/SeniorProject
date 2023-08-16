@@ -14,7 +14,7 @@ $get_id = $_GET['id'];
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">subject </a>
+                <a class="navbar-brand" href="index.html">teacher </a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -43,30 +43,30 @@ $get_id = $_GET['id'];
                             // get data from database
                             ?>
                             <form class="form-horizontal" method="post" enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Edit Subject</strong> </div>
+                                <div class="alert alert-info"><strong>Edit Teacher</strong> </div>
                                 <hr>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Code</label>
+                                    <label class="control-label" for="inputPassword">Name</label>
                                     <div class="controls">
-                                        <input type="text" name="subject_code" class ="form-control" value="">
+                                        <input type="text" name="teacher_name" class ="form-control" value="">
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Title</label>
+                                    <label class="control-label" for="inputPassword">Email</label>
                                     <div class="controls">
-                                        <input type="text"  name="subject_title"  class ="form-control" value="">
+                                        <input type="text"  name="teacher_email"  class ="form-control" value="">
                                     </div>
                                 </div>
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Category</label>
+                                    <label class="control-label" for="inputPassword">Position</label>
                                     <div class="controls">
-                                        <input type="text"  name="subject_category"  class ="form-control" value="">
+                                        <input type="text"  name="teacher_position"  class ="form-control" value="">
                                     </div>
                                 </div>
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Semester</label>
+                                    <label class="control-label" for="inputPassword">Department</label>
                                     <div class="controls">
-                                        <input type="text"  name="semester"  class ="form-control" value="">
+                                        <input type="text"  name="teacher_department"  class ="form-control" value="">
                                     </div>
                                 </div>
                                
@@ -85,16 +85,18 @@ $get_id = $_GET['id'];
                             <?php
                             if (isset($_POST['update'])) {
 
-                                $subject_code = $_POST['subject_code'];
-                                $subject_title = $_POST['subject_title'];
-							    $subject_category = $_POST['subject_category'];
-								$semester = $_POST['semester'];
-									
-                                mysqli_query($conn,"update subject set subject_code='$subject_code',subject_title='$subject_title',subject_category='$subject_category',semester='$semester' where subjectid='$get_id'") or die(mysqli_error());
-                             echo"Saved";
+                                $teacher_name = $_POST['teacher_name'];
+                                $teacher_email = $_POST['teacher_email'];
+								$teacher_position = $_POST['teacher_position'];
+								$teacher_department = $_POST['teacher_department'];
+
+                            //     mysqli_query($conn,"update teacher set teacher_name='$teacher_name',teacher_email='$teacher_email',teacher_position='$teacher_position',teacher_department='$teacher_department' where teacherid='$get_id'") or die(mysqli_error());
+                            //  echo"Saved";
                             }
-									
+
+                            							
                             ?>
+
 
                         </div>
                         </div>

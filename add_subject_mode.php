@@ -11,27 +11,27 @@
                 <form  method="post" enctype="multipart/form-data" action="add_subject_database.php"> <hr>			
 				    <div class="control-group">
                         <label class="control-label" for="inputEmail">Subject Code</label>
-                        <input type="text" name="subject_code" class = "form-control" placeholder="Name">       
+                        <input type="text" name="subject_code" class = "form-control" placeholder="GC__10000">       
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Subject Title</label>
                         <div class="controls">
-                            <input type="text" class = "form-control"  name="subject_title"  placeholder="Description" >
+                            <input type="text" class = "form-control"  name="subject_title"  placeholder="Art" >
                         </div>
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Category</label>
                             <div class="controls">
-                                <input type="text" name="subject_category" class = "form-control" placeholder="">
+                                <input type="text" name="subject_category" class = "form-control" placeholder="Elective">
                             </div>
                     </div>
 
 					<div class="control-group">
                         <label class="control-label" for="inputPassword">Semester</label>
                         <div class="controls">
-                        <input type="text" name="sub_semester" class = "form-control" placeholder="">
+                        <input type="text" name="sub_semester" class = "form-control" placeholder="2B">
                         </div>              
                      </div>
 
