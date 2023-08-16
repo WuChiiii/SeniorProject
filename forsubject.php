@@ -76,7 +76,7 @@
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['subjectid'] ?></h1> -->
                                                 <a value = "<?php echo $data['subjectid'] ?>" onclick="delete_subject(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a class="btn btn-success" role="botton" action="edit_subject_database.php" href="edit_subject.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <a value = "<?php echo $data['subjectid'] ?>" onclick="edit_subject(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                     </tr>
                                     <?php endforeach;
@@ -110,6 +110,12 @@
                 //alert('deletion is canceled') ; 
                 location.herf = "forsubject.php" ; 
             }
+        }
+        function edit_subject(elem)
+        {
+            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            document.cookie='subject_id='+subject_id; 
+            location.href='edit_subject.php';
         }
     </script>
 </body>

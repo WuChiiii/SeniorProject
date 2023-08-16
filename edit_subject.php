@@ -1,7 +1,8 @@
 <?php include ('session.php');?>	
 <?php
 include('header.php');
-$get_id = $_GET['id'];
+$id = $_COOKIE['subject_id'] ; 
+//echo "<script> console.log($id);</script>" ; 
 ?>
 <!DOCTYPE html>
 <body>
@@ -34,44 +35,45 @@ $get_id = $_GET['id'];
        <?php include ('nav_sidebar.php');?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
-            <div id="page-inner">
+            <div id="page-inner" style="position:absolute;left:30%;top:20%;">
 			 <div class="row">
                     <div class="col-md-5 well">
                         <div class="hero-unit-table">   
                           <div class="hero-unit-table">   
                             <?php include ('connect.php');
                             // get data from database
+                                $sql = 'select * from subject where subjectid = ' . $id . ';' ; 
+                                $query = $conn -> query($sql) ; 
+                                $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
                             ?>
-                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="post" enctype="multipart/form-data" action = "edit_subject_database.php">
                                 <div class="alert alert-info"><strong>Edit Subject</strong> </div>
                                 <hr>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Code</label>
-                                    <div class="controls">
-                                        <input type="text" name="subject_code" class ="form-control" value="">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Subject Code</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_code" class ="form-control" value="<?php echo $cur['subject_code'] ?>">
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Subject Title</label>
-                                    <div class="controls">
-                                        <input type="text"  name="subject_title"  class ="form-control" value="">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Subject Title</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_title" class ="form-control" value="<?php echo $cur['subject_title'] ?>">
+                                        </div>
                                     </div>
-                                </div>
-								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Category</label>
-                                    <div class="controls">
-                                        <input type="text"  name="subject_category"  class ="form-control" value="">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Category</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_category" class ="form-control" value="<?php echo $cur['subject_category']?>">
+                                        </div>
                                     </div>
-                                </div>
-								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Semester</label>
-                                    <div class="controls">
-                                        <input type="text"  name="semester"  class ="form-control" value="">
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Semester</label>
+                                        <div class="controls">
+                                            <input type="text" name="semester" class ="form-control" value="<?php echo $cur['semester'] ?>">
+                                        </div>
                                     </div>
-                                </div>
-                               
-								
-									<hr/>
+								<hr/>
 
                                 <div class="control-group">
                                     <div class="controls">
@@ -81,28 +83,11 @@ $get_id = $_GET['id'];
                                     </div>
                                 </div>
                             </form>
-
-                            <?php
-                            if (isset($_POST['update'])) {
-
-                                $subject_code = $_POST['subject_code'];
-                                $subject_title = $_POST['subject_title'];
-							    $subject_category = $_POST['subject_category'];
-								$semester = $_POST['semester'];
-									
-                                mysqli_query($conn,"update subject set subject_code='$subject_code',subject_title='$subject_title',subject_category='$subject_category',semester='$semester' where subjectid='$get_id'") or die(mysqli_error());
-                             echo"Saved";
-                            }
-									
-                            ?>
-
                         </div>
                         </div>
                         </div>
                     </div>
                 </div> 
-                
-				
 				</div>
              <!-- /. PAGE INNER  -->
             </div>
