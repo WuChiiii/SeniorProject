@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 15, 2023 at 05:25 PM
+-- Generation Time: Aug 18, 2023 at 03:38 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `dbase`
+-- Database: `undergraduate_project`
 --
 
 -- --------------------------------------------------------
@@ -31,17 +31,19 @@ CREATE TABLE `classroom` (
   `classroomid` int(255) NOT NULL,
   `classroom_no` varchar(255) NOT NULL,
   `classroom_dept` varchar(255) NOT NULL,
-  `classroom_desc` varchar(255) NOT NULL
+  `classroom_desc` varchar(255) NOT NULL,
+  `classroom_no_seat` int(255) NOT NULL,
+  `classroom_type` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `classroom`
 --
 
-INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`) VALUES
-(1, 'C305', 'CSIE', 'Introduction to Computer Science'),
-(2, 'A331', 'CSIE', 'Data Structures'),
-(3, 'A337', 'CSIE', 'Introductory Machine Learning');
+INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`, `classroom_no_seat`, `classroom_type`) VALUES
+(1, 'C305', 'CSIE', 'Introduction to Computer Science', 0, 0),
+(2, 'A331', 'CSIE', 'Data Structures', 0, 0),
+(3, 'A337', 'CSIE', 'Introductory Machine Learning', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -54,19 +56,22 @@ CREATE TABLE `subject` (
   `subject_code` varchar(255) NOT NULL,
   `subject_title` varchar(255) NOT NULL,
   `subject_category` varchar(255) NOT NULL,
-  `semester` varchar(255) NOT NULL
+  `semester` varchar(255) NOT NULL,
+  `subject_no_student` int(255) NOT NULL,
+  `subject_classroom_type` varchar(255) NOT NULL,
+  `subject_hour` int(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_swedish_ci;
 
 --
 -- Dumping data for table `subject`
 --
 
-INSERT INTO `subject` (`subjectid`, `subject_code`, `subject_title`, `subject_category`, `semester`) VALUES
-(6, 'AM__10500', 'Calculus (I)', 'Required', '1A'),
-(7, 'AM__10800', 'Calculus (II)', 'Required', '1B'),
-(8, 'PHYS10000', 'General Physics (I)', 'Required', '1A'),
-(10, 'PHYS10100', 'General Physics Lab. (I)', 'Required', '1A'),
-(11, 'PHYS10200', 'General Physics (II)', 'Required', '1B');
+INSERT INTO `subject` (`subjectid`, `subject_code`, `subject_title`, `subject_category`, `semester`, `subject_no_student`, `subject_classroom_type`, `subject_hour`) VALUES
+(6, 'AM__10500', 'Calculus (I)', 'Required', '1A', 999, 'lecture', 3),
+(7, 'AM__10800', 'Calculus (II)', 'Required', '1B', 0, '', 0),
+(8, 'PHYS10000', 'General Physics (I)', 'Required', '1A', 0, '', 0),
+(10, 'PHYS10100', 'General Physics Lab. (I)', 'Required', '1A', 0, '', 0),
+(11, 'PHYS10200', 'General Physics (II)', 'Required', '1B', 0, '', 0);
 
 -- --------------------------------------------------------
 

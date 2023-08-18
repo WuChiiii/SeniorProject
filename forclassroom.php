@@ -55,7 +55,9 @@
 
                                         <th>Classroom no.</th>
                                         <th>Department</th>
-                                        <th>Description</th>
+                                        <th>Subject Title</th> <!-- description -->
+                                        <th>No. of Seats</th>
+                                        <th>Classroom Type</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -72,6 +74,8 @@
                                             <td><?php echo $data['classroom_no'] ?></td>
                                             <td><?php echo $data['classroom_dept'] ?></td>
                                             <td><?php echo $data['classroom_desc'] ?></td>
+                                            <td><?php echo $data['classroom_no_seat'] ?></td>
+                                            <td><?php echo $data['classroom_type'] ?></td>
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
                                                 <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>

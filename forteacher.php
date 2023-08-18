@@ -48,7 +48,7 @@
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <div class="alert alert-info">
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Taacher Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Teacher Table</strong>
                                 </div>
                                 <thead>
                                     <tr>
