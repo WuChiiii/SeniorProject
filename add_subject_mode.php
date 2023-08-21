@@ -35,12 +35,31 @@
                         </div>              
                      </div>
 
+                     <div class="control-group">
+                        <label class="control-label" for="inputPassword">No. of students</label>
+                        <div class="controls">
+                        <input type="text" name="subject_no_student" class = "form-control" placeholder="50">
+                        </div>              
+                     </div>
+                
+                     <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom Type</label>
+                        <div class="controls">
+                        <input type="text" name="subject_classroom_type" class = "form-control" placeholder="0/1">
+                        </div>              
+                     </div>
+
+                     <div class="control-group">
+                        <label class="control-label" for="inputPassword">Hour</label>
+                        <div class="controls">
+                        <input type="text" name="subject_hour" class = "form-control" placeholder="3">
+                        </div>              
+                     </div>
                               
 					<div class = "modal-footer">
 						<button name = "go" type="submit" class="btn btn-primary" >Save</button>
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
 					</div>
-							
 									
 			    </form>  
 

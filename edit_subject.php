@@ -45,6 +45,7 @@ $id = $_COOKIE['subject_id'] ;
                                 $sql = 'select * from subject where subjectid = ' . $id . ';' ; 
                                 $query = $conn -> query($sql) ; 
                                 $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
+                                if( !$cur ) header('Location:forsubject.php') ; 
                             ?>
                             <form class="form-horizontal" method="post" enctype="multipart/form-data" action = "edit_subject_database.php">
                                 <div class="alert alert-info"><strong>Edit Subject</strong> </div>
@@ -73,7 +74,28 @@ $id = $_COOKIE['subject_id'] ;
                                             <input type="text" name="semester" class ="form-control" value="<?php echo $cur['semester'] ?>">
                                         </div>
                                     </div>
-								<hr/>
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">No. of Students</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_no_student" class ="form-control" value="<?php echo $cur['subject_no_student'] ?>">
+                                        </div>
+                                    </div>
+
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Classroom Type</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_classroom_type" class ="form-control" value="<?php echo $cur['subject_classroom_type'] ?>">
+                                        </div>
+                                    </div>
+                                
+                                    <div class="control-group">
+                                        <label class="control-label" for="inputPassword">Subject Hour</label>
+                                        <div class="controls">
+                                            <input type="text" name="subject_hour" class ="form-control" value="<?php echo $cur['subject_hour'] ?>">
+                                        </div>
+                                    </div>								
+                                <hr/>
+
 
                                 <div class="control-group">
                                     <div class="controls">

@@ -24,7 +24,7 @@
                         <a href=".php"><i class="fa fa-users"></i> User Account </a>
                     </li>
 					   <li>
-                        <a href=".php"><i class="fa fa-power-off"></i> Log out </a>
+                        <a href="logout.php"><i class="fa fa-power-off"></i> Log out </a>
                     </li>
                  
                 </ul>

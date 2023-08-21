@@ -1,7 +1,6 @@
 <?php
     include "connect.php" ; 
-    $id = $_COOKIE['delete_subject_id'];
-    $id = intval( $id ) ;
+    $id = intval( $_COOKIE['delete_subject_id'] ) ; 
     if( !empty( $id ) ){
         try{
             $query = $conn -> query( "delete from subject where subjectid = " . $id . ";" ) ;
