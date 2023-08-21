@@ -152,7 +152,16 @@ margin-top:300px;
 </center>
 <?php
 							include('connect.php');
-							
+                            session_start();
+                            if (ini_get("session.use_cookies")) {
+                                $params = session_get_cookie_params();
+                                setcookie(session_name(), '', time() - 42000,
+                                    $params["path"], $params["domain"],
+                                    $params["secure"], $params["httponly"]
+                                );
+                            }
+                            session_destroy() ; 
+
 							if(isset($_POST['go']))
 							{
 							
@@ -172,10 +181,9 @@ margin-top:300px;
 																	} 
 																else if ($numberOfRows > 0)
 																	{
-																	session_start();
+																	session_start() ; 
 																	$_SESSION['id'] = ((array)$row)['userid'];
-																header("location:home3.php");
-																
+                                                                    header("location:home3.php");
 															}
 							}
 							?>

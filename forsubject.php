@@ -40,7 +40,6 @@
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                               Add Subject
                             </button>
-							
 						
                         </h1>
 						<?php include ('add_subject_mode.php');?>

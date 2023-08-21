@@ -76,8 +76,9 @@
                                             <td><?php echo $data['teacher_department'] ?></td>    
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['teacherid'] ?></h1> -->
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="delete_subject(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a class="btn btn-success" role="botton" action="edit_teacher_database.php" href="edit_teacher.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="delete_teacher(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
+                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="edit_teacher(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+
                                             </td>
                                     </tr>
                                     <?php endforeach;
@@ -100,9 +101,8 @@
      <!-- /. WRAPPER  -->
    <?php include ('script.php');?>
     <script>
-        function delete_subject(elem)
+        function delete_teacher(elem)
         {
-            //console.log( elem.getAttribute( 'value' ) ) ; 
             var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
             document.cookie='delete_teacher_id='+teacher_id; 
             if( confirm('Are you sure to delete this teacher?\n') )
@@ -111,6 +111,13 @@
                 //alert('deletion is canceled') ; 
                 location.herf = "forteacher.php" ; 
             }
+        }
+
+        function edit_teacher(elem)
+        {
+            var teacher_id = ( elem.getAttribute('value') ).toString() ;
+            document.cookie = 'teacher_id='+teacher_id ; 
+            location.href = "edit_teacher.php" ;
         }
     </script>
 </body>
