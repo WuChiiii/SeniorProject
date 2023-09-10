@@ -9,11 +9,17 @@
 
     $sql = "update classroom set classroom_no = '" . $no . "', classroom_dept = '" . $dept . "', classroom_desc = '" . $desc . "', classroom_no_seat = '" . $seats . "', classroom_type = '" . $type . "' where classroomid = " . $id . " ; " ; 
     echo $sql ; 
-
-    try{
-        $conn -> query( $sql ) ;
-        echo "<script> location.href = 'forclassroom.php' ; </script>" ;  
-    }catch( PDOException $e ){
-        echo $e ; 
+    if( !empty( $id ) )
+    {
+        try{
+            $conn -> query( $sql ) ;
+            
+        }catch( PDOException $e ){
+            echo $e ; 
+        } 
+    }else{
+        echo "<script> alert('The classroom dosen't exist !'); </script>" ; 
     }
+    echo "<script> location.href = 'forclassroom.php' ; </script>" ;  
+
 ?>

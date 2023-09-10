@@ -1,10 +1,10 @@
 <?php
     include "connect.php" ;
     $name = $_POST['name'] ;
-    $edepartment = $_POST['department'] ; 
+    $department = $_POST['department'] ; 
     $username = $_POST['username'] ; 
     $password = $_POST['password'] ;   
-    $sql = "insert into users values( null, '" . $name . "', '" . $department . "', '" . $username . "', '" . $password  . "') ;" ;
+    $sql = "insert into users values( null, '" . $name . "', '" . $department . "', '" . $username . "', '" . password_hash( $password , PASSWORD_DEFAULT )  . "') ;" ;
     echo $sql ; 
 
     try{

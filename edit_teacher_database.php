@@ -8,11 +8,17 @@
     
     $sql = "update teachers set teacher_name = '" . $name . "', teacher_email = '" . $email . "', teacher_position = '" . $position . "', teacher_department = '" . $department . "' where teacherid = " . $id . " ;" ;    
     echo $sql ; 
-    try{
-        $conn -> query( $sql ) ; 
-        echo "<script> location.href = 'forteacher.php' ; </script>" ; 
-    }catch( PDOException $e ){
-        
+
+    if( !empty( $id ) )
+    {
+        try{
+            $conn -> query( $sql ) ; 
+        }catch( PDOException $e ){
+            echo $e ; 
+        }        
+    }else{
+        echo "<script> alert('The teacher has been deleted !'); </script>" ;
     }
+    echo "<script> location.href = 'forteacher.php' ; </script>" ; 
 
 ?>

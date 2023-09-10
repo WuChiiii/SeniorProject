@@ -46,7 +46,7 @@ $id = $_COOKIE['user_id'];
                                 $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
                                 if( !$cur ) header('Location:foruser.php') ; 
                             ?>
-                            <form class="form-horizontal" method="post" action="edit_tuser_database.php" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="post" action="edit_user_database.php" enctype="multipart/form-data">
                                 <div class="alert alert-info"><strong>Edit User</strong> </div>
                                 <hr>
                                 <div class="control-group">
@@ -70,7 +70,7 @@ $id = $_COOKIE['user_id'];
 								<div class="control-group">
                                     <label class="control-label" for="inputPassword">Password</label>
                                     <div class="controls">
-                                        <input type="text"  name="password"  class ="form-control" value="<?php echo $cur['password'] ; ?>">
+                                        <input type="text"  name="password"  class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>">
                                     </div>
                                 </div>
 								
