@@ -17,21 +17,21 @@
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Department</label>
                         <div class="controls">
-                            <input type="text" class = "form-control"  name="email"  placeholder="CSIE" >
+                            <input type="text" class = "form-control"  name="department"  placeholder="CSIE" >
                         </div>
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Username</label>
                             <div class="controls">
-                                <input type="text" name="position" class = "form-control" placeholder="brian_koo123">
+                                <input type="text" name="username" class = "form-control" placeholder="brian_koo123">
                             </div>
                     </div>
 
 					<div class="control-group">
                         <label class="control-label" for="inputPassword">Password</label>
                         <div class="controls">
-                        <input type="text" name="department" class = "form-control" placeholder="briankoo@123">
+                        <input type="text" name="password" class = "form-control" placeholder="briankoo@123">
                         </div>              
                      </div>
 
