@@ -18,13 +18,13 @@
                     </li>
                     </li>
 					<li>
-                        <a href=".php"><i class="fa fa-table"></i> Timetable </a>
+                        <a href="forschedule.php"><i class="fa fa-table"></i> Timetable </a>
                     </li>
 					<li>
-                        <a href=".php"><i class="fa fa-users"></i> User Account </a>
+                        <a href="foruser.php"><i class="fa fa-users"></i> User Account </a>
                     </li>
 					   <li>
-                        <a href=".php"><i class="fa fa-power-off"></i> Log out </a>
+                        <a href="logout.php"><i class="fa fa-power-off"></i> Log out </a>
                     </li>
                  
                 </ul>

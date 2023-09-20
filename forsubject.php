@@ -40,7 +40,6 @@
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                               Add Subject
                             </button>
-							
 						
                         </h1>
 						<?php include ('add_subject_mode.php');?>
@@ -56,6 +55,9 @@
                                         <th>Subject Title</th>
 										<th>Category</th>
 										<th>Semester</th>
+                                        <th>No. of Students</th>
+                                        <th>Classroom Type</th>
+                                        <th>Hour</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -73,6 +75,10 @@
                                             <td><?php echo $data['subject_title'] ?></td>
                                             <td><?php echo $data['subject_category'] ?></td>
                                             <td><?php echo $data['semester'] ?></td>    
+                                            <td><?php echo $data['subject_no_student'] ?></td>   
+                                            <td><?php echo $data['subject_classroom_type'] ?></td>    
+                                            <td><?php echo $data['subject_hour'] ?></td>
+
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['subjectid'] ?></h1> -->
                                                 <a value = "<?php echo $data['subjectid'] ?>" onclick="delete_subject(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>

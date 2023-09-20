@@ -8,12 +8,7 @@
             // set the PDO error mode to exception
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             //echo "Connected successfully";
-            $sql = file_get_contents('dbase.sql');
-            try {
-                $conn -> exec( $sql ) ; 
-            }catch( PDOException $e ){
-
-            }
+            include_once "create_db.php" ; 
         }
     catch(PDOException $e)
         {

@@ -1,7 +1,7 @@
 <?php include ('session.php');?>	
 <?php
 include('header.php');
-$get_id = $_GET['id'];
+$id = $_COOKIE['teacher_id'];
 ?>
 <!DOCTYPE html>
 <body>
@@ -34,42 +34,45 @@ $get_id = $_GET['id'];
        <?php include ('nav_sidebar.php');?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
-            <div id="page-inner">
+            <div id="page-inner" style="position:absolute;left:30%;top:20%;">
 			 <div class="row">
                     <div class="col-md-5 well">
                         <div class="hero-unit-table">   
                           <div class="hero-unit-table">   
                             <?php include ('connect.php');
                             // get data from database
+                                $sql = "select * from teachers where teacherid = " . $id . " ;" ; 
+                                $query = $conn -> query( $sql ) ; 
+                                $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
+                                if( !$cur ) header('Location:forteacher.php') ; 
                             ?>
-                            <form class="form-horizontal" method="post" enctype="multipart/form-data">
+                            <form class="form-horizontal" method="post" action="edit_teacher_database.php" enctype="multipart/form-data">
                                 <div class="alert alert-info"><strong>Edit Teacher</strong> </div>
                                 <hr>
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Name</label>
                                     <div class="controls">
-                                        <input type="text" name="teacher_name" class ="form-control" value="">
+                                        <input type="text" name="teacher_name" class ="form-control" value="<?php echo $cur['teacher_name'] ; ?>">
                                     </div>
                                 </div>
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Email</label>
                                     <div class="controls">
-                                        <input type="text"  name="teacher_email"  class ="form-control" value="">
+                                        <input type="text" name="teacher_email" class ="form-control" value="<?php echo $cur['teacher_email'] ; ?>">
                                     </div>
                                 </div>
 								<div class="control-group">
                                     <label class="control-label" for="inputPassword">Position</label>
                                     <div class="controls">
-                                        <input type="text"  name="teacher_position"  class ="form-control" value="">
+                                        <input type="text"  name="teacher_position"  class ="form-control" value="<?php echo $cur['teacher_position'] ; ?>">
                                     </div>
                                 </div>
 								<div class="control-group">
                                     <label class="control-label" for="inputPassword">Department</label>
                                     <div class="controls">
-                                        <input type="text"  name="teacher_department"  class ="form-control" value="">
+                                        <input type="text"  name="teacher_department"  class ="form-control" value="<?php echo $cur['teacher_department'] ; ?>">
                                     </div>
                                 </div>
-                               
 								
 									<hr/>
 
@@ -81,23 +84,6 @@ $get_id = $_GET['id'];
                                     </div>
                                 </div>
                             </form>
-
-                            <?php
-                            if (isset($_POST['update'])) {
-
-                                $teacher_name = $_POST['teacher_name'];
-                                $teacher_email = $_POST['teacher_email'];
-								$teacher_position = $_POST['teacher_position'];
-								$teacher_department = $_POST['teacher_department'];
-
-                            //     mysqli_query($conn,"update teacher set teacher_name='$teacher_name',teacher_email='$teacher_email',teacher_position='$teacher_position',teacher_department='$teacher_department' where teacherid='$get_id'") or die(mysqli_error());
-                            //  echo"Saved";
-                            }
-
-                            							
-                            ?>
-
-
                         </div>
                         </div>
                         </div>

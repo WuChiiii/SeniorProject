@@ -27,6 +27,20 @@
                                 <input type="text" name="classroom_desc" class = "form-control" placeholder="Intoduction to CS">
                             </div>
                     </div>
+
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">No. of Seats</label>
+                            <div class="controls">
+                                <input type="text" name="classroom_no_seat" class = "form-control" placeholder="80">
+                            </div>
+                    </div>
+    
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom Type</label>
+                            <div class="controls">
+                                <input type="text" name="classroom_type" class = "form-control" placeholder="0/1">
+                            </div>
+                    </div>
                               
 					<div class = "modal-footer">
 						<button name = "go" type="submit" class="btn btn-primary" >Save</button>

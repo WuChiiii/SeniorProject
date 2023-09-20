@@ -55,7 +55,9 @@
 
                                         <th>Classroom no.</th>
                                         <th>Department</th>
-                                        <th>Description</th>
+                                        <th>Subject Title</th> <!-- description -->
+                                        <th>No. of Seats</th>
+                                        <th>Classroom Type</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -72,10 +74,12 @@
                                             <td><?php echo $data['classroom_no'] ?></td>
                                             <td><?php echo $data['classroom_dept'] ?></td>
                                             <td><?php echo $data['classroom_desc'] ?></td>
+                                            <td><?php echo $data['classroom_no_seat'] ?></td>
+                                            <td><?php echo $data['classroom_type'] ?></td>
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
                                                 <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a class="btn btn-success" role="botton" action="edit_classroom_database.php" href="edit_classroom.php"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <a value = "<?php echo $data['classroomid'] ?>" onclick="edit_classroom(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                     </tr>
                                     <?php endforeach;
@@ -100,15 +104,20 @@
     <script>
         function delete_classroom(elem)
         {
-            //console.log( elem.getAttribute( 'value' ) ) ; 
-            var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_classroom_id='+teacher_id; 
+            var classroom_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            document.cookie='delete_classroom_id='+classroom_id; 
             if( confirm('Are you sure to delete this classroom?\n') )
                 location.href='delete_classroom_database.php';
             else{
-                //alert('deletion is canceled') ; 
                 location.herf = "forclassroom.php" ; 
             }
+        }
+
+        function edit_classroom(elem)
+        {
+            var classroom_id = ( elem.getAttribute('value') ).toString() ; 
+            document.cookie = "classroom_id = " + classroom_id ; 
+            location.href = "edit_classroom.php" ; 
         }
     </script>
 </body>
