@@ -109,7 +109,11 @@
         {
             //console.log( elem.getAttribute( 'value' ) ) ; 
             var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_subject_id='+subject_id; 
+            //document.cookie='delete_subject_id='+subject_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
             if( confirm('Are you sure to delete this subject?\n') )
                 location.href='delete_subject_database.php';
             else{
@@ -120,7 +124,11 @@
         function edit_subject(elem)
         {
             var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='subject_id='+subject_id; 
+            //document.cookie='subject_id='+subject_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
             location.href='edit_subject.php';
         }
     </script>

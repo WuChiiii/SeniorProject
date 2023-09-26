@@ -167,36 +167,22 @@ margin-top:300px;
 							$username=$_POST['username'];
 							$password=$_POST['password'];
 							
-								/*
-								$result = $conn -> query("SELECT * FROM users WHERE department like '%ADMIN%' and username ='$username' AND hash = '$password'") or die(mysqli_error());
-                                
-								$row = $result -> fetch( PDO::FETCH_OBJ);
-								$numberOfRows = $result -> rowCount();	
-																if ($numberOfRows == 0) 
-																	{
-																		echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>";
-																	} 
-																else if ($numberOfRows > 0)
-																	{
-																	session_start() ; 
-																	$_SESSION['id'] = ((array)$row)['userid'];
-                                                                    header("location:home3.php");
-															}			
-                                
-                                */
                                     $sql = "select * from users where department = 'Admin' and username = '" . $username . "';" ; 
                                     //echo $sql ; 
-                                    $query = $conn -> query( $sql ) ; 									
+                                    $query = $conn -> query( $sql ) ; 		
                                     $row = $query -> fetch( PDO::FETCH_ASSOC ) ; 
                                     $hash = $row['hash'] ; 
-
+                                    //var_dump( $row ) ; 
                                     if( password_verify( $password , $hash ) ){
                                         session_start() ; 
-                                        $_SESSION['id'] = ((array)$row)['userid'];
-                                        header("location:home3.php");
-                                    }else{
-                                        echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>";
-                                    }    
+                                        $_SESSION['id'] = ((array)$row)['userid'] ; 
+                                        $_SESSION['username'] = ((array)$row)['username'] ; 
+                                        $_SESSION['last_stamp'] = time() ; 
+                                        //var_dump( $_SESSION ) ; 
+                                        header("location:home3.php") ; 
+                                    }else{ 
+                                        echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>" ; 
+                                    } 
 							}
 							?>
 </form>
