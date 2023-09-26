@@ -105,7 +105,12 @@
         function delete_classroom(elem)
         {
             var classroom_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_classroom_id='+classroom_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_classroom_id='+classroom_id+';expires=' + exp + ';path=/;' ; 
+            //console.log( exp ) ; 
+            //document.cookie="delete_classroom_id"+classroom_id; 
             if( confirm('Are you sure to delete this classroom?\n') )
                 location.href='delete_classroom_database.php';
             else{
@@ -116,7 +121,11 @@
         function edit_classroom(elem)
         {
             var classroom_id = ( elem.getAttribute('value') ).toString() ; 
-            document.cookie = "classroom_id = " + classroom_id ; 
+            //document.cookie = "classroom_id = " + classroom_id ; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='classroom_id='+classroom_id+';expires=' + exp + ';path=/;' ; 
             location.href = "edit_classroom.php" ; 
         }
     </script>

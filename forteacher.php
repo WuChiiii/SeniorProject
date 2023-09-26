@@ -104,7 +104,11 @@
         function delete_teacher(elem)
         {
             var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_teacher_id='+teacher_id; 
+            //document.cookie='delete_teacher_id='+teacher_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
             if( confirm('Are you sure to delete this teacher?\n') )
                 location.href='delete_teacher_database.php';
             else{
@@ -116,7 +120,11 @@
         function edit_teacher(elem)
         {
             var teacher_id = ( elem.getAttribute('value') ).toString() ;
-            document.cookie = 'teacher_id='+teacher_id ; 
+            //document.cookie = 'teacher_id='+teacher_id ; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
             location.href = "edit_teacher.php" ;
         }
     </script>

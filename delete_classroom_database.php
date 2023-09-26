@@ -1,6 +1,7 @@
 <?php
     include "connect.php" ; 
     $id = $_COOKIE['delete_classroom_id'] ; 
+    
     $sql = "delete from classroom where classroomid = " . $id . " ; " ; 
     if( !empty($id) )
     {

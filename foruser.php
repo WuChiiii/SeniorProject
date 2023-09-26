@@ -103,7 +103,11 @@
         function delete_user(elem)
         {
             var user_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_user_id='+user_id; 
+            //document.cookie='delete_user_id='+user_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_user_id='+user_id+';expires=' + exp + ';path=/;' ; 
             if( confirm('Are you sure to delete this user?\n') )
                 location.href='delete_user_database.php';
             else{

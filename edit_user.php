@@ -70,7 +70,7 @@ $id = $_COOKIE['user_id'];
 								<div class="control-group">
                                     <label class="control-label" for="inputPassword">Password</label>
                                     <div class="controls">
-                                        <input type="text"  name="password"  class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>">
+                                        <input name="password" type="password" class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>">
                                     </div>
                                 </div>
 								

@@ -19,8 +19,7 @@
               
                 <li class="dropdown"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                      						
-					  Welcome : Teacher
+					  Welcome : <?php echo $_SESSION['username'] ?>
                     </a>
                   
                     <!-- /.dropdown-user -->
