@@ -43,7 +43,7 @@ Alter Table classroom Add Unique( classroom_no ) ;
 --
 
 INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`, `classroom_no_seat`, `classroom_type`) VALUES
-(null, 'C305', 'CSIE', 'Introduction to Computer Science', 0, 0),
+(null, 'B305', 'CSIE', 'Introduction to Computer Science', 0, 1),
 (null, 'A331', 'CSIE', 'Data Structures', 0, 0),
 (null, 'A337', 'CSIE', 'Introductory Machine Learning', 0, 0);
 

@@ -2,7 +2,7 @@
 <?php include "check_login.php" ?>
 <?php
     include "connect.php" ;
-    $id = $_COOKIE['user_id'] ; 
+    $id = $_COOKIE['userid'] ; 
     $name = $_POST['name'] ;
     $department = $_POST['department'] ; 
     $account = $_POST['account'] ; 

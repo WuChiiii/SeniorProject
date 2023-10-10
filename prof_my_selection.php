@@ -21,7 +21,7 @@
                 <li class="dropdown"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                       						
-                    Welcome : <?php echo "Professor " . $_SESSION['name'] . $_SESSION['page_mode'] ?>
+                    Welcome : <?php echo "Professor " . $_SESSION['name'] //. $_SESSION['page_mode'] ?>
                     </a>
                   
                     <!-- /.dropdown-user -->

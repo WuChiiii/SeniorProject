@@ -38,9 +38,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester</label>
+                        <label class="control-label" for="inputPassword">Semester ( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
                         <div class="controls">
-                        <input type="text" name="subjectSemester" pattern="[^'\\\x22;]*" class = "form-control" placeholder="e.g.一上" required>
+                        <input type="text" name="subjectSemester" pattern="[1234][AB]" class = "form-control" placeholder="e.g.2A" required>
                         </div>              
                      </div>
                 

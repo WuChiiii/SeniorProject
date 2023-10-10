@@ -78,12 +78,12 @@
                                             <td><?php echo $data['credit'] ?></td>
                                             <td><?php echo $data['period'] ?></td>    
                                             <td><?php echo $data['semester'] ?></td>   
-                                            <td><?php echo $data['groupType'] ?></td>    
-                                            <td><?php echo $data['classType'] ?></td>
+                                            <td><?php echo $data['groupType'] == 1 ? 'Local Group': 'International Group'  ?></td>    
+                                            <td><?php echo $data['classType'] == 1 ? '必(required)' : '選(elective)' ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
                                             <td width="160" >
-                                                <h1><?php echo $data['id'] ?></h1>
+                                                <!-- <h1><?php echo $data['id'] ?></h1> -->
                                                 <a value = "<?php echo $data['id'] ?>" onclick="delete_subject(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
                                                 <a value = "<?php echo $data['id'] ?>" onclick="edit_subject(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
