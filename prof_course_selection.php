@@ -113,7 +113,7 @@
             var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
             //document.cookie='subject_id='+subject_id; 
             var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp.setTime( exp.getTime() + 1000 * 600 ) ; 
             exp = exp.toString() ; 
             document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
             location.href='select_course_database.php'; 

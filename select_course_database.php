@@ -52,7 +52,7 @@
             $rc = $query -> fetch( PDO::FETCH_ASSOC ) ; 
             var_dump( $rc ) ; 
             $rc = $rc['max( id )'] ; 
-            setcookie('id' , $rc , time() + 600 , '/') ;
+            setcookie('course_id' , $rc , time() + 600 , '/') ;
             var_dump( $_COOKIE ) ;  
             echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
         }catch( PDOException $e ){

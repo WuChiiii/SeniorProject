@@ -33,14 +33,14 @@
 					<div class="control-group">
                         <label class="control-label" for="inputPassword">Period(hr)   ***   an integer in [0, 9]   ***</label>
                         <div class="controls">
-                        <input type="text" name="SPeriod" pattern = "[0-9]" class = "form-control" value="<?php echo $cur['period'] ;?>" required>
+                        <input type="text" name="SPeriod" pattern = "[0-9]" class = "form-control" value="e.g.3" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester</label>
+                        <label class="control-label" for="inputPassword">Semester ( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
                         <div class="controls">
-                        <input type="text" name="SSemester" pattern="[^'\\\x22;]*" class = "form-control" placeholder="e.g.一上" required>
+                        <input type="text" name="SSemester" pattern="[1234][AB]" class = "form-control" placeholder="e.g.3B" required>
                         </div>              
                      </div>
                 

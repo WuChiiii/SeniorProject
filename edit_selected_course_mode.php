@@ -17,6 +17,7 @@
                     $sql = "select * from course_selection where id = " . $id . ";" ; 
                     $query = $conn -> query( $sql ) ; 
                     $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
+                    if( !cur ) echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
                 ?>
                 
                 <form  method="post" enctype="multipart/form-data" action="edit_course_database.php"> <hr>			
@@ -47,9 +48,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester</label>
+                        <label class="control-label" for="inputPassword">Semester ( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
                         <div class="controls">
-                        <input type="text" name="SSemester" pattern="[^'\\\x22;]*" class = "form-control" value="<?php echo $cur['semester'] ;?>" required>
+                        <input type="text" name="SSemester" pattern="[1234][AB]" class = "form-control" value="<?php echo $cur['semester'] ;?>" required>
                         </div>              
                      </div>
                 

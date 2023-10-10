@@ -110,32 +110,16 @@
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-   <?php include ('script.php');?>
+    <?php include ('script.php');?>
+    <?php include "edit_selected_course_mode.php" ; ?> 
     <script>
-        function deselect(elem)
-        {
-            var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            //document.cookie='subject_id='+subject_id; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to deselect this course?') )
+        $("#modal_edit_course").modal("show") ;
+        $("#modal_edit_course").on("hidden.bs.modal", 
+            function()
             {
-                location.href='deselect_course_database.php' ; 
-            }else{
-                location.href='prof_my_selection.php' ; 
+                location.href = "prof_my_selection.php" ;
             }
-        }
-        function edit_course(elem)
-        {
-            var course_id = ( elem.getAttribute('value') ).toString() ; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 600 ) ;
-            exp = exp.toString() ; 
-            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
-            location.href='pre_edit_selected_course.php'; 
-        }
+        );
     </script>
 </body>
 

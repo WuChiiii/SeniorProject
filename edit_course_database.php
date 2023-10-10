@@ -1,5 +1,5 @@
 
-<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "session.php" ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?> 
 <?php include "check_login.php" ?>
 <?php   
     include "connect.php" ; 
