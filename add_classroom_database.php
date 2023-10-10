@@ -1,3 +1,5 @@
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php
     include "connect.php" ; 
     $name = $_POST['classroom_no'] ; 
@@ -7,6 +9,11 @@
     $type = $_POST['classroom_type'] ; 
 
     $sql = "insert into classroom values( null , '" . $name . "', '" . $department . "', '" . $description . "', '" . $seats . "', '" . $type . "' ) ; " ; 
-    $conn -> query( $sql ) ; 
+    try{ 
+        $conn -> query( $sql ) ; 
+    }catch( PDOException $e ){
+        echo "<script> alert('The operation is failed ! You may tr to add a duplicate classroom !') ; </script>" ;  
+    }
+    
     echo "<script> location.href = 'forclassroom.php' ; </script>" ;
 ?>

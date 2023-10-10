@@ -1,4 +1,4 @@
-<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "session.php" ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?> 
 <?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#	">Teacher</a>
+                <a class="navbar-brand" href="#	">Course Selection</a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -21,7 +21,7 @@
                 <li class="dropdown"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                       						
-					  Welcome : Admin
+                    Welcome : <?php echo "Professor " . $_SESSION['name'] //. $_SESSION['page_mode']?>
                     </a>
                   
                     <!-- /.dropdown-user -->
@@ -30,7 +30,7 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-       <?php include ('nav_sidebar3.php');?>
+       <?php include ('nav_sidebar.php');?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
@@ -39,55 +39,60 @@
                         <h1 class="page-header">
                            
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                              Add Teacher
+                              Add Course
                             </button>
-							
 						
                         </h1>
-						<?php include ('add_teacher_mode.php');?>
+						<?php include ('add_course_mode.php');?>
 						
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <div class="alert alert-info">
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Teacher Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Course Selection</strong>
                                 </div>
                                 <thead>
                                     <tr>
-
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Position</th>
-                                        <th>Department</th>
+                                        <th>Course Name</th>
+                                        <th>Course Number</th>
+										<th>Credit</th>
+										<th>Period</th>
+                                        <th>Semester</th>
+                                        <th>Group Type</th>
+                                        <th>Class Type</th>
+                                        <th>Remarks</th>
+                                        <th>Program</th>
                                         <th>Action</th>
-                                        
                                     </tr>
                                     
                                 </thead>
                                 <tbody>
                                     <?php include('connect.php');
                                     //display the data of subjects from database
-                                        $query = $conn -> query( "select * from teachers" ) ; 
+                                        $query = $conn -> query( "select * from courses" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
-                                            
                                     ?>
                                         <tr class="warning"> 
-                                            <td><?php echo $data['teacher_name'] ?></td>
-                                            <td><?php echo $data['teacher_email'] ?></td>
-                                            <td><?php echo $data['teacher_position'] ?></td>
-                                            <td><?php echo $data['teacher_department'] ?></td>    
+                                            <td><?php echo $data['courseName'] ?></td>
+                                            <td><?php echo $data['courseNumber'] ?></td>
+                                            <td><?php echo $data['credit'] ?></td>
+                                            <td><?php echo $data['period'] ?></td>    
+                                            <td><?php echo $data['semester'] ?></td>   
+                                            <td><?php echo $data['groupType'] ?></td>    
+                                            <td><?php echo $data['classType'] ?></td>
+                                            <td><?php echo $data['remarks'] ?></td>
+                                            <td><?php echo $data['program'] ?></td>
                                             <td width="160" >
-                                                <!-- <h1><?php echo $data['teacherid'] ?></h1> -->
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="delete_teacher(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="edit_teacher(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <!-- <h1><?php echo $data['id'] ?></h1> -->
+                                                <a value = "<?php echo $data['id'] ?>" onclick="select_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Select</a>
+                                                <div style="font-size:13px;"><em> * You can specify the number of students and the classroom type after selecting</em> </div>
                                             </td>
-                                            
                                     </tr>
-                                    <?php 
-                                    
-                                    endforeach;
+                                    <?php endforeach;
                                     //end of display
                                     ?>
+
+                                <?php ?>
                                 </tbody>
                             </table>
                         </div>
@@ -101,38 +106,19 @@
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    <?php include ('script.php');?>
+   <?php include ('script.php');?>
     <script>
-        function delete_teacher(elem)
+        function select_course(elem)
         {
-            var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            //document.cookie='delete_teacher_id='+teacher_id; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='delete_teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to delete this teacher?\n') )
-                location.href='delete_teacher_database.php';
-            else{
-                //alert('deletion is canceled') ; 
-                location.herf = "forteacher.php" ; 
-            }
-        }
-
-        function edit_teacher(elem)
-        {
-            var teacher_id = ( elem.getAttribute('value') ).toString() ;
-            //document.cookie = 'teacher_id='+teacher_id ; 
+            var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            //document.cookie='subject_id='+subject_id; 
             var exp = new Date() ; 
             exp.setTime( exp.getTime() + 1000 * 600 ) ; 
             exp = exp.toString() ; 
-            document.cookie='teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            //$("#modal_edit_teacher").modal("show") ; 
-            //location.reload() ; 
-            location.href = "pre_edit_teacher.php" ;
+            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
+            location.href='select_course_database.php'; 
         }
     </script>
-    
 </body>
 
 </html>
