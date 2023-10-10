@@ -1,4 +1,5 @@
-<?php include ('session.php');?>	
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
 
@@ -55,7 +56,7 @@
 
                                         <th>Name</th>
                                         <th>Department</th>
-                                        <th>Username</th>
+                                        <th>Account</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -71,10 +72,10 @@
                                         <tr class="warning"> 
                                             <td><?php echo $data['name'] ?></td>
                                             <td><?php echo $data['department'] ?></td>
-                                            <td><?php echo $data['username'] ?></td>
+                                            <td><?php echo $data['account'] ?></td>
 
                                             <td width="160" >
-                                                <!-- <h1><?php echo $data['userid'] ?></h1> -->
+                                                <!-- <h1><?php echo $data['userid'] ?></h1> --> 
                                                 <a value = "<?php echo $data['userid'] ?>" onclick="delete_user(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
                                                 <a value = "<?php echo $data['userid'] ?>" onclick="edit_user(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
 
@@ -118,9 +119,13 @@
 
         function edit_user(elem)
         {
-            var user_id = ( elem.getAttribute('value') ).toString() ;
-            document.cookie = 'user_id='+user_id ; 
-            location.href = "edit_user.php" ;
+            var user_id = ( elem.getAttribute('value') ).toString() ; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 600 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='userid='+user_id+';expires=' + exp + ';path=/;' ; /******** the cookie index 'user_id' is unavailable******* */
+            console.log( document.cookie ) ; 
+            location.href = "pre_edit_user.php" ;
         }
     </script>
 </body>

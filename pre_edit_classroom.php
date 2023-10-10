@@ -13,7 +13,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="#	">Teacher</a>
+                <a class="navbar-brand" href="#	">Classroom</a>
             </div>
 
             <ul class="nav navbar-top-links navbar-right">
@@ -39,25 +39,26 @@
                         <h1 class="page-header">
                            
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-                              Add Teacher
+                              Add Classroom
                             </button>
 							
 						
                         </h1>
-						<?php include ('add_teacher_mode.php');?>
+						<?php include ('add_classroom_mode.php');?>
 						
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <div class="alert alert-info">
-                                    <strong><i class="icon-user icon-large"></i>&nbsp;Teacher Table</strong>
+                                    <strong><i class="icon-user icon-large"></i>&nbsp;Classroom Table</strong>
                                 </div>
                                 <thead>
                                     <tr>
 
-                                        <th>Name</th>
-                                        <th>Email</th>
-                                        <th>Position</th>
+                                        <th>Classroom no.</th>
                                         <th>Department</th>
+                                        <th>Subject Title</th> <!-- description -->
+                                        <th>No. of Seats</th>
+                                        <th>Classroom Type</th>
                                         <th>Action</th>
                                         
                                     </tr>
@@ -65,29 +66,28 @@
                                 </thead>
                                 <tbody>
                                     <?php include('connect.php');
-                                    //display the data of subjects from database
-                                        $query = $conn -> query( "select * from teachers" ) ; 
+                                    //display the data of classroom from database
+                                        $query = $conn -> query( "select * from classroom" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
-                                            
                                     ?>
                                         <tr class="warning"> 
-                                            <td><?php echo $data['teacher_name'] ?></td>
-                                            <td><?php echo $data['teacher_email'] ?></td>
-                                            <td><?php echo $data['teacher_position'] ?></td>
-                                            <td><?php echo $data['teacher_department'] ?></td>    
+                                            <td><?php echo $data['classroom_no'] ?></td>
+                                            <td><?php echo $data['classroom_dept'] ?></td>
+                                            <td><?php echo $data['classroom_desc'] ?></td>
+                                            <td><?php echo $data['classroom_no_seat'] ?></td>
+                                            <td><?php echo $data['classroom_type'] ?></td>
                                             <td width="160" >
-                                                <!-- <h1><?php echo $data['teacherid'] ?></h1> -->
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="delete_teacher(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="edit_teacher(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
+                                                <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
+                                                <a value = "<?php echo $data['classroomid'] ?>" onclick="edit_classroom(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
-                                            
                                     </tr>
-                                    <?php 
-                                    
-                                    endforeach;
+                                    <?php endforeach;
                                     //end of display
                                     ?>
+
+                                <?php ?>
                                 </tbody>
                             </table>
                         </div>
@@ -101,38 +101,17 @@
          <!-- /. PAGE WRAPPER  -->
         </div>
      <!-- /. WRAPPER  -->
-    <?php include ('script.php');?>
+   <?php include ('script.php');?>
+   <?php include "edit_classroom_mode.php" ; ?>
     <script>
-        function delete_teacher(elem)
-        {
-            var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            //document.cookie='delete_teacher_id='+teacher_id; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='delete_teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to delete this teacher?\n') )
-                location.href='delete_teacher_database.php';
-            else{
-                //alert('deletion is canceled') ; 
-                location.herf = "forteacher.php" ; 
+        $("#modal_edit_classroom").modal("show") ; 
+        $("#modal_edit_classroom").on("hidden.bs.modal", 
+            function()
+            {
+                location.href = "forclassroom.php" ;
             }
-        }
-
-        function edit_teacher(elem)
-        {
-            var teacher_id = ( elem.getAttribute('value') ).toString() ;
-            //document.cookie = 'teacher_id='+teacher_id ; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 600 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            //$("#modal_edit_teacher").modal("show") ; 
-            //location.reload() ; 
-            location.href = "pre_edit_teacher.php" ;
-        }
+        );
     </script>
-    
 </body>
 
 </html>

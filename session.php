@@ -1,5 +1,5 @@
 <?php 
     include('connect.php') ;
-    session_start() ; 
-    include "check_login.php" ; 
+    if(!isset($_SESSION)) session_start() ; 
+    //include "check_login.php" ; 
 ?>

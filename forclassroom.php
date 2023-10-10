@@ -1,4 +1,5 @@
-<?php include ('session.php');?>	
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
 
@@ -126,7 +127,7 @@
             exp.setTime( exp.getTime() + 1000 * 10 ) ; 
             exp = exp.toString() ; 
             document.cookie='classroom_id='+classroom_id+';expires=' + exp + ';path=/;' ; 
-            location.href = "edit_classroom.php" ; 
+            location.href = "pre_edit_classroom.php" ; 
         }
     </script>
 </body>

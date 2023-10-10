@@ -1,10 +1,12 @@
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php
     include "connect.php" ;
     $name = $_POST['name'] ;
     $department = $_POST['department'] ; 
-    $username = $_POST['username'] ; 
+    $account = $_POST['account'] ; 
     $password = $_POST['password'] ;   
-    $sql = "insert into users values( null, '" . $name . "', '" . $department . "', '" . $username . "', '" . password_hash( $password , PASSWORD_DEFAULT )  . "') ;" ;
+    $sql = "insert into users values( null, '" . $name . "', '" . $department . "', '" . $account . "', '" . password_hash( $password , PASSWORD_DEFAULT )  . "') ;" ;
     echo $sql ; 
 
     try{

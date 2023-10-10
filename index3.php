@@ -139,7 +139,7 @@ margin-top:300px;
      <center>
 
 		
-		<Select name="username" style="margin-bottom:10px;">
+		<Select name="account" style="margin-bottom:10px;">
 		<!-- <option>Select User</option> -->
 		<option value="ADMIN">ADMIN</option>
 	</select>
@@ -164,10 +164,10 @@ margin-top:300px;
 							if(isset($_POST['go']))
 							{
 							
-							$username=$_POST['username'];
+							$account=$_POST['account'];
 							$password=$_POST['password'];
 							
-                                    $sql = "select * from users where department = 'Admin' and username = '" . $username . "';" ; 
+                                    $sql = "select * from users where department = 'Admin' and account = '" . $account . "';" ; 
                                     //echo $sql ; 
                                     $query = $conn -> query( $sql ) ; 		
                                     $row = $query -> fetch( PDO::FETCH_ASSOC ) ; 
@@ -176,7 +176,7 @@ margin-top:300px;
                                     if( password_verify( $password , $hash ) ){
                                         session_start() ; 
                                         $_SESSION['id'] = ((array)$row)['userid'] ; 
-                                        $_SESSION['username'] = ((array)$row)['username'] ; 
+                                        $_SESSION['name'] = ((array)$row)['name'] ; 
                                         $_SESSION['last_stamp'] = time() ; 
                                         //var_dump( $_SESSION ) ; 
                                         header("location:home3.php") ; 
