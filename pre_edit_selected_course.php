@@ -113,8 +113,9 @@
     <?php include ('script.php');?>
     <?php include "edit_selected_course_mode.php" ; ?> 
     <script>
+
         $("#modal_edit_course").modal("show") ;
-        $("#modal_edit_course").on("hidden.bs.modal", 
+        $("#modal_edit_course").on('hidden.bs.modal',
             function()
             {
                 location.href = "prof_my_selection.php" ;
@@ -124,3 +125,4 @@
 </body>
 
 </html>
+S

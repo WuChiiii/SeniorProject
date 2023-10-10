@@ -5,7 +5,7 @@
         <div class="modal-content">
             <!-- header -->
             <div class="modal-header">  
-                <div class="alert alert-info"><strong><center>Edit Account Info</center></strong></div>
+                <div class="alert alert-info"><strong><center>Edit Course</center></strong></div>
             </div>
             <!-- body -->
             <div class="modal-body">
@@ -17,7 +17,7 @@
                     $sql = "select * from course_selection where id = " . $id . ";" ; 
                     $query = $conn -> query( $sql ) ; 
                     $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
-                    if( !cur ) echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
+                    if( !$cur ) echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
                 ?>
                 
                 <form  method="post" enctype="multipart/form-data" action="edit_course_database.php"> <hr>			

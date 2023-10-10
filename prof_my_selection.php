@@ -88,7 +88,7 @@
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td width="160" >
                                                 <!--<h1><?php echo $data['id'] ?></h1>-->
-                                                <a value = "<?php echo $data['id'] ?>" onclick="deselect(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Deselect</a>
+                                                <a value = "<?php echo $data['id'] ?>" onclick="deselect(this);" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Deselect</a>
                                                 <a value = "<?php echo $data['id'] ?>" onclick="edit_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                         </tr>
@@ -134,6 +134,8 @@
             exp.setTime( exp.getTime() + 1000 * 600 ) ;
             exp = exp.toString() ; 
             document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
+            //$("#modal_edit_subject").modal("show") ; 
+            console.log( document.cookie ) ; 
             location.href='pre_edit_selected_course.php'; 
         }
     </script>

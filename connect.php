@@ -12,8 +12,8 @@
             /*
             ini_set('max_execution_time', 300) ; 
             // echo ini_get('max_execution_time') ; 
-            shell_exec( "python " . getcwd() . "\crawler_course.py" ) ; */
-            // echo "python " . getcwd() . "\crawler_course.py" ; 
+            shell_exec( "python " . getcwd() . "\crawler_course.py" ) ;*/ 
+            //echo "python " . getcwd() . "\crawler_course.py" ; 
             
         } 
     catch(PDOException $e) 

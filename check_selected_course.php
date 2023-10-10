@@ -42,7 +42,7 @@
                             <strong>***You can specify the classroom type and the number of students or edit other info***</strong>
                             <?php include ('connect.php');
                             // get data from database
-                                $id = $_COOKIE['id'] ; 
+                                $id = $_COOKIE['course_id'] ; 
                                 $sql = "select * from course_selection where id = " . $id . " ;" ; 
                                 $query = $conn -> query( $sql ) ; 
                                 $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
