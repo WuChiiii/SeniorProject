@@ -102,35 +102,15 @@
         </div>
      <!-- /. WRAPPER  -->
     <?php include ('script.php');?>
+    <?php include "edit_teacher_mode.php" ; ?> 
     <script>
-        function delete_teacher(elem)
-        {
-            var teacher_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            //document.cookie='delete_teacher_id='+teacher_id; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='delete_teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to delete this teacher?\n') )
-                location.href='delete_teacher_database.php';
-            else{
-                //alert('deletion is canceled') ; 
-                location.herf = "forteacher.php" ; 
+        $("#modal_edit_teacher").modal("show") ; 
+        $('#modal_edit_teacher').on('hidden.bs.modal', 
+            function() 
+            {
+                location.href = "forteacher.php";
             }
-        }
-
-        function edit_teacher(elem)
-        {
-            var teacher_id = ( elem.getAttribute('value') ).toString() ;
-            //document.cookie = 'teacher_id='+teacher_id ; 
-            var exp = new Date() ; 
-            exp.setTime( exp.getTime() + 1000 * 600 ) ; 
-            exp = exp.toString() ; 
-            document.cookie='teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            //$("#modal_edit_teacher").modal("show") ; 
-            //location.reload() ; 
-            location.href = "pre_edit_teacher.php" ;
-        }
+        );
     </script>
     
 </body>

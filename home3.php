@@ -1,4 +1,5 @@
-<?php include ('session.php');?>	
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
 

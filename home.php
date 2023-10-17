@@ -1,4 +1,5 @@
-<?php include ('session.php');?>	
+<?php include 'session.php' ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
 
@@ -19,8 +20,7 @@
               
                 <li class="dropdown"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
-                      						
-					  Welcome : Teacher
+                        Welcome : <?php $_SESSION['page_mode'] = 1 ; echo "Professor " . $_SESSION['name'] //. $_SESSION['page_mode']; ?>
                     </a>
                   
                     <!-- /.dropdown-user -->
@@ -29,7 +29,7 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-       <?php include ('nav_sidebar3.php');?>
+       <?php include ('nav_sidebar.php');?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
 		    <img src="img/1.jpg" height="200px" width="100%">

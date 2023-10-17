@@ -1,4 +1,5 @@
-<?php include ('session.php');?>	
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
 
@@ -75,7 +76,7 @@
                                             <td><?php echo $data['classroom_dept'] ?></td>
                                             <td><?php echo $data['classroom_desc'] ?></td>
                                             <td><?php echo $data['classroom_no_seat'] ?></td>
-                                            <td><?php echo $data['classroom_type'] ?></td>
+                                            <td><?php echo $data['classroom_type'] == 1 ? 'Computer Classroom' : 'Not Specified' ?></td>
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
                                                 <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
@@ -105,7 +106,12 @@
         function delete_classroom(elem)
         {
             var classroom_id = ( elem.getAttribute( 'value' ) ).toString() ; 
-            document.cookie='delete_classroom_id='+classroom_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_classroom_id='+classroom_id+';expires=' + exp + ';path=/;' ; 
+            //console.log( exp ) ; 
+            //document.cookie="delete_classroom_id"+classroom_id; 
             if( confirm('Are you sure to delete this classroom?\n') )
                 location.href='delete_classroom_database.php';
             else{
@@ -116,8 +122,12 @@
         function edit_classroom(elem)
         {
             var classroom_id = ( elem.getAttribute('value') ).toString() ; 
-            document.cookie = "classroom_id = " + classroom_id ; 
-            location.href = "edit_classroom.php" ; 
+            //document.cookie = "classroom_id = " + classroom_id ; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='classroom_id='+classroom_id+';expires=' + exp + ';path=/;' ; 
+            location.href = "pre_edit_classroom.php" ; 
         }
     </script>
 </body>

@@ -1,3 +1,5 @@
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
+<?php include "check_login.php" ?>
 <?php
     include "connect.php" ; 
     $id = $_COOKIE['delete_user_id'] ; 

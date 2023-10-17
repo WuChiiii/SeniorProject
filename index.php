@@ -145,7 +145,7 @@ margin-top:300px;
 	
 	````</select> -->
 <br/>
-<input type="username" name="username" placeholder="Username" /><br />
+<input type="account" name="account" pattern="[^'\\\x22;]*" placeholder="Account" /><br />
 <input type="password" name="password" placeholder="Password" /><br />
 
 <input type="submit" name="go" value="Log In">
@@ -166,10 +166,10 @@ margin-top:300px;
 							if(isset($_POST['go']))
 							{
 							
-							$username=$_POST['username'];
+							$account=$_POST['account'];
 							$password=$_POST['password'];
                             
-                                                                $sql = "select * from users where username = '" . $username . "';" ; 
+                                                                $sql = "select * from users where account = '" . $account . "';" ; 
                                                                 $query = $conn -> query( $sql ) ; 
                                                                 $row = $query -> fetch( PDO::FETCH_OBJ ) ;                                                             
                                                             if( $row )
@@ -179,11 +179,14 @@ margin-top:300px;
 
                                                                 session_start() ; 
                                                                 $_SESSION['id'] = ((array)$row)['userid'] ; 
+                                                                $_SESSION['name'] = ((array)$row)['name'] ; 
+                                                                $_SESSION['account'] = ((array)$row)['account'] ; 
+                                                                $_SESSION['department'] = ((array)$row)['department'] ; 
+                                                                $_SESSION['last_stamp'] = time() ; 
                                                                 header("location:home.php") ;
                                                             
-                                                            }
+                                                                }
                                                             
-                        
                                                             }else{
                                                                 echo " <br><center><font color= 'red' size='3'>Please fill up the fields correctly</center></font>" ;
                                                             }
