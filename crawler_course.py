@@ -93,7 +93,7 @@ def checkDB():
 
     host = "localhost" 
     user = "root" 
-    password = "+csie411021314" # Enter your own password 
+    password = "" # Enter your own password 
     db = "undergraduate_project" 
 
     connect = pymysql.connect( host = host , user = user , password = password , db = db )
