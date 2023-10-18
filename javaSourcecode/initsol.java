@@ -5,7 +5,7 @@ import java.util.concurrent.ThreadLocalRandom;
 public class initsol {//還未debug
     initsol() {}
 
-    void createfun(totalinfo info) {// 產生出始50組解
+    void createfun(info info) {// 產生出始50組解
         for(int grade=0;grade<4;grade++){//必修電腦教室
             for(int group=0;group<2;group++){
                 for(int cur=0;info.course.classify[grade][group][1][1][cur]!=-1;cur++){
@@ -45,7 +45,7 @@ public class initsol {//還未debug
         show(info);
     }
 
-    int funt(int grade,int group,int classroomtype,int classtype, int cur,totalinfo info){
+    int funt(int grade,int group,int classroomtype,int classtype, int cur,info info){
         ThreadLocalRandom random = ThreadLocalRandom.current();
         int randomnumber = random.nextInt(80),id=info.course.classify[grade][group][classroomtype][classtype][cur];
                     int remain = randomnumber % 16, firstRandomnum, classroomnum;
@@ -106,7 +106,7 @@ public class initsol {//還未debug
                     }
             return 1;
     }
-    int findTheTime(int firstRandomnum, int grade, int group, int randomnumber, int cur,int remain, totalinfo info) {//cur is course id
+    int findTheTime(int firstRandomnum, int grade, int group, int randomnumber, int cur,int remain, info info) {//cur is course id
         while ((info.course.period[cur] == 3) &&
                 (info.tempans.ans[grade][group][randomnumber] != -1 ||
                 info.tempans.ans[grade][group][randomnumber + 1] != -1 ||
@@ -146,7 +146,7 @@ public class initsol {//還未debug
         return randomnumber;
     }
 
-    int findTheClassroom(totalinfo info,int randomnumber,int id) {
+    int findTheClassroom(info info,int randomnumber,int id) {
         for (int classnum = 0; classnum < info.classroomid.rownum; classnum++) { 
             if ((info.course.period[id] == 3 &&
                 info.classroomid.timetable[classnum][randomnumber] == 0
@@ -164,7 +164,7 @@ public class initsol {//還未debug
         return -1;
     }
 
-    void clearFunction(totalinfo info,int grade,int group) {//未完成刪除當下年級的資料
+    void clearFunction(info info,int grade,int group) {//未完成刪除當下年級的資料
         for(int i=0;i<80;i++){
             int classid=info.tempans.ans[grade][group][i]; //classid為整個課程資訊的編號
             if(classid!=-1){
@@ -177,7 +177,7 @@ public class initsol {//還未debug
             info.course.tempclassroom[info.course.semOrder[grade][i]]=-1;
         }*/
     }
-    void show(totalinfo info){
+    void show(info info){
             for(int i=0;i<4;i++){
                 for(int k=0;k<2;k++){
                     for(int m=0;m<80;m++){

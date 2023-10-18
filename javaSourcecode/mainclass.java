@@ -2,7 +2,8 @@
 
 public class mainclass{                              
 	public static void main (String[] args){ 
-		totalinfo info= new totalinfo();
+		// System.out.println("success run");
+		info info= new info();
 		initsol firstsol=new initsol();
 		firstsol.createfun(info);
 	}
