@@ -79,7 +79,7 @@
                                             <td><?php echo $data['courseNumber'] ?></td>
                                             <td><?php echo $data['credit'] ?></td>
                                             <td><?php echo $data['period'] ?></td>    
-                                            <td><?php echo $data['semester'] ?></td>   
+                                            <td><?php echo $data['semester'] ?></td> 
                                             <td><?php if( $data['groupType'] == 0 ) echo'國際組 International Group' ; else if( $data['groupType'] == 1 ) echo '資工組 Local Group' ; else echo $data['groupType'] ; ?></td>    
                                             <td><?php if( $data['classType'] == 0 ) echo '選(elective)' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
                                             <td><?php echo $data['remarks'] ?></td>

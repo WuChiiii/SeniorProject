@@ -3,15 +3,18 @@
 <?php
     include "connect.php" ; 
     $id = $_COOKIE['delete_user_id'] ; 
-    $sql = "delete from users where userid = " . $id . ";" ; 
-    if( !empty( $id ) )
-    {
-        try{
+    /***Since the data of user is modified, the courses selected by the user should be deleted as well***/
+    $sql = "delete from users where userid = " . $id . ";". "delete from course_selection where userid = " . $id . ";" ; 
+    if( !empty( $id ) ) 
+    { 
+        try{ 
+            
             $conn -> query( $sql ) ; 
-            echo "<script> location.href = 'foruser.php' ; </script>" ;  
-        }catch( PDOException $e ){
+            echo "<script> location.href = 'foruser.php' ; </script>" ; 
+        }catch( PDOException $e ){ 
             echo $e ; 
-        }        
-    }
+        } 
+    } 
+    
     
 ?>
