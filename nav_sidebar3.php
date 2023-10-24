@@ -5,18 +5,21 @@
                 <ul class="nav" id="main-menu">
 
 					 <li>
-                        <a href="home3.php"><i class="fa fa-home"></i> Home</a>
+                        <a href="home3.php"><i class="fa fa-home"></i> Home </a>
 						
                     </li>
                     <li>
-                        <a href="forteacher.php"><i class="fa fa-user"></i> Teachers</a>
+                        <a href="forteacher.php"><i class="fa fa-user"></i> Teachers </a>
 
                     </li>
-					<li>
+					<!--<li>
                         <a href="forsubject.php"><i class="fa fa-th"></i> Subject</a>
+                    </li>-->
+                    <li>
+                        <a href="forclassroom.php"><i class="fa fa-inbox"></i> Classroom </a>
                     </li>
                     <li>
-                        <a href="forclassroom.php"><i class="fa fa-inbox"></i> Classroom</a>
+                        <a href="forcourseselection.php"><i class="fa fa-th"></i> Course Selection </a>
                     </li>
                     </li>
 					<li>

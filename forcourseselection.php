@@ -1,4 +1,4 @@
-<?php include "session.php" ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?> 
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
 <?php include "check_login.php" ?>
 <?php include ('header.php');?>	
 <link href="img/ndhu1.png" rel="icon" type="image"> 
@@ -21,7 +21,7 @@
                 <li class="dropdown"> 
                     <a class="dropdown-toggle" data-toggle="dropdown" href="#" aria-expanded="false">
                       						
-                    Welcome : <?php echo "Professor " . $_SESSION['name'] //. $_SESSION['page_mode']?>
+					  Welcome : Admin
                     </a>
                   
                     <!-- /.dropdown-user -->
@@ -30,7 +30,7 @@
             </ul>
         </nav>
         <!--/. NAV TOP  -->
-       <?php include ('nav_sidebar.php');?>
+       <?php include ('nav_sidebar3.php');?>
         <!-- /. NAV SIDE  -->
         <div id="page-wrapper" >
             <div id="page-inner">
@@ -38,13 +38,13 @@
                     <div class="col-md-12">
                         <h1 class="page-header">
                            
-							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="">
                                 Add Course
                             </button>
-						
+                            
                         </h1>
-						<?php include ('add_course_mode.php');?>
-						
+                        <?php //include ('admin_add_course_mode.php');?>
+
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                 <div class="alert alert-info">
@@ -61,14 +61,15 @@
                                         <th>Class Type</th>
                                         <th>Remarks</th>
                                         <th>Program</th>
-                                        <th>Action</th>
+                                        <th>Classroom Type</th>
+                                        <th>Student Number</th>
+                                        <th>Professor</th>
                                     </tr>
-                                    
                                 </thead>
                                 <tbody>
                                     <?php include('connect.php');
                                     //display the data of subjects from database
-                                        $query = $conn -> query( "select * from courses" ) ; 
+                                        $query = $conn -> query( "select * from course_selection" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>
@@ -77,22 +78,25 @@
                                             <td><?php echo $data['courseNumber'] ?></td>
                                             <td><?php echo $data['credit'] ?></td>
                                             <td><?php echo $data['period'] ?></td>    
-                                            <td><?php echo $data['semester'] ?></td>   
-                                            <td><?php echo $data['groupType'] ?></td>    
-                                            <td><?php echo $data['classType'] ?></td>
+                                            <td><?php echo $data['semester'] ?></td> 
+                                            <td><?php if( $data['groupType'] == 0 ) echo'國際組 International Group' ; else if( $data['groupType'] == 1 ) echo '資工組 Local Group' ; else echo $data['groupType'] ; ?></td>    
+                                            <td><?php if( $data['classType'] == 0 ) echo '選(elective)' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
-                                            <td width="160" >
-                                                <!-- <h1><?php echo $data['id'] ?></h1> -->
-                                                <a value = "<?php echo $data['id'] ?>" onclick="select_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Select</a>
-                                                <div style="font-size:13px;"><em> * You can specify the number of students and the classroom type after selecting</em> </div>
+                                            <td><?php if( $data['classroomType'] == 0 ) echo "未指定 Not sepecified" ; else echo "電腦教室 Computer Classroom";?> </td>
+                                            <td><?php echo $data['studentNumber'];?></td>
+                                            <td><?php 
+                                                    $query = $conn -> query( "select * from users where userid = " . $data['userid'] . ";" ) ; 
+                                                    $u = $query -> fetch( PDO::FETCH_ASSOC ) ; 
+                                                    echo $u['name'] ; 
+                                                ?>
                                             </td>
+                                            
                                     </tr>
-                                    <?php endforeach;
+                                    <?php  endforeach;
                                     //end of display
                                     ?>
-
-                                <?php ?>
+                                    
                                 </tbody>
                             </table>
                         </div>
@@ -108,15 +112,31 @@
      <!-- /. WRAPPER  -->
    <?php include ('script.php');?>
     <script>
-        function select_course(elem)
+        function delete_subject(elem)
         {
-            var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            //console.log( elem.getAttribute( 'value' ) ) ; 
+            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            //document.cookie='delete_subject_id='+subject_id; 
+            var exp = new Date() ; 
+            exp.setTime( exp.getTime() + 1000 * 10 ) ; 
+            exp = exp.toString() ; 
+            document.cookie='delete_subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
+            if( confirm('Are you sure to delete this subject?\n') )
+                location.href='delete_subject_database.php';
+            else{
+                //alert('deletion is canceled') ; 
+                location.herf = "forsubject.php" ; 
+            }
+        }
+        function edit_subject(elem)
+        {
+            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
             //document.cookie='subject_id='+subject_id; 
             var exp = new Date() ; 
             exp.setTime( exp.getTime() + 1000 * 600 ) ; 
             exp = exp.toString() ; 
-            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
-            location.href='select_course_database.php'; 
+            document.cookie='subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
+            location.href='pre_edit_subject.php';
         }
     </script>
 </body>
