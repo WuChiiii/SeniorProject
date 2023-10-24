@@ -41,19 +41,20 @@
                               Add Schedule
                             </button>
                             <br></br>
-                             View:							
+                             View:	
+                             <a href="table_teacher.php" target="_blank">						
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#teacher">
-                             Teacher
+                             老師
                             </button>
+                             </a>
+                            <a href="table_semester.php" target="_blank">
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
-                             Room
-                            </button>
-                            
-	
+                             課程表
+                            </button>	
+                            </a>
                         </h1>
 						<?php include ('add_schedule_mode.php');?>
-                        <?php include ('teacher_tt.php');?>
-                        <?php include ('classroom_tt.php');?>
+                                              
 						
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -96,6 +97,10 @@
                                 <?php ?>
                                 </tbody>
                             </table>
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#archive">
+                             Archive Data
+                            </button>
+							<?php include ('archive.php');?>s
                         </div>
                     </div>
                 </div> 
