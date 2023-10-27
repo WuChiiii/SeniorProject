@@ -37,9 +37,14 @@
 			 <div class="row">
                     <div class="col-md-12">
                         <h1 class="page-header">
-                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+                            <!-- <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
                               Add Schedule
-                            </button>
+                            </button> -->
+                            <form action="add_schedule.php" method="post">
+                                <button type="submit" class="btn btn-primary btn-lg" name="add_schedule_submit">
+                                    Add Schedule
+                                </button>
+                            </form
                             <br></br>
                              View:	
                              <a href="table_teacher.php" target="_blank">						

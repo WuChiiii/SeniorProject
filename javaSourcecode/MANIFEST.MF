@@ -1,0 +1,4 @@
+Manifest-Version: 1.0
+Main-Class: mainclass
+Class-Path: lib/mysql-connector-j-8.1.0.jar
+

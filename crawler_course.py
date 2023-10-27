@@ -6,7 +6,7 @@ def crawler( url , header , last_id , dbE , retrieve = 0 ):
     request = req.Request( url , headers = { "User-Agent": header } )
     with req.urlopen( request ) as response:
         data = response.read().decode("utf-8")
-    # print( data )
+    #print( data )
     import bs4
     root = bs4.BeautifulSoup( data , "html.parser" )
     courses = root.find_all( "span" , class_ = 'A03' )

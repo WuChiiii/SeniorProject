@@ -12,9 +12,9 @@ public class info {
 		Statement st = null;
 		ResultSet rs = null;
           int rowcount;
-		String url= "jdbc:mysql://localhost:3306/schedule";
+		String url= "jdbc:mysql://localhost:3306/undergraduate_project";
 		String user = "root";
-		String password = "bruno920718";
+		String password = "";
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, user, password);
@@ -22,17 +22,19 @@ public class info {
 			 
 			st = conn.createStatement();//connection
 
-               rs = st.executeQuery("SELECT COUNT(*) FROM professorno");//here
+               rs = st.executeQuery("SELECT COUNT(*) FROM users");//here
                rs.next();
-               rowcount = rs.getInt(1);
-			rs= st.executeQuery("select * from professorno");
+               rowcount = rs.getInt(1)-1;
+			rs= st.executeQuery("select * from users");
                professorid=new professorno(rowcount);
+               //System.out.println(rowcount);
+               rs.next();
 			for(int i=0;rs.next();i++)
 			{
-				professorid.id[i]=rs.getInt("id")-1;
-                    professorid.name[i]=rs.getString("Name");  
+				professorid.id[i]=rs.getInt("userid")-2;
+                    professorid.name[i]=rs.getString("name");  
 			}                                                          
-               rs = st.executeQuery("select * from professortimetable");
+               rs = st.executeQuery("select * from professorschedule");
                rs.next();
                for(int i=0;rs.next();i++){// 
                     for(int m=0;m<80;m++)
@@ -41,19 +43,20 @@ public class info {
                     }
                }                                                           //to here is data loaded for professorname
 			
-               rs = st.executeQuery("SELECT COUNT(*) FROM classroomno");//here
+               rs = st.executeQuery("SELECT COUNT(*) FROM classroom");//here
                rs.next();
                rowcount = rs.getInt(1);
-			rs= st.executeQuery("select * from classroomno");
+			rs= st.executeQuery("select * from classroom");
                classroomid=new classroomno(rowcount);
+               //System.out.println(rowcount);
 			for(int i=0;rs.next();i++)
 			{
-				classroomid.id[i]=rs.getInt("id")-1;
-                    classroomid.computer[i]=rs.getInt("classroomtype");
-                    classroomid.size[i]=rs.getInt("size");
-                    classroomid.name[i]=rs.getString("Name");  
+				classroomid.id[i]=rs.getInt("classroomid")-1;
+                    classroomid.computer[i]=rs.getInt("classroom_type");
+                    classroomid.size[i]=rs.getInt("classroom_no_seat");
+                    classroomid.name[i]=rs.getString("classroom_no");  
 			}    
-               rs = st.executeQuery("select * from classroomtimetable");
+               rs = st.executeQuery("select * from classroomschedule");
                rs.next();
                for(int i=0;rs.next();i++)
                {
@@ -67,24 +70,28 @@ public class info {
                     System.out.print(classroomid.id[i]+" "+classroomid.name[i]+" "+classroomid.size[i]);
                     System.out.println(classroomid.computer[i]);
 			}*/         
-               rs = st.executeQuery("SELECT COUNT(*) FROM classinfo");//here
+               rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");//here
                rs.next();
-               rowcount = rs.getInt(1);
-			rs= st.executeQuery("select * from classinfo");
+               rowcount = rs.getInt(1)+1;
+			rs= st.executeQuery("select * from course_selection");
                course=new classinfo(rowcount);
+               //System.out.println(rowcount);
                for(int i=0;rs.next();i++)
 			{
+                    String temp;
 				course.id[i]=rs.getInt("id")-1;
                     course.name[i]=rs.getString("courseName");  
-                    course.classtype[i]=rs.getInt("classtype");
-                    course.classroomtype[i]=rs.getInt("classroomtype");
-                    course.semester[i]=rs.getInt("semester")-1;
+                    course.classtype[i]=rs.getInt("classType");
+                    course.classroomtype[i]=rs.getInt("classroomType");
+                    temp=rs.getString("semester");
+                    temp=temp.substring(0,1);
+                    course.semester[i]= Integer.parseInt(temp)-1;
                     course.period[i]=rs.getInt("period");
-                    course.professor[i]=rs.getInt("professor")-1;
-                    course.group[i]=rs.getInt("group");
+                    course.professor[i]=rs.getInt("userid")-2;
+                    course.group[i]=rs.getInt("groupType");
                     for(int cur=0;cur<rowcount;cur++){
                          if(course.classify[course.semester[i]][course.group[i]][ course.classroomtype[i]][course.classtype[i]][cur]==-1){
-                              course.classify[course.semester[i]][course.group[i]][ course.classroomtype[i]][course.classtype[i]][cur]=course.id[i];
+                              course.classify[course.semester[i]][course.group[i]][ course.classroomtype[i]][course.classtype[i]][cur]=i;
                               break;
                          }
                     }
@@ -94,7 +101,7 @@ public class info {
 		}         
 		catch(ClassNotFoundException e)
 		{
-               System.out.println("找不到驅動程式123");
+               System.out.println("找不到讀檔的驅動程式");
 			e.printStackTrace();
 		}
 		catch(SQLException e)

@@ -66,7 +66,7 @@ public class initsol {//還未debug
                         //System.out.println(" "+randomnumber+" "+grade+" "+cur+" "+firstRandomnum);
                         randomnumber = findTheTime(firstRandomnum,grade,group,randomnumber,id,remain,info);
                         remain = randomnumber % 11;
-                        System.out.print(" "+randomnumber);
+                        //System.out.print(" "+randomnumber);
                         if(randomnumber==-1){
                             clearFunction(info,grade,group);
                             return 0;
@@ -89,16 +89,16 @@ public class initsol {//還未debug
                             }
                             continue;
                         }
-                        System.out.println(" "+classroomnum);
-                        info.tempans.ans[grade][group][randomnumber]=id;//到這邊表示教室 教授 同年級必修 空間皆符合要求
-                        info.tempans.ans[grade][group][randomnumber+1]=id;
+                        //System.out.println(" "+classroomnum);
+                        info.tempans.ans[grade][group][randomnumber]=info.course.id[id];//到這邊表示教室 教授 同年級必修 空間皆符合要求
+                        info.tempans.ans[grade][group][randomnumber+1]=info.course.id[id];
                         info.course.tempclassroom[id]=classroomnum;//填該堂課程分配到啥教室
                         info.professorid.timetable[info.course.professor[id]][randomnumber]=1;
                         info.professorid.timetable[info.course.professor[id]][randomnumber+1]=1;
                         info.classroomid.timetable[classroomnum][randomnumber] = 1;
                         info.classroomid.timetable[classroomnum][randomnumber+1] = 1;
                         if (info.course.period[id] == 3){//連續三堂課的
-                            info.tempans.ans[grade][group][randomnumber+2]=id;
+                            info.tempans.ans[grade][group][randomnumber+2]=info.course.id[id];
                             info.professorid.timetable[info.course.professor[id]][randomnumber+2]=1;
                             info.classroomid.timetable[classroomnum][randomnumber+2] = 1;
                         }    

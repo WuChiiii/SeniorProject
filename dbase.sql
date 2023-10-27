@@ -111,40 +111,106 @@ INSERT INTO `teachers` (`teacherid`, `teacher_name`, `teacher_email`, `teacher_p
 -- Table structure for table `users`
 --
 
-CREATE TABLE if not exists `users` (
-  `userid` int AUTO_INCREMENT PRIMARY KEY,
-  `name` varchar(255) NOT NULL,
-  `department` varchar(255) NOT NULL,
-  `account` varchar(255) NOT NULL,
-  `hash` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
--- Set the column 'account' to be unique
-Alter Table users Add Unique( account ) ;
+-- CREATE TABLE if not exists `users` (
+--   `userid` int AUTO_INCREMENT PRIMARY KEY,
+--   `name` varchar(255) NOT NULL,
+--   `department` varchar(255) NOT NULL,
+--   `account` varchar(255) NOT NULL,
+--   `hash` varchar(255) NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
+-- -- Set the column 'account' to be unique
+-- Alter Table users Add Unique( account ) ;
 
---
--- Dumping data for table `users`
---
-INSERT INTO `users` (`userid`, `name`, `department`, `account`, `hash`) VALUES
-(null, 'main', 'Admin', 'ADMIN', '$2y$10$h7wkUzhVWDnSGmKacADGV.QjEUk8ETh3.WQNn5flHx3M9oYf4xpkK');
+-- --
+-- -- Dumping data for table `users`
+-- --
+-- INSERT INTO `users` (`userid`, `name`, `department`, `account`, `hash`) VALUES
+-- (null, 'main', 'Admin', 'ADMIN', '$2y$10$h7wkUzhVWDnSGmKacADGV.QjEUk8ETh3.WQNn5flHx3M9oYf4xpkK');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
-CREATE TABLE if not exists `course_selection` (
-  `id` int PRIMARY KEY AUTO_INCREMENT, 
-  `courseName` varchar(255) NOT NULL, 
-  `courseNumber` varchar(255) NOT NULL, 
-  `credit` varchar(255) NOT NULL, 
-  `period` varchar(255) NOT NULL, 
-  `semester` varchar(255) NOT NULL, 
-  `groupType` varchar(255) NOT NULL, 
-  `classType` varchar(255) NOT NULL, 
-  `remarks` varchar(255) NOT NULL, 
-  `program` varchar(255) NOT NULL, 
-  `classroomType` varchar(255) NOT NULL, 
-  `studentNumber` varchar(255) NOT NULL,
-  `userid` int NOT NULL
+-- CREATE TABLE if not exists `course_selection` (
+--   `id` int PRIMARY KEY AUTO_INCREMENT, 
+--   `courseName` varchar(255) NOT NULL, 
+--   `courseNumber` varchar(255) NOT NULL, 
+--   `credit` varchar(255) NOT NULL, 
+--   `period` int NOT NULL, 
+--   `semester` varchar(255) NOT NULL, 
+--   `groupType` int NOT NULL, 
+--   `classType` int NOT NULL, 
+--   `remarks` varchar(255) NOT NULL, 
+--   `program` varchar(255) NOT NULL, 
+--   `classroomType` int NOT NULL, 
+--   `studentNumber` int NOT NULL,
+--   `userid` int NOT NULL
+-- ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `classroomschedule`
+--
+
+CREATE TABLE if not exists `classroomschedule` (
+  `classroomid` int AUTO_INCREMENT PRIMARY KEY,
+  `1-1` INT DEFAULT 0,`1-2` INT DEFAULT 0,`1-3` INT DEFAULT 0,`1-4` INT DEFAULT 0,`1-5` INT DEFAULT 0,`1-6` INT DEFAULT 0,`1-7` INT DEFAULT 0,
+  `1-8` INT DEFAULT 0,`1-9` INT DEFAULT 0,`1-10` INT DEFAULT 0,`1-11` INT DEFAULT 0,`1-12` INT DEFAULT 0,`1-13` INT DEFAULT 0,`1-14` INT DEFAULT 0,
+  `1-15` INT DEFAULT 0,`1-16` INT DEFAULT 0,`2-1` INT DEFAULT 0,`2-2` INT DEFAULT 0,`2-3` INT DEFAULT 0,`2-4` INT DEFAULT 0,`2-5` INT DEFAULT 0,
+  `2-6` INT DEFAULT 0,`2-7` INT DEFAULT 0,`2-8` INT DEFAULT 0,`2-9` INT DEFAULT 0,`2-10` INT DEFAULT 0,`2-11` INT DEFAULT 0,`2-12` INT DEFAULT 0,
+  `2-13` INT DEFAULT 0,`2-14` INT DEFAULT 0,`2-15` INT DEFAULT 0,`2-16` INT DEFAULT 0,`3-1` INT DEFAULT 0,`3-2` INT DEFAULT 0,`3-3` INT DEFAULT 0,
+  `3-4` INT DEFAULT 0,`3-5` INT DEFAULT 0,`3-6` INT DEFAULT 0,`3-7` INT DEFAULT 0,`3-8` INT DEFAULT 0,`3-9` INT DEFAULT 0,`3-10` INT DEFAULT 0,
+  `3-11` INT DEFAULT 0,`3-12` INT DEFAULT 0,`3-13` INT DEFAULT 0,`3-14` INT DEFAULT 0,`3-15` INT DEFAULT 0,`3-16` INT DEFAULT 0 ,`4-1` INT DEFAULT 0,
+  `4-2` INT DEFAULT 0,`4-3` INT DEFAULT 0,`4-4` INT DEFAULT 0,`4-5` INT DEFAULT 0,`4-6` INT DEFAULT 0,`4-7` INT DEFAULT 0,`4-8` INT DEFAULT 0,
+  `4-9` INT DEFAULT 0,`4-10` INT DEFAULT 0,`4-11` INT DEFAULT 0,`4-12` INT DEFAULT 0,`4-13` INT DEFAULT 0,`4-14` INT DEFAULT 0,`4-15` INT DEFAULT 0,
+  `4-16` INT DEFAULT 0,`5-1` INT DEFAULT 0,`5-2` INT DEFAULT 0,`5-3` INT DEFAULT 0,`5-4` INT DEFAULT 0,`5-5` INT DEFAULT 0,`5-6` INT DEFAULT 0,
+  `5-7` INT DEFAULT 0,`5-8` INT DEFAULT 0,`5-9` INT DEFAULT 0,`5-10` INT DEFAULT 0,`5-11` INT DEFAULT 0,`5-12` INT DEFAULT 0,`5-13` INT DEFAULT 0,
+  `5-14` INT DEFAULT 0,`5-15` INT DEFAULT 0,`5-16` INT DEFAULT 0
 ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
 
+
+--
+-- Dumping data for table `subject`
+--
+  INSERT INTO classroomschedule VALUES ();
+  INSERT INTO classroomschedule VALUES ();
+  INSERT INTO classroomschedule VALUES ();
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `professorschedule`
+--
+
+CREATE TABLE if not exists `professorschedule` (
+  `professorid` int AUTO_INCREMENT PRIMARY KEY,
+  `1-1` INT DEFAULT 0,`1-2` INT DEFAULT 0,`1-3` INT DEFAULT 0,`1-4` INT DEFAULT 0,`1-5` INT DEFAULT 0,`1-6` INT DEFAULT 0,`1-7` INT DEFAULT 0,
+  `1-8` INT DEFAULT 0,`1-9` INT DEFAULT 0,`1-10` INT DEFAULT 0,`1-11` INT DEFAULT 0,`1-12` INT DEFAULT 0,`1-13` INT DEFAULT 0,`1-14` INT DEFAULT 0,
+  `1-15` INT DEFAULT 0,`1-16` INT DEFAULT 0,`2-1` INT DEFAULT 0,`2-2` INT DEFAULT 0,`2-3` INT DEFAULT 0,`2-4` INT DEFAULT 0,`2-5` INT DEFAULT 0,
+  `2-6` INT DEFAULT 0,`2-7` INT DEFAULT 0,`2-8` INT DEFAULT 0,`2-9` INT DEFAULT 0,`2-10` INT DEFAULT 0,`2-11` INT DEFAULT 0,`2-12` INT DEFAULT 0,
+  `2-13` INT DEFAULT 0,`2-14` INT DEFAULT 0,`2-15` INT DEFAULT 0,`2-16` INT DEFAULT 0,`3-1` INT DEFAULT 0,`3-2` INT DEFAULT 0,`3-3` INT DEFAULT 0,
+  `3-4` INT DEFAULT 0,`3-5` INT DEFAULT 0,`3-6` INT DEFAULT 0,`3-7` INT DEFAULT 0,`3-8` INT DEFAULT 0,`3-9` INT DEFAULT 0,`3-10` INT DEFAULT 0,
+  `3-11` INT DEFAULT 0,`3-12` INT DEFAULT 0,`3-13` INT DEFAULT 0,`3-14` INT DEFAULT 0,`3-15` INT DEFAULT 0,`3-16` INT DEFAULT 0 ,`4-1` INT DEFAULT 0,
+  `4-2` INT DEFAULT 0,`4-3` INT DEFAULT 0,`4-4` INT DEFAULT 0,`4-5` INT DEFAULT 0,`4-6` INT DEFAULT 0,`4-7` INT DEFAULT 0,`4-8` INT DEFAULT 0,
+  `4-9` INT DEFAULT 0,`4-10` INT DEFAULT 0,`4-11` INT DEFAULT 0,`4-12` INT DEFAULT 0,`4-13` INT DEFAULT 0,`4-14` INT DEFAULT 0,`4-15` INT DEFAULT 0,
+  `4-16` INT DEFAULT 0,`5-1` INT DEFAULT 0,`5-2` INT DEFAULT 0,`5-3` INT DEFAULT 0,`5-4` INT DEFAULT 0,`5-5` INT DEFAULT 0,`5-6` INT DEFAULT 0,
+  `5-7` INT DEFAULT 0,`5-8` INT DEFAULT 0,`5-9` INT DEFAULT 0,`5-10` INT DEFAULT 0,`5-11` INT DEFAULT 0,`5-12` INT DEFAULT 0,`5-13` INT DEFAULT 0,
+  `5-14` INT DEFAULT 0,`5-15` INT DEFAULT 0,`5-16` INT DEFAULT 0
+) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
+
+
+
+--
+-- Dumping data for table `subject`
+--
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+INSERT INTO professorschedule VALUES ();
+
+-- --------------------------------------------------------
