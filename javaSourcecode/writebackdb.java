@@ -6,16 +6,12 @@ public class writebackdb {
         String driver ="com.mysql.cj.jdbc.Driver";      
 		Connection conn = null;
 		Statement st = null;
-		//ResultSet rs = null;
-        //int rowcount;
 		String url= "jdbc:mysql://localhost:3306/undergraduate_project";
 		String user = "root";
-		String password = "";
+		String password = "";//enter your own password
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, user, password);
-			//System.out.println("成功連結資料庫2");
-			 
 			st = conn.createStatement();//connection
             String droptable="DROP TABLE IF EXISTS normalschedule";
             st.execute(droptable);
@@ -88,7 +84,6 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
                conn.close();
-               System.out.println("success");
 		}         
 		catch(ClassNotFoundException e)
 		{

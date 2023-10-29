@@ -1,13 +1,20 @@
-<?php include "session.php" ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?>
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?>
 <?php
 if (isset($_POST['add_schedule_submit'])) {
-    // Execute the Java program and capture the output
-   // $output = shell_exec('java -cp /javaSourcecode mainclass');
-    $output = shell_exec( "\"C:\Program Files\Java\jdk-20\bin\java.exe\" -jar C:/xampp\htdocs\SeniorProject\javaSourcecode\mainclass.jar" );
+    $path_back =getcwd();
+    $path_to_source =getcwd() ."\javaSourcecode";
+    $path_to_jar="";//enter your absolute path of jar.exe;
+    //example of my pathtojar:$path_to_jar="C:\Program Files\Java\jdk-20\bin\jar.exe";
+    $path_to_javac="";//enter your absolute path of javac.exe 
+    //example of my pathtojavac:$path_to_javac="C:\Program Files\Java\jdk-20\bin\javac.exe";
+    $java_Exe = "";//enter your absolute path of java.exe 
+    //example of my javapath:$java_Exe = "C:\Program Files\Java\jdk-20\bin\java.exe";
+    shell_exec( "\"$path_to_javac\" $path_to_source\*.java" );
+    shell_exec("cd $path_to_source && \"$path_to_jar\" -cvfm mainclass.jar MANIFEST.MF *.class");
+    shell_exec("cd $path_back");
+    $output = shell_exec( "\"$java_Exe\" -jar $path_to_source\mainclass.jar" );
     var_dump($output);
-    // $output = shell_exec( "test.bat" );
-    // var_dump($output);
-    echo "<script> window.location = 'forschedule.php' ; </script>" ; 
+    //echo "<script> window.location = 'forschedule.php' ; </script>" ; 
 }
 else 
 {
