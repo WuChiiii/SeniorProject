@@ -2,10 +2,10 @@ import java.util.concurrent.ThreadLocalRandom;
 
 //import totalinfo.classinfo;
 
-public class initsol {//還未debug
+public class initsol {
     initsol() {}
 
-    void createfun(info info) {// 產生出始50組解
+    void createfun(info info) {
         for(int grade=0;grade<4;grade++){//必修電腦教室
             for(int group=0;group<2;group++){
                 for(int cur=0;info.course.classify[grade][group][1][1][cur]!=-1;cur++){
@@ -65,7 +65,7 @@ public class initsol {//還未debug
                     while (true) {
                         //System.out.println(" "+randomnumber+" "+grade+" "+cur+" "+firstRandomnum);
                         randomnumber = findTheTime(firstRandomnum,grade,group,randomnumber,id,remain,info);
-                        remain = randomnumber % 11;
+                        remain = randomnumber % 16;
                         //System.out.print(" "+randomnumber);
                         if(randomnumber==-1){
                             clearFunction(info,grade,group);
@@ -92,13 +92,16 @@ public class initsol {//還未debug
                         //System.out.println(" "+classroomnum);
                         info.tempans.ans[grade][group][randomnumber]=info.course.id[id];//到這邊表示教室 教授 同年級必修 空間皆符合要求
                         info.tempans.ans[grade][group][randomnumber+1]=info.course.id[id];
-                        info.course.tempclassroom[id]=classroomnum;//填該堂課程分配到啥教室
+                        info.tempans.classroom[grade][group][randomnumber]=1;
+                        info.tempans.classroom[grade][group][randomnumber+1]=1;
+                        info.course.tempclassroom[id]=info.classroomid.id[classroomnum];//填該堂課程分配到啥教室
                         info.professorid.timetable[info.course.professor[id]][randomnumber]=1;
                         info.professorid.timetable[info.course.professor[id]][randomnumber+1]=1;
                         info.classroomid.timetable[classroomnum][randomnumber] = 1;
                         info.classroomid.timetable[classroomnum][randomnumber+1] = 1;
                         if (info.course.period[id] == 3){//連續三堂課的
                             info.tempans.ans[grade][group][randomnumber+2]=info.course.id[id];
+                            info.tempans.classroom[grade][group][randomnumber+2]=1;
                             info.professorid.timetable[info.course.professor[id]][randomnumber+2]=1;
                             info.classroomid.timetable[classroomnum][randomnumber+2] = 1;
                         }    

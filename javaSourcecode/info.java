@@ -51,7 +51,7 @@ public class info {
                //System.out.println(rowcount);
 			for(int i=0;rs.next();i++)
 			{
-				classroomid.id[i]=rs.getInt("classroomid")-1;
+				classroomid.id[i]=rs.getInt("classroomid");
                     classroomid.computer[i]=rs.getInt("classroom_type");
                     classroomid.size[i]=rs.getInt("classroom_no_seat");
                     classroomid.name[i]=rs.getString("classroom_no");  
@@ -79,7 +79,7 @@ public class info {
                for(int i=0;rs.next();i++)
 			{
                     String temp;
-				course.id[i]=rs.getInt("id")-1;
+				course.id[i]=rs.getInt("id");
                     course.name[i]=rs.getString("courseName");  
                     course.classtype[i]=rs.getInt("classType");
                     course.classroomtype[i]=rs.getInt("classroomType");
@@ -139,9 +139,10 @@ public class info {
    public class classinfo{//debug 完成
         public int id[],professor[],period[],classroomtype[],classtype[],semester[],classify[][][][][];
         public String name[];
-        public int tempclassroom[],group[];//存6個年級的課程
+        public int tempclassroom[],group[],cnt;//存6個年級的課程
         classinfo(int rowcount)
         {
+          cnt=rowcount;
           id=new int[rowcount];
           professor=new int[rowcount];
           group=new int[rowcount];
@@ -186,13 +187,17 @@ public class info {
         }
    }
    public class temptimetable{
-        public int[][][] ans =new int[4][2][90];//此刻表代表每個年級的課表 同個時間不得有兩個數字
+        public int[][][] ans =new int[4][2][80];//此刻表代表每個年級的課表 同個時間不得有兩個數字
+        public int[][][] classroom=new int [4][2][80];
         temptimetable()
         { 
           for(int k=0;k<4;k++)
                for(int u=0;u<2;u++)
-                    for(int m=0;m<80;m++)
+                    for(int m=0;m<80;m++){
                          ans[k][u][m]=-1;
+                         classroom[k][u][m]=0;
+                    }
+          
         }
    }
     

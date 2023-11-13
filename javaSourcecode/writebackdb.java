@@ -41,8 +41,13 @@ public class writebackdb {
                 "`5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,"+
                 "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
                 "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
+            String createclassroompair="CREATE TABLE if not exists `classroompair` ("+
+                "`classinfoid` int,"+
+                "`classroom` int"+
+                ") ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;";
             st.execute(createinternationaltable);
             st.execute(createnormaltable);
+            st.execute(createclassroompair);
 
             // Insert data into the table
             for(int i=0;i<4;i++){
@@ -83,6 +88,12 @@ public class writebackdb {
                 ")";
                 st.executeUpdate(insertDataSQL);
             }
+            for(int i=0;i<info.course.cnt;i++){
+                String insertpair="INSERT INTO  classroompair VALUES ("+info.course.id[i]+","+info.course.tempclassroom[i]+")";
+                st.executeUpdate(insertpair);          
+            }
+            
+
                conn.close();
 		}         
 		catch(ClassNotFoundException e)

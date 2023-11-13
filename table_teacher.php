@@ -37,19 +37,19 @@
 					<tr>
 						<td width="30" align="center"></td>
 						
-						<th colspan="9" class="center-text">
+						<th colspan="10" class="center-text">
 							<font size="2">星期一</font>
 						</th>
-						<th colspan="9" class="center-text">
+						<th colspan="10" class="center-text">
 							<font size="2">星期二</font>
 						</th>
-						<th colspan="9" class="center-text">
+						<th colspan="10" class="center-text">
 							<font size="2">星期三</font>
 						</th>
-						<th colspan="9" class="center-text">
+						<th colspan="10" class="center-text">
 							<font size="2">星期四</font>
 						</th>
-						<th colspan="9" class="center-text">
+						<th colspan="10" class="center-text">
 							<font size="2">星期五</font>
 						</th>
 					</tr>
@@ -58,7 +58,7 @@
 				<td width="30" align="center"></td>
 
 				<!-- 星期一 -->
-				<td colspan="2" class="center-text">
+				<td colspan="3" class="center-text">
 					<font size="1" class="center-text">學士班資工組</font>
 				</td>
 				<td colspan="3" class="center-text">
@@ -78,7 +78,7 @@
 				</td>
 
 				<!-- 星期二 -->
-				<td colspan="2" class="center-text" >
+				<td colspan="3" class="center-text" >
 					<font size="1" class="center-text">學士班資工組</font>
 				</td>
 				<td colspan="3" class="center-text">
@@ -98,7 +98,7 @@
 				</td>
 
 				<!-- 星期三 -->
-				<td colspan="2" class="center-text">
+				<td colspan="3" class="center-text">
 					<font size="1" class="center-text">學士班資工組</font>
 				</td>
 				<td colspan="3" class="center-text">
@@ -118,7 +118,7 @@
 				</td>
 
 				<!-- 星期四 -->
-				<td colspan="2" class="center-text">
+				<td colspan="3" class="center-text">
 					<font size="1" class="center-text">學士班資工組</font>
 				</td>
 				<td colspan="3" class="center-text">
@@ -138,7 +138,7 @@
 				</td>
 
 				<!-- 星期五 -->
-				<td colspan="2" class="center-text">
+				<td colspan="3" class="center-text">
 					<font size="1" class="center-text">學士班資工組</font>
 				</td>
 				<td colspan="3" class="center-text">
@@ -172,6 +172,9 @@
 				</td>
 				<td>
 					<font size="1" class="center-text">大二</font>
+				</td>
+				<td>
+					<font size="1" class="center-text">大三</font>
 				</td>
 				<!-- 學士班國際組 -->
 				<td>
@@ -210,6 +213,9 @@
 				<td>
 					<font size="1" class="center-text">大二</font>
 				</td>
+				<td>
+					<font size="1" class="center-text">大三</font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text">大一</font>
@@ -245,6 +251,9 @@
 				</td>
 				<td>
 					<font size="1" class="center-text">大二</font>
+				</td>
+				<td>
+					<font size="1" class="center-text">大三</font>
 				</td>
 				<!-- 學士班國際組 -->
 				<td>
@@ -282,6 +291,9 @@
 				<td>
 					<font size="1" class="center-text">大二</font>
 				</td>
+				<td>
+					<font size="1" class="center-text">大三</font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text">大一</font>
@@ -317,6 +329,9 @@
 				</td>
 				<td>
 					<font size="1" class="center-text">大二</font>
+				</td>
+				<td>
+					<font size="1" class="center-text">大三</font>
 				</td>
 				<!-- 學士班國際組 -->
 				<td>
@@ -368,6 +383,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -399,6 +417,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -441,6 +462,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -477,6 +501,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -507,6 +534,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -559,6 +589,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -590,6 +623,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -632,6 +668,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -668,6 +707,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -698,6 +740,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -749,6 +794,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -780,6 +828,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -822,6 +873,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -858,6 +912,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -888,6 +945,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -941,6 +1001,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -972,6 +1035,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1014,6 +1080,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1050,6 +1119,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1080,6 +1152,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1134,6 +1209,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1165,6 +1243,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1207,6 +1288,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1243,6 +1327,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1273,6 +1360,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1325,6 +1415,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1356,6 +1449,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1398,6 +1494,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1434,6 +1533,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1464,6 +1566,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1516,6 +1621,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1547,6 +1655,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1595,6 +1706,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1625,6 +1739,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1677,6 +1794,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1708,6 +1828,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1750,6 +1873,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1780,6 +1906,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1832,6 +1961,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1863,6 +1995,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -1905,6 +2040,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1941,6 +2079,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -1971,6 +2112,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2023,6 +2167,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2054,6 +2201,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2096,6 +2246,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2132,6 +2285,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2162,6 +2318,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2214,6 +2373,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2245,6 +2407,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2287,6 +2452,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2323,6 +2491,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2353,6 +2524,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2405,6 +2579,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2436,6 +2613,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2478,6 +2658,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2514,6 +2697,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2544,6 +2730,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2596,6 +2785,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2627,6 +2819,9 @@
 
 				<!-- 星期二 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
@@ -2669,6 +2864,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2705,6 +2903,9 @@
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<!-- 學士班國際組 -->
 				<td>
 					<font size="1" class="center-text"></font>
@@ -2735,6 +2936,9 @@
 
 				<!-- 星期五 start -->
 				<!-- 學士班資工組 -->
+				<td>
+					<font size="1" class="center-text"></font>
+				</td>
 				<td>
 					<font size="1" class="center-text"></font>
 				</td>
