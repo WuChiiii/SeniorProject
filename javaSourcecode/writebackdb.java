@@ -17,6 +17,8 @@ public class writebackdb {
             st.execute(droptable);
             droptable="DROP TABLE IF EXISTS internationalschedule";
             st.execute(droptable);
+            droptable="DROP TABLE IF EXISTS mapping_id";
+            st.execute(droptable);
             String createnormaltable ="CREATE TABLE if not exists normalschedule "+
                 "(`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
                 "`1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,"+
@@ -41,9 +43,10 @@ public class writebackdb {
                 "`5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,"+
                 "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
                 "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
-            String createclassroompair="CREATE TABLE if not exists `classroompair` ("+
-                "`classinfoid` int,"+
-                "`classroom` int"+
+            String createclassroompair="CREATE TABLE if not exists `mapping_id` ("+
+                "`class_id` int,"+
+                "`classroom_id` int,"+
+                "`professor_id` int"+
                 ") ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;";
             st.execute(createinternationaltable);
             st.execute(createnormaltable);
@@ -89,7 +92,7 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
             for(int i=0;i<info.course.cnt;i++){
-                String insertpair="INSERT INTO  classroompair VALUES ("+info.course.id[i]+","+info.course.tempclassroom[i]+")";
+                String insertpair="INSERT INTO  mapping_id VALUES ("+info.course.id[i]+","+info.course.tempclassroom[i]+","+info.professorid.id[info.course.professor[i]]+")";
                 st.executeUpdate(insertpair);          
             }
             
@@ -104,7 +107,7 @@ public class writebackdb {
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-               System.out.println("找不到SQL");
+               System.out.println("找不到SQL write");
 		}
     }
 }

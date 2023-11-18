@@ -24,8 +24,8 @@
     else if( $semester == '四上' ) $semester = '4A' ;
     else if( $semester == '四下' ) $semester = '4B' ;
     $groupType = ((array)$row)['groupType'] ; 
-    if( $groupType == 'Local Group' ) $classType = '1' ;
-    else if( $groupType == 'International Group' ) $classType = '0' ;      
+    if( $groupType == 'Local Group' ) $groupType = '1' ;
+    else if( $groupType == 'International Group' ) $groupType = '0' ;      
     $classType = ((array)$row)['classType'] ; 
     if( $classType == '必(Required)' ) $classType = '1' ;
     else if( $classType == '選(elective)' ) $classType = '0' ;  

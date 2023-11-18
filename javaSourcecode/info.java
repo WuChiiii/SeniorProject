@@ -24,25 +24,23 @@ public class info {
 
                rs = st.executeQuery("SELECT COUNT(*) FROM users");//here
                rs.next();
-               rowcount = rs.getInt(1)-1;
+               rowcount = rs.getInt(1);
 			rs= st.executeQuery("select * from users");
                professorid=new professorno(rowcount);
                //System.out.println(rowcount);
-               rs.next();
 			for(int i=0;rs.next();i++)
 			{
-				professorid.id[i]=rs.getInt("userid")-2;
+				professorid.id[i]=rs.getInt("userid");
                     professorid.name[i]=rs.getString("name");  
-			}                                                          
-               rs = st.executeQuery("select * from professorschedule");
+			}                                                                                                            //to here is data loaded for professorname
+			rs = st.executeQuery("select * from professorschedule");
                rs.next();
                for(int i=0;rs.next();i++){// 
                     for(int m=0;m<80;m++)
                     {
                          professorid.timetable[i][m]=rs.getInt(m+1);    
                     }
-               }                                                           //to here is data loaded for professorname
-			
+               }   
                rs = st.executeQuery("SELECT COUNT(*) FROM classroom");//here
                rs.next();
                rowcount = rs.getInt(1);
@@ -55,7 +53,7 @@ public class info {
                     classroomid.computer[i]=rs.getInt("classroom_type");
                     classroomid.size[i]=rs.getInt("classroom_no_seat");
                     classroomid.name[i]=rs.getString("classroom_no");  
-			}    
+			}
                rs = st.executeQuery("select * from classroomschedule");
                rs.next();
                for(int i=0;rs.next();i++)
@@ -64,15 +62,11 @@ public class info {
                          {
                               classroomid.timetable[i][m]=rs.getInt(m+1);
                          }              //to here is data loaded for classroomname
-               }
-               /*for(int i=0;i<rowcount;i++)
-			{
-                    System.out.print(classroomid.id[i]+" "+classroomid.name[i]+" "+classroomid.size[i]);
-                    System.out.println(classroomid.computer[i]);
-			}*/         
+               }      
+                     
                rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");//here
                rs.next();
-               rowcount = rs.getInt(1)+1;
+               rowcount = rs.getInt(1);
 			rs= st.executeQuery("select * from course_selection");
                course=new classinfo(rowcount);
                //System.out.println(rowcount);
@@ -87,7 +81,11 @@ public class info {
                     temp=temp.substring(0,1);
                     course.semester[i]= Integer.parseInt(temp)-1;
                     course.period[i]=rs.getInt("period");
-                    course.professor[i]=rs.getInt("userid")-2;
+                    for(int cur=0;cur<professorid.rownum;cur++){
+                         if(rs.getInt("userid")==professorid.id[cur]){
+                              course.professor[i]=cur;
+                         }
+                    }
                     course.group[i]=rs.getInt("groupType");
                     for(int cur=0;cur<rowcount;cur++){
                          if(course.classify[course.semester[i]][course.group[i]][ course.classroomtype[i]][course.classtype[i]][cur]==-1){

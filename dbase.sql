@@ -42,10 +42,10 @@ Alter Table classroom Add Unique( classroom_no ) ;
 -- Dumping data for table `classroom`
 --
 
-INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`, `classroom_no_seat`, `classroom_type`) VALUES
-(null, 'B305', 'CSIE', 'Introduction to Computer Science', 0, 1),
-(null, 'A331', 'CSIE', 'Data Structures', 0, 0),
-(null, 'A337', 'CSIE', 'Introductory Machine Learning', 0, 0);
+-- INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`, `classroom_no_seat`, `classroom_type`) VALUES
+-- (null, 'B305', 'CSIE', 'Introduction to Computer Science', 0, 1),
+-- (null, 'A331', 'CSIE', 'Data Structures', 0, 0),
+-- (null, 'A337', 'CSIE', 'Introductory Machine Learning', 0, 0);
 
 -- --------------------------------------------------------
 
@@ -111,42 +111,42 @@ INSERT INTO `teachers` (`teacherid`, `teacher_name`, `teacher_email`, `teacher_p
 -- Table structure for table `users`
 --
 
--- CREATE TABLE if not exists `users` (
---   `userid` int AUTO_INCREMENT PRIMARY KEY,
---   `name` varchar(255) NOT NULL,
---   `department` varchar(255) NOT NULL,
---   `account` varchar(255) NOT NULL,
---   `hash` varchar(255) NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
--- -- Set the column 'account' to be unique
--- Alter Table users Add Unique( account ) ;
+CREATE TABLE if not exists `users` (
+  `userid` int AUTO_INCREMENT PRIMARY KEY,
+  `name` varchar(255) NOT NULL,
+  `department` varchar(255) NOT NULL,
+  `account` varchar(255) NOT NULL,
+  `hash` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
+-- Set the column 'account' to be unique
+Alter Table users Add Unique( account ) ;
 
 -- --
 -- -- Dumping data for table `users`
 -- --
--- INSERT INTO `users` (`userid`, `name`, `department`, `account`, `hash`) VALUES
--- (null, 'main', 'Admin', 'ADMIN', '$2y$10$h7wkUzhVWDnSGmKacADGV.QjEUk8ETh3.WQNn5flHx3M9oYf4xpkK');
+INSERT INTO `users` (`userid`, `name`, `department`, `account`, `hash`) VALUES
+(null, 'main', 'Admin', 'ADMIN', '$2y$10$h7wkUzhVWDnSGmKacADGV.QjEUk8ETh3.WQNn5flHx3M9oYf4xpkK');
 
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 
--- CREATE TABLE if not exists `course_selection` (
---   `id` int PRIMARY KEY AUTO_INCREMENT, 
---   `courseName` varchar(255) NOT NULL, 
---   `courseNumber` varchar(255) NOT NULL, 
---   `credit` varchar(255) NOT NULL, 
---   `period` int NOT NULL, 
---   `semester` varchar(255) NOT NULL, 
---   `groupType` int NOT NULL, 
---   `classType` int NOT NULL, 
---   `remarks` varchar(255) NOT NULL, 
---   `program` varchar(255) NOT NULL, 
---   `classroomType` int NOT NULL, 
---   `studentNumber` int NOT NULL,
---   `userid` int NOT NULL
--- ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
+CREATE TABLE if not exists `course_selection` (
+  `id` int PRIMARY KEY AUTO_INCREMENT, 
+  `courseName` varchar(255) NOT NULL, 
+  `courseNumber` varchar(255) NOT NULL, 
+  `credit` varchar(255) NOT NULL, 
+  `period` int NOT NULL, 
+  `semester` varchar(255) NOT NULL, 
+  `groupType` int NOT NULL, 
+  `classType` int NOT NULL, 
+  `remarks` varchar(255) NOT NULL, 
+  `program` varchar(255) NOT NULL, 
+  `classroomType` int NOT NULL, 
+  `studentNumber` int NOT NULL,
+  `userid` int NOT NULL
+) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
 
 -- --------------------------------------------------------
 
@@ -174,9 +174,9 @@ CREATE TABLE if not exists `classroomschedule` (
 --
 -- Dumping data for table `subject`
 --
-  INSERT INTO classroomschedule VALUES ();
-  INSERT INTO classroomschedule VALUES ();
-  INSERT INTO classroomschedule VALUES ();
+  -- INSERT INTO classroomschedule VALUES ();
+  -- INSERT INTO classroomschedule VALUES ();
+  -- INSERT INTO classroomschedule VALUES ();
 -- --------------------------------------------------------
 
 --
@@ -205,12 +205,12 @@ CREATE TABLE if not exists `professorschedule` (
 -- Dumping data for table `subject`
 --
 INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
-INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
 
 -- --------------------------------------------------------
