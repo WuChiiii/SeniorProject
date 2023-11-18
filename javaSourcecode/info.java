@@ -38,9 +38,9 @@ public class info {
                for(int i=0;rs.next();i++){// 
                     for(int m=0;m<80;m++)
                     {
-                         professorid.timetable[i][m]=rs.getInt(m+1);    
+                         professorid.timetable[i][m]=0;    
                     }
-               }   
+               }
                rs = st.executeQuery("SELECT COUNT(*) FROM classroom");//here
                rs.next();
                rowcount = rs.getInt(1);
@@ -60,7 +60,7 @@ public class info {
                {
                          for(int m=0;m<80;m++)
                          {
-                              classroomid.timetable[i][m]=rs.getInt(m+1);
+                              classroomid.timetable[i][m]=0;
                          }              //to here is data loaded for classroomname
                }      
                      
@@ -105,7 +105,7 @@ public class info {
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-               System.out.println("找不到SQL");
+               System.out.println("找不到SQL121");
 		}
      }
    public class professorno{//debug 完成

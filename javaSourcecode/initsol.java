@@ -90,19 +90,20 @@ public class initsol {
                             continue;
                         }
                         //System.out.println(" "+classroomnum);
+                        int teacherid=findtheprofessor(info, info.course.professor[id]);
                         info.tempans.ans[grade][group][randomnumber]=info.course.id[id];//到這邊表示教室 教授 同年級必修 空間皆符合要求
                         info.tempans.ans[grade][group][randomnumber+1]=info.course.id[id];
                         info.tempans.classroom[grade][group][randomnumber]=1;
                         info.tempans.classroom[grade][group][randomnumber+1]=1;
                         info.course.tempclassroom[id]=info.classroomid.id[classroomnum];//填該堂課程分配到啥教室
-                        info.professorid.timetable[info.course.professor[id]][randomnumber]=1;
-                        info.professorid.timetable[info.course.professor[id]][randomnumber+1]=1;
+                        info.professorid.timetable[teacherid][randomnumber]=1;
+                        info.professorid.timetable[teacherid][randomnumber+1]=1;
                         info.classroomid.timetable[classroomnum][randomnumber] = 1;
                         info.classroomid.timetable[classroomnum][randomnumber+1] = 1;
                         if (info.course.period[id] == 3){//連續三堂課的
                             info.tempans.ans[grade][group][randomnumber+2]=info.course.id[id];
                             info.tempans.classroom[grade][group][randomnumber+2]=1;
-                            info.professorid.timetable[info.course.professor[id]][randomnumber+2]=1;
+                            info.professorid.timetable[teacherid][randomnumber+2]=1;
                             info.classroomid.timetable[classroomnum][randomnumber+2] = 1;
                         }    
                         break;
@@ -110,18 +111,19 @@ public class initsol {
             return 1;
     }
     int findTheTime(int firstRandomnum, int grade, int group, int randomnumber, int cur,int remain, info info) {//cur is course id
+        int teacherid=findtheprofessor(info, info.course.professor[cur]);
         while ((info.course.period[cur] == 3) &&
                 (info.tempans.ans[grade][group][randomnumber] != -1 ||
                 info.tempans.ans[grade][group][randomnumber + 1] != -1 ||
                 info.tempans.ans[grade][group][randomnumber + 2] != -1||
-                info.professorid.timetable[info.course.professor[cur]][randomnumber]!=0||
-                info.professorid.timetable[info.course.professor[cur]][randomnumber+1]!=0||
-                info.professorid.timetable[info.course.professor[cur]][randomnumber+2]!=0)||
+                info.professorid.timetable[teacherid][randomnumber]!=0||
+                info.professorid.timetable[teacherid][randomnumber+1]!=0||
+                info.professorid.timetable[teacherid][randomnumber+2]!=0)||
                 ((info.course.period[cur] == 2) &&
                 (info.tempans.ans[grade][group][randomnumber] != -1 ||
                 info.tempans.ans[grade][group][randomnumber + 1] != -1||
-                info.professorid.timetable[info.course.professor[cur]][randomnumber]!=0||
-                info.professorid.timetable[info.course.professor[cur]][randomnumber+1]!=0))) {// 隨機的時間有同年級必修或教授當下有課就往後延直到找到合適時間
+                info.professorid.timetable[teacherid][randomnumber]!=0||
+                info.professorid.timetable[teacherid][randomnumber+1]!=0))) {// 隨機的時間有同年級必修或教授當下有課就往後延直到找到合適時間
                 //System.out.print(" "+randomnumber+" "+cur+" ");
             if (remain == 3) {
                 randomnumber += 5;
@@ -147,6 +149,14 @@ public class initsol {
             }
         }
         return randomnumber;
+    }
+    int findtheprofessor(info info,int id){
+        for(int i=0;i<info.professorid.rownum;i++){
+            if(info.professorid.id[i]==id){
+                return i;
+            }
+        }
+        return 0;
     }
 
     int findTheClassroom(info info,int randomnumber,int id) {
