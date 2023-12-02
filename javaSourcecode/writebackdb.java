@@ -19,7 +19,9 @@ public class writebackdb {
             st.execute(droptable);
             droptable="DROP TABLE IF EXISTS mapping_id";
             st.execute(droptable);
-            droptable="DROP TABLE IF EXISTS professorschedule";
+            String dropprofessortable="DROP TABLE IF EXISTS professorschedule";
+            st.execute(dropprofessortable);
+            droptable="DROP TABLE IF EXISTS classroomschedule";
             st.execute(droptable);
             String createnormaltable ="CREATE TABLE if not exists normalschedule "+
                 "(`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
@@ -46,7 +48,19 @@ public class writebackdb {
                 "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
                 "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
             String createprofessortable ="CREATE TABLE if not exists professorschedule "+
-                "(`professorid` int AUTO_INCREMENT PRIMARY KEY,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
+                "(`professorid` int,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
+                "`1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,"+
+                "`1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,"+
+                "`2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,"+
+                "`2-16` INT,`3-1` INT,`3-2` INT,`3-3` INT,`3-4` INT,`3-5` INT,`3-6` INT,`3-7` INT,"+
+                "`3-8` INT,`3-9` INT,`3-10` INT,`3-11` INT,`3-12` INT,`3-13` INT,`3-14` INT,`3-15` INT,"+
+                "`3-16` INT ,`4-1` INT,`4-2` INT,`4-3` INT,`4-4` INT,`4-5` INT,`4-6` INT,`4-7` INT,`4-8` INT,"+
+                "`4-9` INT,`4-10` INT,`4-11` INT,`4-12` INT,`4-13` INT,`4-14` INT,`4-15` INT,`4-16` INT,"+
+                "`5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,"+
+                "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
+                "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
+            String createclassroomtable ="CREATE TABLE if not exists classroomschedule "+
+                "(`classroomid` int,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
                 "`1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,"+
                 "`1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,"+
                 "`2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,"+
@@ -64,6 +78,7 @@ public class writebackdb {
                 ") ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;";
             st.execute(createinternationaltable);
             st.execute(createprofessortable);
+            st.execute(createclassroomtable);
             st.execute(createnormaltable);
             st.execute(createclassroompair);
 
@@ -77,7 +92,7 @@ public class writebackdb {
                 }
             }
             for(int i=0;i<info.professorid.rownum;i++){
-                String insertDataSQL = "INSERT INTO  professorschedule VALUES (NULL,"+
+                String insertDataSQL = "INSERT INTO  professorschedule VALUES ("+info.professorid.id[i]+","+
                 info.professorid.timetable[i][0]+","+info.professorid.timetable[i][1]+","+info.professorid.timetable[i][2]+","+info.professorid.timetable[i][3]+","+info.professorid.timetable[i][4]+","+info.professorid.timetable[i][5]+","+info.professorid.timetable[i][6]+","+info.professorid.timetable[i][7]+","+
                 info.professorid.timetable[i][8]+","+info.professorid.timetable[i][9]+","+info.professorid.timetable[i][10]+","+info.professorid.timetable[i][11]+","+info.professorid.timetable[i][12]+","+info.professorid.timetable[i][13]+","+info.professorid.timetable[i][14]+","+info.professorid.timetable[i][15]+","+
                 info.professorid.timetable[i][16]+","+info.professorid.timetable[i][17]+","+info.professorid.timetable[i][18]+","+info.professorid.timetable[i][19]+","+info.professorid.timetable[i][20]+","+info.professorid.timetable[i][21]+","+info.professorid.timetable[i][22]+","+info.professorid.timetable[i][23]+","+
@@ -88,6 +103,21 @@ public class writebackdb {
                 info.professorid.timetable[i][56]+","+info.professorid.timetable[i][57]+","+info.professorid.timetable[i][58]+","+info.professorid.timetable[i][59]+","+info.professorid.timetable[i][60]+","+info.professorid.timetable[i][61]+","+info.professorid.timetable[i][62]+","+info.professorid.timetable[i][63]+","+
                 info.professorid.timetable[i][64]+","+info.professorid.timetable[i][65]+","+info.professorid.timetable[i][66]+","+info.professorid.timetable[i][67]+","+info.professorid.timetable[i][68]+","+info.professorid.timetable[i][69]+","+info.professorid.timetable[i][70]+","+info.professorid.timetable[i][71]+","+
                 info.professorid.timetable[i][72]+","+info.professorid.timetable[i][73]+","+info.professorid.timetable[i][74]+","+info.professorid.timetable[i][75]+","+info.professorid.timetable[i][76]+","+info.professorid.timetable[i][77]+","+info.professorid.timetable[i][78]+","+info.professorid.timetable[i][79]+
+                ")";
+                st.executeUpdate(insertDataSQL);
+            }
+            for(int i=0;i<info.classroomid.rownum;i++){
+                String insertDataSQL = "INSERT INTO  classroomschedule VALUES ("+info.classroomid.id[i]+","+
+                info.classroomid.timetable[i][0]+","+info.classroomid.timetable[i][1]+","+info.classroomid.timetable[i][2]+","+info.classroomid.timetable[i][3]+","+info.classroomid.timetable[i][4]+","+info.classroomid.timetable[i][5]+","+info.classroomid.timetable[i][6]+","+info.classroomid.timetable[i][7]+","+
+                info.classroomid.timetable[i][8]+","+info.classroomid.timetable[i][9]+","+info.classroomid.timetable[i][10]+","+info.classroomid.timetable[i][11]+","+info.classroomid.timetable[i][12]+","+info.classroomid.timetable[i][13]+","+info.classroomid.timetable[i][14]+","+info.classroomid.timetable[i][15]+","+
+                info.classroomid.timetable[i][16]+","+info.classroomid.timetable[i][17]+","+info.classroomid.timetable[i][18]+","+info.classroomid.timetable[i][19]+","+info.classroomid.timetable[i][20]+","+info.classroomid.timetable[i][21]+","+info.classroomid.timetable[i][22]+","+info.classroomid.timetable[i][23]+","+
+                info.classroomid.timetable[i][24]+","+info.classroomid.timetable[i][25]+","+info.classroomid.timetable[i][26]+","+info.classroomid.timetable[i][27]+","+info.classroomid.timetable[i][28]+","+info.classroomid.timetable[i][29]+","+info.classroomid.timetable[i][30]+","+info.classroomid.timetable[i][31]+","+
+                info.classroomid.timetable[i][32]+","+info.classroomid.timetable[i][33]+","+info.classroomid.timetable[i][34]+","+info.classroomid.timetable[i][35]+","+info.classroomid.timetable[i][36]+","+info.classroomid.timetable[i][37]+","+info.classroomid.timetable[i][38]+","+info.classroomid.timetable[i][39]+","+
+                info.classroomid.timetable[i][40]+","+info.classroomid.timetable[i][41]+","+info.classroomid.timetable[i][42]+","+info.classroomid.timetable[i][43]+","+info.classroomid.timetable[i][44]+","+info.classroomid.timetable[i][45]+","+info.classroomid.timetable[i][46]+","+info.classroomid.timetable[i][47]+","+
+                info.classroomid.timetable[i][48]+","+info.classroomid.timetable[i][49]+","+info.classroomid.timetable[i][50]+","+info.classroomid.timetable[i][51]+","+info.classroomid.timetable[i][52]+","+info.classroomid.timetable[i][53]+","+info.classroomid.timetable[i][54]+","+info.classroomid.timetable[i][55]+","+
+                info.classroomid.timetable[i][56]+","+info.classroomid.timetable[i][57]+","+info.classroomid.timetable[i][58]+","+info.classroomid.timetable[i][59]+","+info.classroomid.timetable[i][60]+","+info.classroomid.timetable[i][61]+","+info.classroomid.timetable[i][62]+","+info.classroomid.timetable[i][63]+","+
+                info.classroomid.timetable[i][64]+","+info.classroomid.timetable[i][65]+","+info.classroomid.timetable[i][66]+","+info.classroomid.timetable[i][67]+","+info.classroomid.timetable[i][68]+","+info.classroomid.timetable[i][69]+","+info.classroomid.timetable[i][70]+","+info.classroomid.timetable[i][71]+","+
+                info.classroomid.timetable[i][72]+","+info.classroomid.timetable[i][73]+","+info.classroomid.timetable[i][74]+","+info.classroomid.timetable[i][75]+","+info.classroomid.timetable[i][76]+","+info.classroomid.timetable[i][77]+","+info.classroomid.timetable[i][78]+","+info.classroomid.timetable[i][79]+
                 ")";
                 st.executeUpdate(insertDataSQL);
             }

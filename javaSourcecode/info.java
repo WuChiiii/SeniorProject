@@ -32,7 +32,7 @@ public class info {
 			{
 				professorid.id[i]=rs.getInt("userid");
                     professorid.name[i]=rs.getString("name");  
-			}                                                                                                            //to here is data loaded for professorname
+			}                                                                                                    //to here is data loaded for professorname
 			rs = st.executeQuery("select * from professorschedule");
                rs.next();
                for(int i=0;rs.next();i++){// 
