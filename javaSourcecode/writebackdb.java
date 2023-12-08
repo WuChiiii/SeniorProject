@@ -122,7 +122,7 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
             for(int i=0;i<4;i++){
-                String insertDataSQL = "INSERT INTO  normalschedule VALUES ("+
+                String insertDataSQL = "INSERT INTO  internationalschedule VALUES ("+
                 info.tempans.ans[i][0][0]+","+info.tempans.ans[i][0][1]+","+info.tempans.ans[i][0][2]+","+info.tempans.ans[i][0][3]+","+info.tempans.ans[i][0][4]+","+info.tempans.ans[i][0][5]+","+info.tempans.ans[i][0][6]+","+info.tempans.ans[i][0][7]+","+
                 info.tempans.ans[i][0][8]+","+info.tempans.ans[i][0][9]+","+info.tempans.ans[i][0][10]+","+info.tempans.ans[i][0][11]+","+info.tempans.ans[i][0][12]+","+info.tempans.ans[i][0][13]+","+info.tempans.ans[i][0][14]+","+info.tempans.ans[i][0][15]+","+
                 info.tempans.ans[i][0][16]+","+info.tempans.ans[i][0][17]+","+info.tempans.ans[i][0][18]+","+info.tempans.ans[i][0][19]+","+info.tempans.ans[i][0][20]+","+info.tempans.ans[i][0][21]+","+info.tempans.ans[i][0][22]+","+info.tempans.ans[i][0][23]+","+
@@ -137,16 +137,16 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
             for(int i=0;i<4;i++){
-                String insertDataSQL = "INSERT INTO  internationalschedule VALUES ("+
+                String insertDataSQL = "INSERT INTO  normalschedule VALUES ("+
                 info.tempans.ans[i][1][0]+","+info.tempans.ans[i][1][1]+","+info.tempans.ans[i][1][2]+","+info.tempans.ans[i][1][3]+","+info.tempans.ans[i][1][4]+","+info.tempans.ans[i][1][5]+","+info.tempans.ans[i][1][6]+","+info.tempans.ans[i][1][7]+","+
-                info.tempans.ans[i][1][8]+","+info.tempans.ans[i][1][9]+","+info.tempans.ans[i][1][11]+","+info.tempans.ans[i][1][11]+","+info.tempans.ans[i][1][12]+","+info.tempans.ans[i][1][13]+","+info.tempans.ans[i][1][14]+","+info.tempans.ans[i][1][15]+","+
-                info.tempans.ans[i][1][16]+","+info.tempans.ans[i][1][17]+","+info.tempans.ans[i][1][18]+","+info.tempans.ans[i][1][19]+","+info.tempans.ans[i][1][21]+","+info.tempans.ans[i][1][21]+","+info.tempans.ans[i][1][22]+","+info.tempans.ans[i][1][23]+","+
-                info.tempans.ans[i][1][24]+","+info.tempans.ans[i][1][25]+","+info.tempans.ans[i][1][26]+","+info.tempans.ans[i][1][27]+","+info.tempans.ans[i][1][28]+","+info.tempans.ans[i][1][29]+","+info.tempans.ans[i][1][31]+","+info.tempans.ans[i][1][31]+","+
+                info.tempans.ans[i][1][8]+","+info.tempans.ans[i][1][9]+","+info.tempans.ans[i][1][10]+","+info.tempans.ans[i][1][11]+","+info.tempans.ans[i][1][12]+","+info.tempans.ans[i][1][13]+","+info.tempans.ans[i][1][14]+","+info.tempans.ans[i][1][15]+","+
+                info.tempans.ans[i][1][16]+","+info.tempans.ans[i][1][17]+","+info.tempans.ans[i][1][18]+","+info.tempans.ans[i][1][19]+","+info.tempans.ans[i][1][20]+","+info.tempans.ans[i][1][21]+","+info.tempans.ans[i][1][22]+","+info.tempans.ans[i][1][23]+","+
+                info.tempans.ans[i][1][24]+","+info.tempans.ans[i][1][25]+","+info.tempans.ans[i][1][26]+","+info.tempans.ans[i][1][27]+","+info.tempans.ans[i][1][28]+","+info.tempans.ans[i][1][29]+","+info.tempans.ans[i][1][30]+","+info.tempans.ans[i][1][31]+","+
                 info.tempans.ans[i][1][32]+","+info.tempans.ans[i][1][33]+","+info.tempans.ans[i][1][34]+","+info.tempans.ans[i][1][35]+","+info.tempans.ans[i][1][36]+","+info.tempans.ans[i][1][37]+","+info.tempans.ans[i][1][38]+","+info.tempans.ans[i][1][39]+","+
-                info.tempans.ans[i][1][41]+","+info.tempans.ans[i][1][41]+","+info.tempans.ans[i][1][42]+","+info.tempans.ans[i][1][43]+","+info.tempans.ans[i][1][44]+","+info.tempans.ans[i][1][45]+","+info.tempans.ans[i][1][46]+","+info.tempans.ans[i][1][47]+","+
-                info.tempans.ans[i][1][48]+","+info.tempans.ans[i][1][49]+","+info.tempans.ans[i][1][51]+","+info.tempans.ans[i][1][51]+","+info.tempans.ans[i][1][52]+","+info.tempans.ans[i][1][53]+","+info.tempans.ans[i][1][54]+","+info.tempans.ans[i][1][55]+","+
-                info.tempans.ans[i][1][56]+","+info.tempans.ans[i][1][57]+","+info.tempans.ans[i][1][58]+","+info.tempans.ans[i][1][59]+","+info.tempans.ans[i][1][61]+","+info.tempans.ans[i][1][61]+","+info.tempans.ans[i][1][62]+","+info.tempans.ans[i][1][63]+","+
-                info.tempans.ans[i][1][64]+","+info.tempans.ans[i][1][65]+","+info.tempans.ans[i][1][66]+","+info.tempans.ans[i][1][67]+","+info.tempans.ans[i][1][68]+","+info.tempans.ans[i][1][69]+","+info.tempans.ans[i][1][71]+","+info.tempans.ans[i][1][71]+","+
+                info.tempans.ans[i][1][40]+","+info.tempans.ans[i][1][41]+","+info.tempans.ans[i][1][42]+","+info.tempans.ans[i][1][43]+","+info.tempans.ans[i][1][44]+","+info.tempans.ans[i][1][45]+","+info.tempans.ans[i][1][46]+","+info.tempans.ans[i][1][47]+","+
+                info.tempans.ans[i][1][48]+","+info.tempans.ans[i][1][49]+","+info.tempans.ans[i][1][50]+","+info.tempans.ans[i][1][51]+","+info.tempans.ans[i][1][52]+","+info.tempans.ans[i][1][53]+","+info.tempans.ans[i][1][54]+","+info.tempans.ans[i][1][55]+","+
+                info.tempans.ans[i][1][56]+","+info.tempans.ans[i][1][57]+","+info.tempans.ans[i][1][58]+","+info.tempans.ans[i][1][59]+","+info.tempans.ans[i][1][60]+","+info.tempans.ans[i][1][61]+","+info.tempans.ans[i][1][62]+","+info.tempans.ans[i][1][63]+","+
+                info.tempans.ans[i][1][64]+","+info.tempans.ans[i][1][65]+","+info.tempans.ans[i][1][66]+","+info.tempans.ans[i][1][67]+","+info.tempans.ans[i][1][68]+","+info.tempans.ans[i][1][69]+","+info.tempans.ans[i][1][70]+","+info.tempans.ans[i][1][71]+","+
                 info.tempans.ans[i][1][72]+","+info.tempans.ans[i][1][73]+","+info.tempans.ans[i][1][74]+","+info.tempans.ans[i][1][75]+","+info.tempans.ans[i][1][76]+","+info.tempans.ans[i][1][77]+","+info.tempans.ans[i][1][78]+","+info.tempans.ans[i][1][79]+
                 ")";
                 st.executeUpdate(insertDataSQL);
