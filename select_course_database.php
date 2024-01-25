@@ -34,6 +34,13 @@
     $classroomType = 0 ;//default, the prof can change it later ; 
     $studentNumber = 999 ; //default, the prof can change it later 
     $userid = $_SESSION['id'] ; //!!!once the professors' name are changed, the table should be updated also !!!
+    $sql = 'select * from teachers where userid =' . $userid .';';
+    $query = $conn -> query( $sql ) ;
+    $id_result = $query->fetch(PDO::FETCH_ASSOC);
+    $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
+    $time;
+    $priority=1;//1代表教授,0代表kiki
+    $classroom;
 
     var_dump( $courseNumber ) ; 
     var_dump( $groupType ) ; 
@@ -53,7 +60,7 @@
         }
     endforeach ; 
 
-    $sql = "insert into course_selection values( null, '" . $courseName . "', '" . $courseNumber . "', '" . $credit . "', '" . $period . "', '" . $semester . "', '" . $groupType . "', '" . $classType . "', '" . $remarks . "', '" . $program . "', '" . $classroomType . "', '" . $studentNumber . "', '" . $userid . "' ) ; " ; 
+    $sql = "insert into course_selection values( null, '" . $courseName . "', '" . $courseNumber . "', '" . $credit . "', '" . $period . "', '" . $semester . "', '" . $groupType . "', '" . $classType . "', '" . $remarks . "', '" . $program . "', '" . $classroomType . "', '" . $studentNumber . "', '" . $teacherid . "','". $time . "', '" . $priority . "', '" . $classroom . "') ; " ; 
     echo $sql ; 
     if( $flag == 0 )
     {

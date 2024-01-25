@@ -9,9 +9,13 @@
     $type = $_POST['classroom_type'] ; 
 
     $sql = "insert into classroom values( null , '" . $name . "', '" . $department . "', '" . $description . "', '" . $seats . "', '" . $type . "' ) ; " ; 
-    $add_classroom_sql="insert into classroomschedule values ();";
+
     try{ 
         $conn -> query( $sql ) ; 
+        $sql = "select * from classroom where classroom_no ='" . $name  . "' ;" ;
+        $query = $conn -> query( $sql ) ;
+        $result = $query->fetch(PDO::FETCH_ASSOC);
+        $add_classroom_sql ="insert into classroomschedule (classroomid) values (".$result['classroomid'].");"; 
         $conn -> query( $add_classroom_sql ) ;
     }catch( PDOException $e ){
         echo "<script> alert('The operation is failed ! You may tr to add a duplicate classroom !') ; </script>" ;  

@@ -1,4 +1,4 @@
-<?php include "session.php" ; $_SESSION['page_mode'] = 1 ;//0 for admin; 1 for professors ?> 
+<?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?> 
 <?php include "check_login.php" ?>
 <?php 
     include "connect.php" ;    
@@ -14,13 +14,15 @@
     $classroomType = $_POST['Classroom_Type'] ;//default, the prof can change it later ; 
     $studentNumber = $_POST['Student_Number'] ; //default, the prof can change it later 
     $userid = $_SESSION['id'] ; //!!!once the professors' name are changed, the table should be updated also !!!
-    $sql = 'select * from teachers where userid =' . $userid .';';
+    //find the teacher userid with name
+    $teachername = $_POST['teacher'];
+    $sql = 'select teacherid from teachers where teacher_name ="' . $teachername .'";';
     $query = $conn -> query( $sql ) ;
     $id_result = $query->fetch(PDO::FETCH_ASSOC);
     $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
-    $time;
-    $priority=1;//1代表教授,0代表kiki
-    $classroom;
+    $time=$_POST['time'];
+    $priority=0;//1代表教授,0代表kiki
+    $classroom=$_POST['classroom'];
 
     var_dump( $courseNumber ) ; 
     var_dump( $groupType ) ; 
@@ -35,8 +37,8 @@
         if( $data['courseNumber'] == $courseNumber && $data['groupType'] == $groupType && $data['userid'] == $userid )
         {
             $flag = 1 ; 
-            echo "<script> alert('You have already added this course ! Please check in My Selection'); </script>" ;
-            echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
+            echo "<script> alert('You have already added this course ! Please check in Course Selection'); </script>" ;
+            echo "<script> location.href = 'forcourseselection.php' ; </script>" ; 
         }
     endforeach ; 
 
@@ -53,7 +55,7 @@
             $rc = $rc['max( id )'] ; 
             setcookie('course_id' , $rc , time() + 600 , '/') ;
             var_dump( $_COOKIE ) ;  
-            echo "<script> window.location = 'prof_course_selection.php' ; </script>" ; 
+            echo "<script> window.location = 'forcourseselection.php' ; </script>" ; 
         }catch( PDOException $e ){
             echo $e ;  
         }

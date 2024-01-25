@@ -70,7 +70,13 @@
                                 <tbody>
                                     <?php include('connect.php');
                                     //display the data of subjects from database
-                                        $query = $conn -> query( "select * from course_selection where userid = " . $_SESSION['id'] . ";" ) ; 
+                                        $sql="select * from teachers where userid =". $_SESSION['id'] .";";
+                                        try{ $query = $conn -> query($sql);
+                                            $id_result = $query->fetch(PDO::FETCH_ASSOC);
+                                            $teacherid=$id_result['teacherid'];
+                                        }
+                                        catch( PDOException $e ){ $e ; }
+                                        $query = $conn -> query( "select * from course_selection where userid = " . $teacherid . ";" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>

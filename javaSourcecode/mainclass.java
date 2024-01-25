@@ -1,5 +1,6 @@
 //import java.sql.*;
 
+
 public class mainclass{                              
 	public static void main (String[] args){ 
 		System.out.println("success start");
@@ -8,7 +9,7 @@ public class mainclass{
 		firstsol.createfun(info);
 		writebackdb db=new writebackdb();
 		db.run(info);
-		System.out.println("success end");
+		System.out.println("success end new");
 	}
 }
 

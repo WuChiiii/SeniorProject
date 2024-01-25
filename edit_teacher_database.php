@@ -7,13 +7,23 @@
     $email = $_POST['teacher_email'] ; 
     $position = $_POST['teacher_position'] ; 
     $department = $_POST['teacher_department'] ;
-    
-    $sql = "update teachers set teacher_name = '" . $name . "', teacher_email = '" . $email . "', teacher_position = '" . $position . "', teacher_department = '" . $department . "' where teacherid = " . $id . " ;" ;    
+    $sql = 'select * from teachers where teacherid ="' . $id .'";';
+    try{
+        $query = $conn -> query( $sql ) ;
+        $id_result = $query->fetch(PDO::FETCH_ASSOC);
+        $userid=$id_result['userid'];
+        $prename=$id_result['teacher_name'];//名字不同要改user、改teacher
+    }
+    catch( PDOException $e ){echo $e ; } 
+    $sqlusers = "update users set name = '" . $name . "', department = '" . $department . "' where name = '" . $prename . "' ;" ;
+    $sql = "update teachers set teacher_name = '" . $name . "', teacher_email = '" . $email . "', teacher_position = '" . $position . "', teacher_department = '" . $department . "', userid = '" . $userid . "' where teacherid = " . $id . " ;" ;    
     echo $sql ; 
 
     if( !empty( $id ) )
     {
         try{
+            if($userid!=-1)
+                $conn -> query( $sqlusers ) ; 
             $conn -> query( $sql ) ; 
         }catch( PDOException $e ){
             echo $e ; 

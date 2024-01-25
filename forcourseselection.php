@@ -38,12 +38,12 @@
                     <div class="col-md-12">
                         <h1 class="page-header">
                            
-							<button class="btn btn-primary btn-lg" data-toggle="modal" data-target="">
+                            <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#adminModal">
                                 Add Course
                             </button>
                             
                         </h1>
-                        <?php //include ('admin_add_course_mode.php');?>
+                        <?php include ('admin_add_course_mode.php');?>
 
 						<div class="hero-unit-table">   
                             <table class="table table-striped table-bordered table-hover" id="dataTables-example">
@@ -64,6 +64,11 @@
                                         <th>Classroom Type</th>
                                         <th>Student Number</th>
                                         <th>Professor</th>
+                                        <th>time</th>
+                                        <th>domain</th>
+                                        <th>classroom</th>
+                                        <th>Action</th>
+
                                     </tr>
                                 </thead>
                                 <tbody>
@@ -86,11 +91,20 @@
                                             <td><?php if( $data['classroomType'] == 0 ) echo "未指定 Not sepecified" ; else echo "電腦教室 Computer Classroom";?> </td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td><?php 
-                                                    $query = $conn -> query( "select * from users where userid = " . $data['userid'] . ";" ) ; 
+                                                    $query = $conn -> query( "select * from teachers where teacherid = " . $data['userid'] . ";" ) ; 
                                                     $u = $query -> fetch( PDO::FETCH_ASSOC ) ; 
-                                                    echo $u['name'] ; 
+                                                    echo $u['teacher_name'] ; 
                                                 ?>
                                             </td>
+                                            <td><?php if( $data['time'] == null ) echo "Not sepecified" ; else echo $data['time']; ?></td>
+                                            <td><?php if( $data['priority'] == 0 ) echo "admin" ; else echo "professor"; ?></td>
+                                            <td><?php if( $data['classroom'] == null ) echo "Not sepecified" ; else echo $data['classroom']; ?></td>
+                                            <td width="160" >
+                                                <!--<h1><?php echo $data['id'] ?></h1>-->
+                                                <a value = "<?php echo $data['id'] ?>" onclick="delete_subject(this);" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
+                                                <a value = "<?php echo $data['id'] ?>" onclick="edit_subject(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                            </td>
+                                            
                                             
                                     </tr>
                                     <?php  endforeach;
@@ -115,28 +129,29 @@
         function delete_subject(elem)
         {
             //console.log( elem.getAttribute( 'value' ) ) ; 
-            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
             //document.cookie='delete_subject_id='+subject_id; 
             var exp = new Date() ; 
             exp.setTime( exp.getTime() + 1000 * 10 ) ; 
             exp = exp.toString() ; 
-            document.cookie='delete_subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to delete this subject?\n') )
+            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ; 
+            if( confirm('Are you sure to delete this course?\n') )
                 location.href='delete_subject_database.php';
             else{
                 //alert('deletion is canceled') ; 
-                location.herf = "forsubject.php" ; 
+                location.herf = "forcourseselection.php" ; 
             }
         }
         function edit_subject(elem)
         {
-            var subject_id = ( elem.getAttribute( 'value' ) ).toString() ; 
+            var course_id = ( elem.getAttribute( 'value' ) ).toString() ; 
             //document.cookie='subject_id='+subject_id; 
             var exp = new Date() ; 
             exp.setTime( exp.getTime() + 1000 * 600 ) ; 
             exp = exp.toString() ; 
-            document.cookie='subject_id='+subject_id+';expires=' + exp + ';path=/;' ; 
-            location.href='pre_edit_subject.php';
+            document.cookie='course_id='+course_id+';expires=' + exp + ';path=/;' ;
+            // location.href='pre_edit_subject.php';
+            location.href='pre_edit_select_admin.php';
         }
     </script>
 </body>

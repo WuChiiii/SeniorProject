@@ -1,6 +1,47 @@
 <?php include "session.php" ; $_SESSION['page_mode'] = 0 ;//0 for admin; 1 for professors ?>
 <?php
 if (isset($_POST['add_schedule_submit'])) {
+    //translate for the table--------------------------------------------------------------------------------------
+    $deleteSql = "DELETE FROM pre4_international";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre4_international SELECT * FROM pre3_international";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre3_international";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre3_international SELECT * FROM pre2_international";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre2_international";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre2_international SELECT * FROM pre1_international";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre1_international";
+    $conn->exec($deleteSql);
+    $checkTableSql = "SHOW TABLES LIKE 'internationalschedule'";
+    $result = $conn->query($checkTableSql);
+    if ($result->rowCount() > 0) 
+        $conn->exec("INSERT INTO pre1_international SELECT * FROM internationalschedule");
+    $deleteSql = "DELETE FROM pre4_csie";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre4_csie SELECT * FROM pre3_csie";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre3_csie";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre3_csie SELECT * FROM pre2_csie";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre2_csie";
+    $conn->exec($deleteSql);
+    $dumpSql = "INSERT INTO pre2_csie SELECT * FROM pre1_csie";
+    $conn->exec($dumpSql);
+    $deleteSql = "DELETE FROM pre1_csie";
+    $conn->exec($deleteSql);
+    $checkTableSql = "SHOW TABLES LIKE 'normalschedule'";
+    $result = $conn->query($checkTableSql);
+    if ($result->rowCount() > 0) 
+        $conn->exec("INSERT INTO pre1_csie SELECT * FROM normalschedule");
+
+    //end of translate---------------------------------------------------------------------------------------------
+
+
     $path_back =getcwd();
     $path_to_source =getcwd() ."\javaSourcecode";
     $path_to_jar=getcwd() ."/environment/jar.exe";
@@ -14,8 +55,7 @@ if (isset($_POST['add_schedule_submit'])) {
     shell_exec("cd $path_back");
     $output = shell_exec( "\"$java_Exe\" -jar $path_to_source\mainclass.jar" );
     var_dump($output);
-    //echo "<script> window.location = 'forschedule.php' ; </script>" ; 
-    
+    //echo "<script> window.location = 'forschedule.php' ; </script>" ;
 }
 else 
 {

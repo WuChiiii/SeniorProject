@@ -47,14 +47,29 @@
                             </form
                             <br></br>
                              View:	
-                             <a href="table_teacher.php" target="_blank">						
-							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#teacher">
-                             老師
-                            </button>
-                             </a>
                             <a href="table_semester.php" target="_blank">
 							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
                              課程表
+                            </button>	
+                            </a>
+                            <a href="table_pre1.php" target="_blank">
+							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                             歷史課表1
+                            </button>	
+                            </a>
+                            <a href="table_pre2.php" target="_blank">
+							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                             歷史課表2
+                            </button>	
+                            </a>
+                            <a href="table_pre3.php" target="_blank">
+							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                             歷史課表3
+                            </button>	
+                            </a>
+                            <a href="table_pre4.php" target="_blank">
+							 <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                             歷史課表4
                             </button>	
                             </a>
                         </h1>
