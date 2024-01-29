@@ -71,22 +71,7 @@ public class initsol {
                 } catch (SQLException e) {
                     e.printStackTrace();
                     System.out.println("找不到SQLhh");
-                    System.out.println(info.course.id[0]);
                 }
-
-                // to do
-                /*
-                 * info.course.professor[id]
-                 * 先轉換1-1變成第幾個時間$time
-                 * info.tempans.ans[time]=info.course.id[i];
-                 * classroom department==csie
-                 * info.classroomid.timetable[classroomid][time] = 1;
-                 * professor department===csie
-                 * info.professorid.timetable[professorid][time]=1;
-                 * 
-                 * info.course.tempclassroom[id]=info.classroomid.id[classroomnum];//填該堂課程分配到啥教室
-                 * 
-                 */
             }
         }
         for (int grade = 0; grade < 4; grade++) {// 必修電腦教室
@@ -203,10 +188,7 @@ public class initsol {
         return 1;
     }
 
-    int findTheTime(int firstRandomnum, int grade, int group, int randomnumber, int cur, int remain, info info) {// cur
-                                                                                                                 // is
-                                                                                                                 // course
-                                                                                                                 // id
+    int findTheTime(int firstRandomnum, int grade, int group, int randomnumber, int cur, int remain, info info) {// cur is course id
         while ((info.course.period[cur] == 3) &&
                 (info.tempans.ans[grade][group][randomnumber] != -1 ||
                         info.tempans.ans[grade][group][randomnumber + 1] != -1 ||

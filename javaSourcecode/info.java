@@ -74,7 +74,7 @@ public class info {
                rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");// here
                rs.next();
                rowcount = rs.getInt(1);
-               rs = st.executeQuery("select * from course_selection");
+               rs = st.executeQuery("select  * from course_selection");
                course = new classinfo(rowcount);
                // System.out.println(rowcount);
                for (int i = 0; rs.next(); i++) {
@@ -94,6 +94,9 @@ public class info {
                          }
                     }
                     course.group[i] = rs.getInt("groupType");
+                    if(course.semester[i]==3){
+                         course.group[i]=1;
+                    }
                     for (int cur = 0; cur < rowcount; cur++) {
                          if (course.classify[course.semester[i]][course.group[i]][course.classroomtype[i]][course.classtype[i]][cur] == -1) {
                               course.classify[course.semester[i]][course.group[i]][course.classroomtype[i]][course.classtype[i]][cur] = i;
