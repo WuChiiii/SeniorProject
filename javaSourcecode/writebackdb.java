@@ -25,7 +25,7 @@ public class writebackdb {
             droptable="DROP TABLE IF EXISTS classroomschedule";
             st.execute(droptable);
             String createnormaltable ="CREATE TABLE if not exists normalschedule "+
-                "(`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
+                "(`grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
                 "`1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,"+
                 "`1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,"+
                 "`2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,"+
@@ -37,7 +37,7 @@ public class writebackdb {
                 "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
                 "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
             String createinternationaltable ="CREATE TABLE if not exists internationalschedule "+
-                "(`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
+                "(`grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,"+
                 "`1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,"+
                 "`1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,"+
                 "`2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,"+
@@ -123,7 +123,7 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
             for(int i=0;i<4;i++){
-                String insertDataSQL = "INSERT INTO  internationalschedule VALUES ("+
+                String insertDataSQL = "INSERT INTO  internationalschedule VALUES ("+(i+1)+","+
                 info.tempans.ans[i][0][0]+","+info.tempans.ans[i][0][1]+","+info.tempans.ans[i][0][2]+","+info.tempans.ans[i][0][3]+","+info.tempans.ans[i][0][4]+","+info.tempans.ans[i][0][5]+","+info.tempans.ans[i][0][6]+","+info.tempans.ans[i][0][7]+","+
                 info.tempans.ans[i][0][8]+","+info.tempans.ans[i][0][9]+","+info.tempans.ans[i][0][10]+","+info.tempans.ans[i][0][11]+","+info.tempans.ans[i][0][12]+","+info.tempans.ans[i][0][13]+","+info.tempans.ans[i][0][14]+","+info.tempans.ans[i][0][15]+","+
                 info.tempans.ans[i][0][16]+","+info.tempans.ans[i][0][17]+","+info.tempans.ans[i][0][18]+","+info.tempans.ans[i][0][19]+","+info.tempans.ans[i][0][20]+","+info.tempans.ans[i][0][21]+","+info.tempans.ans[i][0][22]+","+info.tempans.ans[i][0][23]+","+
@@ -138,7 +138,7 @@ public class writebackdb {
                 st.executeUpdate(insertDataSQL);
             }
             for(int i=0;i<4;i++){
-                String insertDataSQL = "INSERT INTO  normalschedule VALUES ("+
+                String insertDataSQL = "INSERT INTO  normalschedule VALUES ("+(i+1)+","+
                 info.tempans.ans[i][1][0]+","+info.tempans.ans[i][1][1]+","+info.tempans.ans[i][1][2]+","+info.tempans.ans[i][1][3]+","+info.tempans.ans[i][1][4]+","+info.tempans.ans[i][1][5]+","+info.tempans.ans[i][1][6]+","+info.tempans.ans[i][1][7]+","+
                 info.tempans.ans[i][1][8]+","+info.tempans.ans[i][1][9]+","+info.tempans.ans[i][1][10]+","+info.tempans.ans[i][1][11]+","+info.tempans.ans[i][1][12]+","+info.tempans.ans[i][1][13]+","+info.tempans.ans[i][1][14]+","+info.tempans.ans[i][1][15]+","+
                 info.tempans.ans[i][1][16]+","+info.tempans.ans[i][1][17]+","+info.tempans.ans[i][1][18]+","+info.tempans.ans[i][1][19]+","+info.tempans.ans[i][1][20]+","+info.tempans.ans[i][1][21]+","+info.tempans.ans[i][1][22]+","+info.tempans.ans[i][1][23]+","+

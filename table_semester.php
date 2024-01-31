@@ -1846,6 +1846,76 @@
 				<!-- 星期四 start -->
 				<!-- 學士班資工組 -->
 				<?php
+					if($normal1["4-2"] == -1)//當下沒課
+						echo "<td><font size='1' class='center-text'></font></td>";
+					else if($normal1["4-2"] != -1 && $normal1["4-1"] != $normal1["4-2"]){//當下有課並且為第一堂
+						$temp=$normal1["4-2"];
+						$row = $conn->query("SELECT * FROM course_selection WHERE id =".$temp)->fetch(PDO::FETCH_ASSOC); 
+						$num=$row["period"];
+						$parts = explode('-', "4-2");$first=$parts[0];$last=$parts[1];
+						$cnt=1;
+						for( $i=1 ; $i < $num && $last + $i <=16 ; $i++, $cnt++){
+							$str = $first . '-' . ($last + $i);
+							if($normal1[$str]!= $temp)
+								break;
+						}
+						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
+						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
+						$name=$row["courseName"];
+						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
+						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						
+					}
+					//剩下的當下有課而且跟上一堂一樣
+					if($normal2["4-2"] == -1)//當下沒課
+						echo "<td><font size='1' class='center-text'></font></td>";
+					else if($normal2["4-2"] != -1 && $normal2["4-1"] != $normal2["4-2"]){//當下有課並且為第一堂
+						$temp=$normal2["4-2"];
+						$row = $conn->query("SELECT * FROM course_selection WHERE id =".$temp)->fetch(PDO::FETCH_ASSOC); 
+						$num=$row["period"];
+						$parts = explode('-', "4-2");$first=$parts[0];$last=$parts[1];
+						$cnt=1;
+						for( $i=1 ; $i < $num && $last + $i <=16 ; $i++, $cnt++){
+							$str = $first . '-' . ($last + $i);
+							if($normal2[$str]!= $temp)
+								break;
+						}
+						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
+						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
+						$name=$row["courseName"];
+						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
+						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						
+					} 
+					if($normal3["4-2"] == -1)//當下沒課
+						echo "<td><font size='1' class='center-text'></font></td>";
+					else if($normal3["4-2"] != -1 && $normal3["4-1"] != $normal3["4-2"]){//當下有課並且為第一堂
+						$temp=$normal3["4-2"];
+						$row = $conn->query("SELECT * FROM course_selection WHERE id =".$temp)->fetch(PDO::FETCH_ASSOC); 
+						$num=$row["period"];
+						$parts = explode('-', "4-2");$first=$parts[0];$last=$parts[1];
+						$cnt=1;
+						for( $i=1 ; $i < $num && $last + $i <=16 ; $i++, $cnt++){
+							$str = $first . '-' . ($last + $i);
+							if($normal3[$str]!=$temp)
+								break;
+						}
+						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
+						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
+						$name=$row["courseName"];
+						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
+						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						
+					} 
+				?>
+				<!-- 學士班國際組 -->
+				<?php
 					if($international1["4-2"] == -1)//當下沒課
 						echo "<td><font size='1' class='center-text'></font></td>";
 					else if($international1["4-2"] != -1 && $international1["4-1"] != $international1["4-2"]){//當下有課並且為第一堂
@@ -1914,16 +1984,6 @@
 						
 					} 
 				?>
-				<!-- 學士班國際組 -->
-				<td>
-					<font size="1" class="center-text"></font>
-				</td>
-				<td>
-					<font size="1" class="center-text"></font>
-				</td>
-				<td>
-					<font size="1" class="center-text"></font>
-				</td>
 				<!-- 學程 -->
 				<td>
 					<font size="1" class="center-text"></font>
