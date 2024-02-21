@@ -211,7 +211,7 @@ CREATE TABLE if not exists `professorschedule` (
 --
 -- Dumping data for table `subject`
 --
---INSERT INTO professorschedule VALUES ();
+-- INSERT INTO professorschedule VALUES ();
 
 CREATE TABLE if not exists `pre1_csie` (
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,

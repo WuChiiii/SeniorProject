@@ -125,8 +125,10 @@
                               
 					<div class = "modal-footer">
 						<button name = "go" type="submit" class="btn btn-primary" >Save</button>
-						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-					</div>
+                        <a href = 'prof_course_selection.php'>
+						    <button type="button" class="btn btn-default" data-dismiss="modal">Cancel Modification</button>
+                        </a>
+                    </div>
 									
 			    </form>  
 
