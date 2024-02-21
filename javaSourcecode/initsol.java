@@ -97,7 +97,7 @@ public class initsol {
                 }
             }
         }
-        System.out.println("here2");
+        // System.out.println("here2");
         for (int grade = 0; grade < 4; grade++) {// 必修非電腦教室
             for (int group = 0; group < 2; group++) {
                 for (int cur = 0; info.course.classify[grade][group][0][1][cur] != -1; cur++) {
@@ -109,7 +109,7 @@ public class initsol {
                 }
             }
         }
-        System.out.println("here3");
+        // System.out.println("here3");
         for (int grade = 0; grade < 4; grade++) {// 選修非電腦教室
             for (int group = 0; group < 2; group++) {
                 for (int cur = 0; info.course.classify[grade][group][0][0][cur] != -1; cur++) {
@@ -146,8 +146,8 @@ public class initsol {
             remain = randomnumber % 16;
             // System.out.print(" "+randomnumber);
             if (randomnumber == -1) {
-                clearFunction(info, grade, group);
-                return 0;
+                remainclass(info, grade, group, id);
+                break;
             }
             classroomnum = findTheClassroom(info, randomnumber, id);
             if (classroomnum == -1) {// 當下時間沒有空教室
@@ -248,20 +248,33 @@ public class initsol {
         return -1;
     }
 
-    void clearFunction(info info, int grade, int group) {// 未完成刪除當下年級的資料
+    void remainclass(info info, int grade, int group, int id) {// 未完成刪除當下年級的資料
         for (int i = 0; i < 80; i++) {
-            int classid = info.tempans.ans[grade][group][i]; // classid為整個課程資訊的編號
-            if (classid != -1) {
-                info.tempans.ans[grade][group][i] = -1;
-                info.professorid.timetable[info.course.professor[classid]][i] = -1;
-                info.classroomid.timetable[info.course.tempclassroom[classid]][i] = -1;
+            if(i%16+info.course.period[id]>12 || (i<=39 && i+info.course.period[id]-1>=38)){//找課堂在13堂內的且不能周三的78
+                continue;
             }
+            int classroomnum = findTheClassroom(info, i, id);
+            if (classroomnum == -1) {// 當下時間沒有空教室就往後延一個時間
+                continue;
+            }
+            // System.out.println(" "+classroomnum);
+            info.tempans.ans[grade][group][i] = info.course.id[id];// 到這邊表示教室 教授 同年級必修 空間皆符合要求
+            info.tempans.ans[grade][group][i + 1] = info.course.id[id];
+            info.tempans.classroom[grade][group][i] = 1;
+            info.tempans.classroom[grade][group][i + 1] = 1;
+            info.course.tempclassroom[id] = info.classroomid.id[classroomnum];// 填該堂課程分配到啥教室
+            info.professorid.timetable[info.course.professor[id]][i] = 1;
+            info.professorid.timetable[info.course.professor[id]][i + 1] = 1;
+            info.classroomid.timetable[classroomnum][i] = 1;
+            info.classroomid.timetable[classroomnum][i + 1] = 1;
+            if (info.course.period[id] == 3) {// 連續三堂課的
+                info.tempans.ans[grade][group][i + 2] = info.course.id[id];
+                info.tempans.classroom[grade][group][i + 2] = 1;
+                info.professorid.timetable[info.course.professor[id]][i + 2] = 1;
+                info.classroomid.timetable[classroomnum][i + 2] = 1;
+            }
+            break;
         }
-        /*
-         * for(int i=0;i<info.course.maxOfGrade[grade];i++){
-         * info.course.tempclassroom[info.course.semOrder[grade][i]]=-1;
-         * }
-         */
     }
 
     void show(info info) {
