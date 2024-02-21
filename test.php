@@ -16,5 +16,7 @@ $(document).ready(function(){
 <p>Click me away!</p>
 <p class = "test">Click me too!</p>
 
+<input type="file" name="file" id="File" style="width:0.1px;height:0px;"/>
+<label for="File" style="color:red;">Choose a file</label>
 </body>
 </html>
