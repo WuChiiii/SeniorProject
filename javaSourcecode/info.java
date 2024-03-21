@@ -14,7 +14,7 @@ public class info {
           int rowcount;
           String url = "jdbc:mysql://localhost:3306/undergraduate_project";
           String user = "root";
-          String password = "920718";//enter your own password
+          String password = "";//enter your own password
           try {
                Class.forName(driver);               conn = DriverManager.getConnection(url, user, password);
                st = conn.createStatement();// connection
