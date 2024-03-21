@@ -14,7 +14,7 @@ public class initsol {
         ResultSet rs = null;
         String url = "jdbc:mysql://localhost:3306/undergraduate_project";
         String user = "root";
-        String password = "";//enter your own password
+        String password = "920718";//enter your own password
         for (int i = 0; i < info.course.cnt; i++) {// admin的課程先塞
             // System.out.print("complete0");
             if (info.course.priority[i] == 0) {// admin加的

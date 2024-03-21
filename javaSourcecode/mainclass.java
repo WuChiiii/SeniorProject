@@ -9,7 +9,7 @@ public class mainclass{
 		firstsol.createfun(info);
 		writebackdb db=new writebackdb();
 		db.run(info);
-		System.out.println("success end new");
+		System.out.println("success  bitch");
 	}
 }
 

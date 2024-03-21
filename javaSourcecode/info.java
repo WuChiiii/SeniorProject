@@ -14,13 +14,9 @@ public class info {
           int rowcount;
           String url = "jdbc:mysql://localhost:3306/undergraduate_project";
           String user = "root";
-          String password = "";//enter your own password
+          String password = "920718";//enter your own password
           try {
-
-               Class.forName(driver);
-               conn = DriverManager.getConnection(url, user, password);
-               System.out.println("成功連結資料庫");
-
+               Class.forName(driver);               conn = DriverManager.getConnection(url, user, password);
                st = conn.createStatement();// connection
 
                rs = st.executeQuery("SELECT COUNT(*) FROM teachers");// here
@@ -111,7 +107,7 @@ public class info {
                e.printStackTrace();
           } catch (SQLException e) {
                e.printStackTrace();
-               System.out.println("找不到SQL121");
+               System.out.println("can't find SQL121");
           }
      }
 
