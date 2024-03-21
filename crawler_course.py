@@ -1,3 +1,5 @@
+import ssl
+ssl._create_default_https_context = ssl._create_unverified_context
 import urllib.request as req
 
 # retrieve == 1 ->> drop the current exitsting table first 
@@ -38,6 +40,7 @@ def crawler( url , header , last_id , dbE , retrieve = 0 ):
 
     if( retrieve == 1 ): 
         cursor.execute("drop table if exists undergraduate_project.courses;")
+
     # cursor.execute('create table courses if not exist ( "id" int(255) AUTO_INCREMENT PRIMARY_KEY, "courseName" varchar(255), "studentNumber" int(255), "period" int(255), "semester" varchar(255), "classType" varchar(255), classroomType varchar(255), "group" int(255) );')  
     if( dbE == 0 ):
         cursor.execute('create table if not exists courses ( id int PRIMARY KEY AUTO_INCREMENT, courseName varchar(255), courseNumber varchar(255), credit varchar(255), period varchar(255), semester varchar(255), groupType varchar(255), classType varchar(255), remarks varchar(255), program varchar(255));' )
@@ -90,7 +93,6 @@ def crawler( url , header , last_id , dbE , retrieve = 0 ):
     return last_id
 def checkDB():
     import pymysql
-
     host = "localhost" 
     user = "root" 
     password = "" # Enter your own password 
