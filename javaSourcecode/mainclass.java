@@ -3,7 +3,7 @@
 
 public class mainclass{                              
 	public static void main (String[] args){ 
-		String password = "bruno920718";
+		String password = "";
 		System.out.println("success start");
 		info info= new info(password);
 		initsol firstsol=new initsol(); 
