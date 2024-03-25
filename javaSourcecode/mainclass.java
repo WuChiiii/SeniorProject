@@ -3,13 +3,14 @@
 
 public class mainclass{                              
 	public static void main (String[] args){ 
+		String password = "bruno920718";
 		System.out.println("success start");
-		info info= new info();
+		info info= new info(password);
 		initsol firstsol=new initsol(); 
-		firstsol.createfun(info);
+		firstsol.createfun(info,password);
 		writebackdb db=new writebackdb();
-		db.run(info);
-		System.out.println("success ending");
+		db.run(info,password);
+		System.out.println("test ending");
 	}
 }
 

@@ -16,6 +16,13 @@
 	$international3 = $international->fetch(PDO::FETCH_ASSOC);
 	$international4 = $international->fetch(PDO::FETCH_ASSOC);
 ?>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>History curriculum 4</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
 <header>
 	<style>
 		th.center-text {
@@ -46,7 +53,7 @@
 		資工系課程表</br>
 	</h4>
 
-	<table border="1" style="border-collapse:collapse;">
+	<table border="1" style="border-collapse:collapse;" id =pre4_Table>
 		<thead>
 			<tr>
 				<thead>
@@ -1025,7 +1032,7 @@
 						<?php 
 							if ($normal1["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1052,7 +1059,7 @@
 						<?php 
 							if ($normal2["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1079,7 +1086,7 @@
 						<?php 
 							if ($normal3["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1107,7 +1114,7 @@
 						<?php 
 							if ($international1["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1134,7 +1141,7 @@
 						<?php 
 							if ($international2["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1161,7 +1168,7 @@
 						<?php 
 							if ($international3["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1198,7 +1205,7 @@
 						<?php 
 							if ($normal4["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1208,7 +1215,7 @@
 							} 
 							if ($international4["1-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["1-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["1-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1248,7 +1255,7 @@
 						<?php 
 							if ($normal1["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1275,7 +1282,7 @@
 						<?php 
 							if ($normal2["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1302,7 +1309,7 @@
 						<?php 
 							if ($normal3["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1330,7 +1337,7 @@
 						<?php 
 							if ($international1["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1357,7 +1364,7 @@
 						<?php 
 							if ($international2["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1384,7 +1391,7 @@
 						<?php 
 							if ($international3["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1421,7 +1428,7 @@
 						<?php 
 							if ($normal4["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1431,7 +1438,7 @@
 							} 
 							if ($international4["2-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["2-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["2-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1470,7 +1477,7 @@
 						<?php 
 							if ($normal1["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1497,7 +1504,7 @@
 						<?php 
 							if ($normal2["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1524,7 +1531,7 @@
 						<?php 
 							if ($normal3["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1552,7 +1559,7 @@
 						<?php 
 							if ($international1["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1579,7 +1586,7 @@
 						<?php 
 							if ($international2["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1606,7 +1613,7 @@
 						<?php 
 							if ($international3["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1643,7 +1650,7 @@
 						<?php 
 							if ($normal4["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1653,7 +1660,7 @@
 							} 
 							if ($international4["3-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["3-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["3-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1692,7 +1699,7 @@
 						<?php 
 							if ($normal1["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1719,7 +1726,7 @@
 						<?php 
 							if ($normal2["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1746,7 +1753,7 @@
 						<?php 
 							if ($normal3["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1774,7 +1781,7 @@
 						<?php 
 							if ($international1["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1801,7 +1808,7 @@
 						<?php 
 							if ($international2["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1828,7 +1835,7 @@
 						<?php 
 							if ($international3["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1865,7 +1872,7 @@
 						<?php 
 							if ($normal4["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1875,7 +1882,7 @@
 							}
 							if ($international4["4-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["4-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["4-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1915,7 +1922,7 @@
 						<?php 
 							if ($normal1["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1942,7 +1949,7 @@
 						<?php 
 							if ($normal2["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1969,7 +1976,7 @@
 						<?php 
 							if ($normal3["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -1997,7 +2004,7 @@
 						<?php 
 							if ($international1["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2024,7 +2031,7 @@
 						<?php 
 							if ($international2["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2051,7 +2058,7 @@
 					<?php 
 							if ($international3["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2088,7 +2095,7 @@
 						<?php 
 							if ($normal4["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2098,7 +2105,7 @@
 							}
 							if ($international4["5-4"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["5-4"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["5-4"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2962,7 +2969,7 @@
 						<?php 
 							if ($normal1["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -2989,7 +2996,7 @@
 						<?php 
 							if ($normal2["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3016,7 +3023,7 @@
 						<?php 
 							if ($normal3["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3044,7 +3051,7 @@
 						<?php 
 							if ($international1["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3071,7 +3078,7 @@
 						<?php 
 							if ($international2["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3098,7 +3105,7 @@
 						<?php 
 							if ($international3["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3135,7 +3142,7 @@
 						<?php 
 							if ($normal4["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3145,7 +3152,7 @@
 							} 
 							if ($international4["1-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["1-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["1-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3186,7 +3193,7 @@
 						<?php 
 							if ($normal1["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3213,7 +3220,7 @@
 						<?php 
 							if ($normal2["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3240,7 +3247,7 @@
 						<?php 
 							if ($normal3["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3268,7 +3275,7 @@
 						<?php 
 							if ($international1["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3295,7 +3302,7 @@
 						<?php 
 							if ($international2["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3322,7 +3329,7 @@
 						<?php 
 							if ($international3["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3359,7 +3366,7 @@
 					<?php 
 							if ($normal4["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3369,7 +3376,7 @@
 							} 
 							if ($international4["2-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["2-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["2-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3409,7 +3416,7 @@
 						<?php 
 							if ($normal1["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3436,7 +3443,7 @@
 						<?php 
 							if ($normal2["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3463,7 +3470,7 @@
 						<?php 
 							if ($normal3["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3491,7 +3498,7 @@
 						<?php 
 							if ($international1["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3518,7 +3525,7 @@
 						<?php 
 							if ($international2["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3545,7 +3552,7 @@
 						<?php 
 							if ($international3["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3582,7 +3589,7 @@
 						<?php 
 							if ($normal4["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3592,7 +3599,7 @@
 							} 
 							if ($international4["3-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["3-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["3-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3632,7 +3639,7 @@
 						<?php 
 							if ($normal1["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3659,7 +3666,7 @@
 						<?php 
 							if ($normal2["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3686,7 +3693,7 @@
 						<?php 
 							if ($normal3["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3714,7 +3721,7 @@
 						<?php 
 							if ($international1["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3741,7 +3748,7 @@
 						<?php 
 							if ($international2["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3768,7 +3775,7 @@
 						<?php 
 							if ($international3["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3805,7 +3812,7 @@
 						<?php 
 							if ($normal4["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3815,7 +3822,7 @@
 							}
 							if ($international4["4-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["4-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["4-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3855,7 +3862,7 @@
 						<?php 
 							if ($normal1["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal1["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal1["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3882,7 +3889,7 @@
 						<?php 
 							if ($normal2["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal2["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal2["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3909,7 +3916,7 @@
 						<?php 
 							if ($normal3["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal3["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal3["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3937,7 +3944,7 @@
 						<?php 
 							if ($international1["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international1["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international1["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3964,7 +3971,7 @@
 						<?php 
 							if ($international2["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international2["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international2["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -3991,7 +3998,7 @@
 						<?php 
 							if ($international3["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international3["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international3["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -4028,7 +4035,7 @@
 						<?php 
 							if ($normal4["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$normal4["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$normal4["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -4038,7 +4045,7 @@
 							} 
 							if ($international4["5-9"] != -1) {
 								$row = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$international4["5-9"])->fetch(PDO::FETCH_ASSOC);
-								$classroomid=$row["classroom_id"];
+								$classroomid=$row["pre4_classroom_id"];
 								$professorid=$row["professor_id"];
 								$row = $conn->query("SELECT * FROM course_selection WHERE id =".$international4["5-9"])->fetch(PDO::FETCH_ASSOC); 
 								$name=$row["courseName"];
@@ -4951,5 +4958,15 @@
 		</tbody>
 	</table>
 </center>
+<button onclick="exportToExcel()">Export to Excel</button>
 
+<script>
+function exportToExcel() {
+  var table = document.getElementById("pre4_Table");
+  var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet1"});
+  XLSX.writeFile(wb, "previous_curriculum.xlsx");
+}
+</script>
+
+</body>
 </html>

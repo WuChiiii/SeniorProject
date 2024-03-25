@@ -38,19 +38,28 @@ if (isset($_POST['add_schedule_submit'])) {
     $result = $conn->query($checkTableSql);
     if ($result->rowCount() > 0) 
         $conn->exec("INSERT INTO pre1_csie SELECT * FROM normalschedule");
+    
+    $checkTableSql = "SHOW TABLES LIKE 'mapping_id'";
+    $result = $conn->query($checkTableSql);
+    if ($result->rowCount() > 0) {
+        $conn->exec("UPDATE mapping_id
+        SET pre4_classroom_id = pre3_classroom_id,
+            pre3_classroom_id = pre2_classroom_id,
+            pre2_classroom_id = pre1_classroom_id,
+            pre1_classroom_id = classroom_id"); 
+    }
+        
+     
 
     //end of translate---------------------------------------------------------------------------------------------
 
 
     $path_back =getcwd();
-    $path_to_source =getcwd() ."\javaSourcecode";
-    $path_to_jar=getcwd() .'\environment\bin\jar.exe';
-    $path_to_javac=getcwd() .'\environment\bin\javac.exe';
-    $java_Exe =getcwd() .'\environment\bin\java.exe'; 
-    shell_exec( "$path_to_javac"." -encoding utf-8 "."$path_to_source"."\*.java" );
-    shell_exec("cd "."$path_to_source"." && "."$path_to_jar"." -cvfm mainclass.jar MANIFEST.MF *.class");
+    $path_to_source =getcwd() ."\javaSourcecode"; 
+    shell_exec( "javac -encoding utf-8 ".getcwd()."\javaSourcecode\*.java" );
+    shell_exec("cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class");
     shell_exec("cd "."$path_back");
-    $output = shell_exec( "$java_Exe"." -jar "."$path_to_source"."\mainclass.jar" );
+    $output = shell_exec( "java -jar "."$path_to_source"."\mainclass.jar" );
     var_dump($output);
     echo "<script> window.location = 'forschedule.php' ; </script>" ;
 }

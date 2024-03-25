@@ -16,6 +16,13 @@
 	$international3 = $international->fetch(PDO::FETCH_ASSOC);
 	$international4 = $international->fetch(PDO::FETCH_ASSOC);
 ?>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>curriculum</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+</head>
 <header>
 	<style>
 		th.center-text {
@@ -45,8 +52,7 @@
 	<h4 align="center">
 		資工系課程表</br>
 	</h4>
-
-	<table border="1" style="border-collapse:collapse;">
+	<table border="1" style="border-collapse:collapse;" id=myTable>
 		<thead>
 			<tr>
 				<thead>
@@ -11877,5 +11883,15 @@
 		</tbody>
 	</table>
 </center>
+<button onclick="exportToExcel()">Export to Excel</button>
 
+<script>
+function exportToExcel() {
+  var table = document.getElementById("myTable");
+  var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet1"});
+  XLSX.writeFile(wb, "curriculum.xlsx");
+}
+</script>
+
+</body>
 </html>

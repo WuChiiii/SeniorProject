@@ -2,14 +2,13 @@ import java.sql.*;
 
 public class writebackdb {
     writebackdb(){}
-    void run(info info){
+    void run(info info,String password){
         String driver ="com.mysql.cj.jdbc.Driver";      
 		Connection conn = null;
 		Statement st = null;
-		//ResultSet rs = null;
+		ResultSet rs = null;
 		String url= "jdbc:mysql://localhost:3306/undergraduate_project";
 		String user = "root";
-        String password = "";//enter your own password
 		try {
 			Class.forName(driver);
 			conn = DriverManager.getConnection(url, user, password);
@@ -17,8 +16,6 @@ public class writebackdb {
             String droptable="DROP TABLE IF EXISTS normalschedule";
             st.execute(droptable);
             droptable="DROP TABLE IF EXISTS internationalschedule";
-            st.execute(droptable);
-            droptable="DROP TABLE IF EXISTS mapping_id";
             st.execute(droptable);
             String dropprofessortable="DROP TABLE IF EXISTS professorschedule";
             st.execute(dropprofessortable);
@@ -72,26 +69,11 @@ public class writebackdb {
                 "`5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,"+
                 "`5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT)"+
                 "ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; ";
-            String createclassroompair="CREATE TABLE if not exists `mapping_id` ("+
-                "`class_id` int,"+
-                "`classroom_id` int,"+
-                "`professor_id` int"+
-                ") ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;";
             st.execute(createinternationaltable);
             st.execute(createprofessortable);
             st.execute(createclassroomtable);
             st.execute(createnormaltable);
-            st.execute(createclassroompair);
 
-            // Insert data into the table
-            for(int i=0;i<4;i++){
-                for(int k=0;k<2;k++){
-                    for(int m=0;m<80;m++){
-                        System.out.print(info.tempans.ans[i][k][m] );
-                    }
-                    System.out.println(" ");
-                }
-            }
             for(int i=0;i<info.professorid.rownum;i++){
                 String insertDataSQL = "INSERT INTO  professorschedule VALUES ("+info.professorid.id[i]+","+
                 info.professorid.timetable[i][0]+","+info.professorid.timetable[i][1]+","+info.professorid.timetable[i][2]+","+info.professorid.timetable[i][3]+","+info.professorid.timetable[i][4]+","+info.professorid.timetable[i][5]+","+info.professorid.timetable[i][6]+","+info.professorid.timetable[i][7]+","+
@@ -152,9 +134,16 @@ public class writebackdb {
                 ")";
                 st.executeUpdate(insertDataSQL);
             }
+        
             for(int i=0;i<info.course.cnt;i++){
-                String insertpair="INSERT INTO  mapping_id VALUES ("+info.course.id[i]+","+info.course.tempclassroom[i]+","+info.professorid.id[info.course.professor[i]]+")";
-                st.executeUpdate(insertpair);          
+                rs=st.executeQuery("SELECT * FROM mapping_id WHERE class_id = "+info.course.id[i]);
+                rs.next();
+                if(!rs.next()){
+                    st.executeUpdate("INSERT INTO  mapping_id VALUES ("+info.course.id[i]+","+info.professorid.id[info.course.professor[i]]+","+info.course.tempclassroom[i]+",-1,-1,-1,-1)");
+                }
+                else{
+                    st.executeUpdate("UPDATE mapping_id SET professor_id = "+info.professorid.id[info.course.professor[i]]+" , classroom_id ="+info.course.tempclassroom[i]+"  WHERE class_id ="+info.course.id[i]);
+                }        
             }
             
 
@@ -162,13 +151,13 @@ public class writebackdb {
 		}         
 		catch(ClassNotFoundException e)
 		{
-               System.out.println("找不到寫入之驅動程式");
+               System.out.println("can't find driver for reading files, please check writebackdb.java");
 			e.printStackTrace();
 		}
 		catch(SQLException e)
 		{
 			e.printStackTrace();
-               System.out.println("找不到SQL write");
+               System.out.println("SQL access denied, please check writebackdb.java");
 		}
     }
 }

@@ -7,16 +7,14 @@ public class initsol {
     initsol() {
     }
 
-    void createfun(info info) {
+    void createfun(info info,String password) {
         String driver = "com.mysql.cj.jdbc.Driver";
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
         String url = "jdbc:mysql://localhost:3306/undergraduate_project";
         String user = "root";
-        String password = "";//enter your own password
-        for (int i = 0; i < info.course.cnt; i++) {// admin的課程先塞
-            // System.out.print("complete0");
+        for (int i = 0; i < info.course.cnt; i++) {// admin
             if (info.course.priority[i] == 0) {// admin加的
                 try {
                     String time, classroomstr,sql;
@@ -26,16 +24,13 @@ public class initsol {
                     conn = DriverManager.getConnection(url, user, password);
                     st = conn.createStatement();// connection
                     
-                    System.out.print("complete0");
                     sql="select * from course_selection where id =" + info.course.id[i] + ";";
-                    rs = st.executeQuery(sql);// here
+                    rs = st.executeQuery(sql);
                     rs.next();
-                    System.out.print("complete");
                     time = rs.getString("time");
                     classroomstr = rs.getString("classroom");
                     sql="select * from classroom where classroom_no ='" + classroomstr + "';";
-                    rs = st.executeQuery(sql);// here
-                    System.out.println("complete2");
+                    rs = st.executeQuery(sql);
                     rs.next();
                     classroomtemp = rs.getInt("classroomid");
                     for(int k=0;k<info.classroomid.rownum;k++){
@@ -57,7 +52,6 @@ public class initsol {
                             current+=2;
                         }
                         numarr[count++] = tmp;
-                        System.out.println(tmp);
                     }
                     for (int k = 0; k < count; k++) {
                         info.tempans.ans[info.course.semester[i]][info.course.group[i]][numarr[k]] = info.course.id[i];
@@ -66,11 +60,11 @@ public class initsol {
                     }
                     conn.close();
                 } catch (ClassNotFoundException e) {
-                    System.out.println("找不到的驅動程式");
+                    System.out.println("can't find driver for reading files, please check initsol.java");
                     e.printStackTrace();
                 } catch (SQLException e) {
                     e.printStackTrace();
-                    System.out.println("找不到SQLhh");
+                    System.out.println("SQL access denied, please check initsol.java");
                 }
             }
         }
@@ -79,7 +73,6 @@ public class initsol {
                 for (int cur = 0; info.course.classify[grade][group][1][1][cur] != -1; cur++) {
                     if (info.course.priority[info.course.classify[grade][group][1][1][cur]] == 0)
                         continue;
-                    System.out.println(info.course.classify[grade][group][1][1][cur]);
                     int temp = funt(grade, group, 1, 1, cur, info);
                     if (temp == 0)
                         cur--;
@@ -97,7 +90,6 @@ public class initsol {
                 }
             }
         }
-        // System.out.println("here2");
         for (int grade = 0; grade < 4; grade++) {// 必修非電腦教室
             for (int group = 0; group < 2; group++) {
                 for (int cur = 0; info.course.classify[grade][group][0][1][cur] != -1; cur++) {
@@ -109,7 +101,6 @@ public class initsol {
                 }
             }
         }
-        // System.out.println("here3");
         for (int grade = 0; grade < 4; grade++) {// 選修非電腦教室
             for (int group = 0; group < 2; group++) {
                 for (int cur = 0; info.course.classify[grade][group][0][0][cur] != -1; cur++) {
@@ -141,17 +132,14 @@ public class initsol {
         }
         firstRandomnum = randomnumber;
         while (true) {
-            // System.out.println(" "+randomnumber+" "+grade+" "+cur+" "+firstRandomnum);
             randomnumber = findTheTime(firstRandomnum, grade, group, randomnumber, id, remain, info);
             remain = randomnumber % 16;
-            // System.out.print(" "+randomnumber);
             if (randomnumber == -1) {
                 remainclass(info, grade, group, id);
                 break;
             }
             classroomnum = findTheClassroom(info, randomnumber, id);
             if (classroomnum == -1) {// 當下時間沒有空教室
-                System.out.println("hrer");
                 if (remain == 3) {
                     randomnumber += 5;
                     remain = 8;
@@ -167,7 +155,6 @@ public class initsol {
                 }
                 continue;
             }
-            // System.out.println(" "+classroomnum);
             info.tempans.ans[grade][group][randomnumber] = info.course.id[id];// 到這邊表示教室 教授 同年級必修 空間皆符合要求
             info.tempans.ans[grade][group][randomnumber + 1] = info.course.id[id];
             info.tempans.classroom[grade][group][randomnumber] = 1;
@@ -202,7 +189,6 @@ public class initsol {
                                 info.tempans.ans[grade][group][randomnumber + 1] != -1 ||
                                 info.professorid.timetable[info.course.professor[cur]][randomnumber] != 0 ||
                                 info.professorid.timetable[info.course.professor[cur]][randomnumber + 1] != 0))) {// 隨機的時間有同年級必修或教授當下有課就往後延直到找到合適時間
-            // System.out.print(" "+randomnumber+" "+cur+" ");
             if (remain == 3) {
                 randomnumber += 5;
                 remain = 8;
@@ -257,7 +243,6 @@ public class initsol {
             if (classroomnum == -1) {// 當下時間沒有空教室就往後延一個時間
                 continue;
             }
-            // System.out.println(" "+classroomnum);
             info.tempans.ans[grade][group][i] = info.course.id[id];// 到這邊表示教室 教授 同年級必修 空間皆符合要求
             info.tempans.ans[grade][group][i + 1] = info.course.id[id];
             info.tempans.classroom[grade][group][i] = 1;

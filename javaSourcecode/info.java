@@ -6,7 +6,7 @@ public class info {
      classinfo course;
      temptimetable tempans = new temptimetable();
 
-     info() {
+     info(String password) {
           String driver = "com.mysql.cj.jdbc.Driver";
           Connection conn = null;
           Statement st = null;
@@ -14,40 +14,37 @@ public class info {
           int rowcount;
           String url = "jdbc:mysql://localhost:3306/undergraduate_project";
           String user = "root";
-          String password = "";//enter your own password
           try {
-               Class.forName(driver);               conn = DriverManager.getConnection(url, user, password);
-               st = conn.createStatement();// connection
+               Class.forName(driver);               
+               conn = DriverManager.getConnection(url, user, password);
+               st = conn.createStatement();
 
-               rs = st.executeQuery("SELECT COUNT(*) FROM teachers");// here
+               rs = st.executeQuery("SELECT COUNT(*) FROM teachers");
                rs.next();
                rowcount = rs.getInt(1);
                rs = st.executeQuery("select * from teachers");
                professorid = new professorno(rowcount);
-               // System.out.println(rowcount);
                for (int i = 0; rs.next(); i++) {
                     professorid.id[i] = rs.getInt("teacherid");
                     professorid.name[i] = rs.getString("teacher_name");
                     String temp = rs.getString("teacher_department");
                     if (temp.equals("CSIE")) {
                          professorid.department[i] = 0;
-                         // System.out.println("");
                     } else {
-                         professorid.department[i] = 1;// 外系
+                         professorid.department[i] = 1;
                     }
-               } // to here is data loaded for professorname
+               }
                rs = st.executeQuery("select * from professorschedule");
                for (int i = 0; rs.next(); i++) {//
                     for (int m = 0; m < 80; m++) {
                          professorid.timetable[i][m] = 0;
                     }
                }
-               rs = st.executeQuery("SELECT COUNT(*) FROM classroom");// here
+               rs = st.executeQuery("SELECT COUNT(*) FROM classroom");
                rs.next();
                rowcount = rs.getInt(1);
                rs = st.executeQuery("select * from classroom");
                classroomid = new classroomno(rowcount);
-               // System.out.println(rowcount);
                for (int i = 0; rs.next(); i++) {
                     classroomid.id[i] = rs.getInt("classroomid");
                     classroomid.computer[i] = rs.getInt("classroom_type");
@@ -64,15 +61,14 @@ public class info {
                for (int i = 0; rs.next(); i++) {
                     for (int m = 0; m < 80; m++) {
                          classroomid.timetable[i][m] = 0;
-                    } // to here is data loaded for classroomname
+                    } 
                }
 
-               rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");// here
+               rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");
                rs.next();
                rowcount = rs.getInt(1);
                rs = st.executeQuery("select  * from course_selection");
                course = new classinfo(rowcount);
-               // System.out.println(rowcount);
                for (int i = 0; rs.next(); i++) {
                     String temp;
                     course.id[i] = rs.getInt("id");
@@ -100,18 +96,17 @@ public class info {
                          }
                     }
                }
-               // course.show(rowcount);
                conn.close();
           } catch (ClassNotFoundException e) {
-               System.out.println("找不到讀檔的驅動程式");
+               System.out.println("can't find driver for reading files, please check info.java");
                e.printStackTrace();
           } catch (SQLException e) {
                e.printStackTrace();
-               System.out.println("can't find SQL121");
+               System.out.println("SQL access denied, please check info.java");
           }
      }
 
-     public class professorno {// debug 完成
+     public class professorno {
           public int id[], department[];
           public String name[];
           public int[][] timetable;
@@ -126,7 +121,7 @@ public class info {
           }
      }
 
-     public class classroomno {// debug 完成
+     public class classroomno {
           public int id[], size[], computer[], department[];
           public int[][] timetable;
           public int rownum;
@@ -143,11 +138,11 @@ public class info {
           }
      }
 
-     public class classinfo {// debug 完成
+     public class classinfo {
           public int id[], professor[], period[], classroomtype[], classtype[], semester[], classify[][][][][],
                     priority[];
           public String name[];
-          public int tempclassroom[], group[], cnt;// 存6個年級的課程
+          public int tempclassroom[], group[], cnt;
 
           classinfo(int rowcount) {
                cnt = rowcount;
@@ -161,7 +156,6 @@ public class info {
                tempclassroom = new int[rowcount];
                classtype = new int[rowcount];
                semester = new int[rowcount];
-               // semOrder=new int[6][rowcount];
                classify = new int[4][2][2][2][rowcount];
                for (int i = 0; i < rowcount; i++) {
                     tempclassroom[i] = -1;
@@ -192,7 +186,6 @@ public class info {
                          }
                     }
                }
-               // System.out.print(classify[2][1][1][1][0] +" ");
           }
      }
 

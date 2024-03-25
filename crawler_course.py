@@ -29,7 +29,7 @@ def crawler( url , header , last_id , dbE , retrieve = 0 ):
 
     host = "localhost" 
     user = "root" 
-    password = "" # Enter your own password 
+    password = "bruno920718" # Enter your own password 
     db = "undergraduate_project" 
 
     connect = pymysql.connect( host = host , user = user , password = password , db = db )
@@ -95,7 +95,7 @@ def checkDB():
     import pymysql
     host = "localhost" 
     user = "root" 
-    password = "" # Enter your own password 
+    password = "bruno920718" # Enter your own password 
     db = "undergraduate_project" 
 
     connect = pymysql.connect( host = host , user = user , password = password , db = db )
