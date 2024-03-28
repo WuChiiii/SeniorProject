@@ -11,3 +11,8 @@ https://www.kjnotes.com/devtools/35
 https://www.python.org/downloads/
 ### 4.Execute the downloaded executable file and save the file to the specified folder. Additionally, on the download page, you can choose to automatically add Python to the PATH. If this option is unchecked, you'll need to follow the method described above to add the downloaded Java file's path to the PATH environment variable. For more details, please refer to the following website for downloading.
 https://ithelp.ithome.com.tw/articles/10210071
+
+# Setup the Database Credentials (Windows)
+### 1.Start Menu -> Systems -> Advanced System Setting -> Environment Variables -> New System variables ** Set the variable name to DBpassw **
+#### ( Note: It's syetem variable NOT User variable which cannot be seen by the web server )  
+### 2.Restart the web server 

@@ -1,6 +1,7 @@
 import ssl
 ssl._create_default_https_context = ssl._create_unverified_context
 import urllib.request as req
+import os
 
 # retrieve == 1 ->> drop the current exitsting table first 
 # dbE == 1 ->> the table courses exists
@@ -29,7 +30,7 @@ def crawler( url , header , last_id , dbE , retrieve = 0 ):
 
     host = "localhost" 
     user = "root" 
-    password = "" # Enter your own password 
+    password = os.environ.get('DBpassw') # Enter your own password 
     db = "undergraduate_project" 
 
     connect = pymysql.connect( host = host , user = user , password = password , db = db )
@@ -95,7 +96,7 @@ def checkDB():
     import pymysql
     host = "localhost" 
     user = "root" 
-    password = "" # Enter your own password 
+    password = os.environ.get('DBpassw') # Enter your own password 
     db = "undergraduate_project" 
 
     connect = pymysql.connect( host = host , user = user , password = password , db = db )

@@ -11,7 +11,13 @@ $(document).ready(function(){
 </script>
 </head>
 <body>
+<?php
 
+foreach (getenv() as $key => $value) {
+  echo $key . ' - ' . $value . '<br/>' ;
+}
+echo "+++" . getenv('DBpassw') . "+++" ; 
+?>
 <p>If you click on me, I will disappear.</p>
 <p>Click me away!</p>
 <p class = "test">Click me too!</p>
