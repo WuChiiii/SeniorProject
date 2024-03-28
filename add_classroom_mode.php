@@ -17,9 +17,9 @@
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Department</label>
+                        <label class="control-label" for="inputPassword">Department   ***   ( 資工系必須為"CSIE" )   *** </label>
                         <div class="controls">
-                            <input type="text" class = "form-control" name="classroom_dept" pattern="[^'\\\x22;]*" placeholder="e.g.CSIE" >
+                            <input type="text" class = "form-control" name="classroom_dept" value="CSIE" pattern="[^'\\\x22;]*" placeholder="e.g.CSIE" required >
                         </div>
                     </div>
                                

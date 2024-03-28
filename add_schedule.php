@@ -53,19 +53,19 @@ if (isset($_POST['add_schedule_submit'])) {
 
     //end of translate---------------------------------------------------------------------------------------------
 
-
-    $path_back =getcwd();
-    $path_to_source =getcwd() ."\javaSourcecode"; 
-    shell_exec( "javac -encoding utf-8 ".getcwd()."\javaSourcecode\*.java" );
-    shell_exec("cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class");
+    $path_back = getcwd();
+    $path_to_source = getcwd() ."\javaSourcecode";
+    $path_to_java_bin = "\"C:\Users\user\AppData\Local\Programs\Eclipse Adoptium\jdk-17.0.7.7-hotspot\bin\"" ; //paste the absolute path 
+    shell_exec( $path_to_java_bin . "\javac.exe -encoding utf-8 ".getcwd()."\javaSourcecode\*.java" );
+    shell_exec("cd "."$path_to_source"." && " . $path_to_java_bin . "\jar.exe -cvfm mainclass.jar MANIFEST.MF *.class");
     shell_exec("cd "."$path_back");
-    $output = shell_exec( "java -jar "."$path_to_source"."\mainclass.jar" );
+    $output = shell_exec( $path_to_java_bin . "\java.exe -jar "."$path_to_source"."\mainclass.jar" );
     var_dump($output);
 
-    // echo "javac -encoding utf-8 ".getcwd()."\javaSourcecode\*.java<br/> " ; 
-    // echo  "cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class<br/>" ;
-    // echo "cd "."$path_back<br/>" ; 
-    // echo "java -jar "."$path_to_source"."\mainclass.jar<br/>" ; 
+    // echo $path_to_java_bin . "\javac.exe -encoding utf-8 " .getcwd()."\javaSourcecode\*.java<br/>" ; 
+    // echo  "cd "."$path_to_source"." && " . $path_to_java_bin . "\jar.exe -cvfm mainclass.jar MANIFEST.MF *.class<br/>" ;
+    // echo "cd ". $path_back . "<br/>" ; 
+    // echo $path_to_java_bin . "\java.exe -jar "."$path_to_source"."\mainclass.jar" ; 
 
     echo "<script> window.location = 'forschedule.php' ; </script>" ;
 }
