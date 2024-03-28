@@ -97,7 +97,7 @@
                                 // 生成下拉式選單
                                 echo '<select name=classroom class="form-control">';
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo '<option>' . $row['classroom_no'] . ( $row['classroom_type'] ? " ( computer classroom )" : "" ) . '</option>';
+                                    echo '<option>' . $row['classroom_no'] . ( $row['classroom_type'] ? " ( computer classroom )" : " " ) . '</option>';
                                 }
 
                                 echo '</select>';
