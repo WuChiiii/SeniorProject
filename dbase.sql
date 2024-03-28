@@ -148,7 +148,7 @@ CREATE TABLE if not exists `course_selection` (
   `program` varchar(255) NOT NULL, 
   `classroomType` int NOT NULL, 
   `studentNumber` int NOT NULL,
-  `userid` int NOT NULL,
+  `teacherid` int NOT NULL,
   `time` varchar(255) NOT NULL,
   `priority` int NOT NULL,
   `classroom` varchar(255) NOT NULL
@@ -161,21 +161,21 @@ CREATE TABLE if not exists `course_selection` (
 -- Table structure for table `classroomschedule`
 --
 
--- CREATE TABLE if not exists `classroomschedule` (
---   `classroomid` int NOT NULL,
---   `1-1` INT DEFAULT 0,`1-2` INT DEFAULT 0,`1-3` INT DEFAULT 0,`1-4` INT DEFAULT 0,`1-5` INT DEFAULT 0,`1-6` INT DEFAULT 0,`1-7` INT DEFAULT 0,
---   `1-8` INT DEFAULT 0,`1-9` INT DEFAULT 0,`1-10` INT DEFAULT 0,`1-11` INT DEFAULT 0,`1-12` INT DEFAULT 0,`1-13` INT DEFAULT 0,`1-14` INT DEFAULT 0,
---   `1-15` INT DEFAULT 0,`1-16` INT DEFAULT 0,`2-1` INT DEFAULT 0,`2-2` INT DEFAULT 0,`2-3` INT DEFAULT 0,`2-4` INT DEFAULT 0,`2-5` INT DEFAULT 0,
---   `2-6` INT DEFAULT 0,`2-7` INT DEFAULT 0,`2-8` INT DEFAULT 0,`2-9` INT DEFAULT 0,`2-10` INT DEFAULT 0,`2-11` INT DEFAULT 0,`2-12` INT DEFAULT 0,
---   `2-13` INT DEFAULT 0,`2-14` INT DEFAULT 0,`2-15` INT DEFAULT 0,`2-16` INT DEFAULT 0,`3-1` INT DEFAULT 0,`3-2` INT DEFAULT 0,`3-3` INT DEFAULT 0,
---   `3-4` INT DEFAULT 0,`3-5` INT DEFAULT 0,`3-6` INT DEFAULT 0,`3-7` INT DEFAULT 0,`3-8` INT DEFAULT 0,`3-9` INT DEFAULT 0,`3-10` INT DEFAULT 0,
---   `3-11` INT DEFAULT 0,`3-12` INT DEFAULT 0,`3-13` INT DEFAULT 0,`3-14` INT DEFAULT 0,`3-15` INT DEFAULT 0,`3-16` INT DEFAULT 0 ,`4-1` INT DEFAULT 0,
---   `4-2` INT DEFAULT 0,`4-3` INT DEFAULT 0,`4-4` INT DEFAULT 0,`4-5` INT DEFAULT 0,`4-6` INT DEFAULT 0,`4-7` INT DEFAULT 0,`4-8` INT DEFAULT 0,
---   `4-9` INT DEFAULT 0,`4-10` INT DEFAULT 0,`4-11` INT DEFAULT 0,`4-12` INT DEFAULT 0,`4-13` INT DEFAULT 0,`4-14` INT DEFAULT 0,`4-15` INT DEFAULT 0,
---   `4-16` INT DEFAULT 0,`5-1` INT DEFAULT 0,`5-2` INT DEFAULT 0,`5-3` INT DEFAULT 0,`5-4` INT DEFAULT 0,`5-5` INT DEFAULT 0,`5-6` INT DEFAULT 0,
---   `5-7` INT DEFAULT 0,`5-8` INT DEFAULT 0,`5-9` INT DEFAULT 0,`5-10` INT DEFAULT 0,`5-11` INT DEFAULT 0,`5-12` INT DEFAULT 0,`5-13` INT DEFAULT 0,
---   `5-14` INT DEFAULT 0,`5-15` INT DEFAULT 0,`5-16` INT DEFAULT 0
--- ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
+CREATE TABLE if not exists `classroomschedule` (
+   `classroomid` int NOT NULL,
+   `1-1` INT DEFAULT 0,`1-2` INT DEFAULT 0,`1-3` INT DEFAULT 0,`1-4` INT DEFAULT 0,`1-5` INT DEFAULT 0,`1-6` INT DEFAULT 0,`1-7` INT DEFAULT 0,
+   `1-8` INT DEFAULT 0,`1-9` INT DEFAULT 0,`1-10` INT DEFAULT 0,`1-11` INT DEFAULT 0,`1-12` INT DEFAULT 0,`1-13` INT DEFAULT 0,`1-14` INT DEFAULT 0,
+   `1-15` INT DEFAULT 0,`1-16` INT DEFAULT 0,`2-1` INT DEFAULT 0,`2-2` INT DEFAULT 0,`2-3` INT DEFAULT 0,`2-4` INT DEFAULT 0,`2-5` INT DEFAULT 0,
+   `2-6` INT DEFAULT 0,`2-7` INT DEFAULT 0,`2-8` INT DEFAULT 0,`2-9` INT DEFAULT 0,`2-10` INT DEFAULT 0,`2-11` INT DEFAULT 0,`2-12` INT DEFAULT 0,
+   `2-13` INT DEFAULT 0,`2-14` INT DEFAULT 0,`2-15` INT DEFAULT 0,`2-16` INT DEFAULT 0,`3-1` INT DEFAULT 0,`3-2` INT DEFAULT 0,`3-3` INT DEFAULT 0,
+   `3-4` INT DEFAULT 0,`3-5` INT DEFAULT 0,`3-6` INT DEFAULT 0,`3-7` INT DEFAULT 0,`3-8` INT DEFAULT 0,`3-9` INT DEFAULT 0,`3-10` INT DEFAULT 0,
+   `3-11` INT DEFAULT 0,`3-12` INT DEFAULT 0,`3-13` INT DEFAULT 0,`3-14` INT DEFAULT 0,`3-15` INT DEFAULT 0,`3-16` INT DEFAULT 0 ,`4-1` INT DEFAULT 0,
+   `4-2` INT DEFAULT 0,`4-3` INT DEFAULT 0,`4-4` INT DEFAULT 0,`4-5` INT DEFAULT 0,`4-6` INT DEFAULT 0,`4-7` INT DEFAULT 0,`4-8` INT DEFAULT 0,
+   `4-9` INT DEFAULT 0,`4-10` INT DEFAULT 0,`4-11` INT DEFAULT 0,`4-12` INT DEFAULT 0,`4-13` INT DEFAULT 0,`4-14` INT DEFAULT 0,`4-15` INT DEFAULT 0,
+   `4-16` INT DEFAULT 0,`5-1` INT DEFAULT 0,`5-2` INT DEFAULT 0,`5-3` INT DEFAULT 0,`5-4` INT DEFAULT 0,`5-5` INT DEFAULT 0,`5-6` INT DEFAULT 0,
+   `5-7` INT DEFAULT 0,`5-8` INT DEFAULT 0,`5-9` INT DEFAULT 0,`5-10` INT DEFAULT 0,`5-11` INT DEFAULT 0,`5-12` INT DEFAULT 0,`5-13` INT DEFAULT 0,
+   `5-14` INT DEFAULT 0,`5-15` INT DEFAULT 0,`5-16` INT DEFAULT 0
+ ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ; 
 
 
 --
@@ -393,6 +393,100 @@ CREATE TABLE if not exists `mapping_id`(
   `pre3_classroom_id` INT,
   `pre4_classroom_id` INT
 
-)ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;;
+)ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
  
--- --------------------------------------------------------
+-- ------------------------------------
+-- CREATE AND INSERT INITIAL VALUES 
+-- ------------------------------------
+
+CREATE TABLE if not exists `normalschedule`(
+  `grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
+  `1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,
+  `1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,
+  `2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,
+  `2-16` INT,`3-1` INT,`3-2` INT,`3-3` INT,`3-4` INT,`3-5` INT,`3-6` INT,`3-7` INT,
+  `3-8` INT,`3-9` INT,`3-10` INT,`3-11` INT,`3-12` INT,`3-13` INT,`3-14` INT,`3-15` INT,
+  `3-16` INT ,`4-1` INT,`4-2` INT,`4-3` INT,`4-4` INT,`4-5` INT,`4-6` INT,`4-7` INT,`4-8` INT,
+  `4-9` INT,`4-10` INT,`4-11` INT,`4-12` INT,`4-13` INT,`4-14` INT,`4-15` INT,`4-16` INT,
+  `5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,
+  `5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT 
+) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
+
+CREATE TABLE if not exists `internationalschedule`(
+  `grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
+  `1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,
+  `1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,
+  `2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,
+  `2-16` INT,`3-1` INT,`3-2` INT,`3-3` INT,`3-4` INT,`3-5` INT,`3-6` INT,`3-7` INT,
+  `3-8` INT,`3-9` INT,`3-10` INT,`3-11` INT,`3-12` INT,`3-13` INT,`3-14` INT,`3-15` INT,
+  `3-16` INT ,`4-1` INT,`4-2` INT,`4-3` INT,`4-4` INT,`4-5` INT,`4-6` INT,`4-7` INT,`4-8` INT,
+  `4-9` INT,`4-10` INT,`4-11` INT,`4-12` INT,`4-13` INT,`4-14` INT,`4-15` INT,`4-16` INT,
+  `5-1` INT,`5-2` INT,`5-3` INT,`5-4` INT,`5-5` INT,`5-6` INT,`5-7` INT,`5-8` INT,`5-9` INT,
+  `5-10` INT,`5-11` INT,`5-12` INT,`5-13` INT,`5-14` INT,`5-15` INT,`5-16` INT 
+)ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
+
+INSERT INTO `normalschedule`(
+  `grade` , `1-1` , `1-2` ,`1-3`, `1-4` , `1-5` , `1-6` , `1-7` ,
+  `1-8` , `1-9` , `1-10` , `1-11` , `1-12` , `1-13` , `1-14` , `1-15` ,
+  `1-16` , `2-1` , `2-2` , `2-3` , `2-4` , `2-5` , `2-6` , `2-7` ,
+  `2-8` , `2-9` , `2-10` , `2-11` , `2-12` , `2-13` , `2-14` , `2-15` ,
+  `2-16` , `3-1` , `3-2` , `3-3` , `3-4` , `3-5` , `3-6` , `3-7` ,
+  `3-8` , `3-9` , `3-10` , `3-11` , `3-12` , `3-13` , `3-14` , `3-15` ,
+  `3-16` , `4-1` , `4-2` , `4-3` , `4-4` , `4-5` , `4-6` , `4-7`  , `4-8` ,
+  `4-9` , `4-10` , `4-11` , `4-12` , `4-13` , `4-14` , `4-15` , `4-16` ,
+  `5-1` , `5-2` , `5-3` , `5-4` , `5-5` , `5-6` , `5-7` , `5-8` , `5-9` ,
+  `5-10` , `5-11` , `5-12` , `5-13` , `5-14` , `5-15` , `5-16`  
+) VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 2 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 3 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 4 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         )
+;
+
+INSERT INTO `internationalschedule`(
+  `grade` , `1-1` , `1-2` ,`1-3`, `1-4` , `1-5` , `1-6` , `1-7` ,
+  `1-8` , `1-9` , `1-10` , `1-11` , `1-12` , `1-13` , `1-14` , `1-15` ,
+  `1-16` , `2-1` , `2-2` , `2-3` , `2-4` , `2-5` , `2-6` , `2-7` ,
+  `2-8` , `2-9` , `2-10` , `2-11` , `2-12` , `2-13` , `2-14` , `2-15` ,
+  `2-16` , `3-1` , `3-2` , `3-3` , `3-4` , `3-5` , `3-6` , `3-7` ,
+  `3-8` , `3-9` , `3-10` , `3-11` , `3-12` , `3-13` , `3-14` , `3-15` ,
+  `3-16` , `4-1` , `4-2` , `4-3` , `4-4` , `4-5` , `4-6` , `4-7`  , `4-8` ,
+  `4-9` , `4-10` , `4-11` , `4-12` , `4-13` , `4-14` , `4-15` , `4-16` ,
+  `5-1` , `5-2` , `5-3` , `5-4` , `5-5` , `5-6` , `5-7` , `5-8` , `5-9` ,
+  `5-10` , `5-11` , `5-12` , `5-13` , `5-14` , `5-15` , `5-16`  
+) VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 2 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 3 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         ),
+         ( 4 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 ,
+              -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 
+         )
+;

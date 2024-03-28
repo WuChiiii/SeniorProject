@@ -19,6 +19,7 @@
         $conn -> query( $add_classroom_sql ) ;
     }catch( PDOException $e ){
         echo "<script> alert('The operation is failed ! You may tr to add a duplicate classroom !') ; </script>" ;  
+        // echo $e ; 
     }
     
     echo "<script> location.href = 'forclassroom.php' ; </script>" ;

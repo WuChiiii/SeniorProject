@@ -61,6 +61,12 @@ if (isset($_POST['add_schedule_submit'])) {
     shell_exec("cd "."$path_back");
     $output = shell_exec( "java -jar "."$path_to_source"."\mainclass.jar" );
     var_dump($output);
+
+    // echo "javac -encoding utf-8 ".getcwd()."\javaSourcecode\*.java<br/> " ; 
+    // echo  "cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class<br/>" ;
+    // echo "cd "."$path_back<br/>" ; 
+    // echo "java -jar "."$path_to_source"."\mainclass.jar<br/>" ; 
+
     echo "<script> window.location = 'forschedule.php' ; </script>" ;
 }
 else 
