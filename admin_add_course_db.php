@@ -11,7 +11,6 @@
     $classType = $_POST['Class_Type'] ; 
     $remarks = $_POST['Remarks'] ; 
     $program = $_POST['Program'] ; 
-    $classroomType = $_POST['Classroom_Type'] ;//default, the prof can change it later ; 
     $studentNumber = $_POST['Student_Number'] ; //default, the prof can change it later 
     $userid = $_SESSION['id'] ; //!!!once the professors' name are changed, the table should be updated also !!!
     //find the teacher userid with name
@@ -22,7 +21,13 @@
     $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
     $time=$_POST['time'];
     $priority=0;//1代表教授,0代表kiki
-    $classroom=$_POST['classroom'];
+    $classroom=$_POST['classroom'][ 0 ] . $_POST['classroom'][ 1 ] . $_POST['classroom'][ 2 ] . $_POST['classroom'][ 3 ] ;
+
+    $sql = 'select * from classroom where classroom_no = "' . $classroom[0] . $classroom[1] . $classroom[2] . $classroom[3] . '";';
+    $result = $conn->query($sql);
+    echo "classroom = " . $classroom ;
+    $row = $result->fetch(PDO::FETCH_ASSOC);
+    $classroomType = $row['classroom_type'] ; 
 
     var_dump( $courseNumber ) ; 
     var_dump( $groupType ) ; 

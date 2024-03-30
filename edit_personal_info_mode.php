@@ -38,13 +38,13 @@
                                     <div class="control-group">
                                         <label class="control-label" for="inputPassword">Position</label>
                                         <div class="controls">
-                                            <input type="text"  name="position" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $position ; ?>" required>
+                                            <input type="text"  name="position" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $position ; ?>">
                                         </div>
                                     </div>
                                     <div class="control-group">
                                         <label class="control-label" for="inputPassword">Department</label>
                                         <div class="controls">
-                                            <input name="department" type="text" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $department ; ?>" required>
+                                            <input name="department" type="text" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $department ; ?>">
                                         </div>
                                     </div>
 								<hr/>
