@@ -12,8 +12,8 @@
                 <!-- form -->
                 <form  method="post" enctype="multipart/form-data" action="add_classroom_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Classroom No.</label>
-                        <input type="text" name="classroom_no" class = "form-control" pattern="[^'\\\x22;]*" placeholder="e.g.B101" required>       
+                        <label class="control-label" for="inputEmail">Classroom No.    ***   ( 一個大寫字母 + 三個數字 )    *** </label>
+                        <input type="text" name="classroom_no" class = "form-control" pattern="^[A-Z][0-9][0-9][0-9]$" placeholder="e.g.B101" required>       
                     </div>
                                
                     <div class="control-group">
