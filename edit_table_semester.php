@@ -418,7 +418,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -444,7 +444,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -470,7 +470,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -498,7 +498,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -524,7 +524,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -550,7 +550,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -582,7 +582,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -622,7 +622,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -648,7 +648,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -674,7 +674,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -702,7 +702,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -728,7 +728,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -754,7 +754,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -786,7 +786,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -825,7 +825,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -851,7 +851,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -877,7 +877,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -905,7 +905,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -931,7 +931,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -957,7 +957,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -989,7 +989,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1028,7 +1028,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1054,7 +1054,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1080,7 +1080,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1108,7 +1108,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1134,7 +1134,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1160,7 +1160,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1192,7 +1192,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1231,7 +1231,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1257,7 +1257,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1283,7 +1283,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1311,7 +1311,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1337,7 +1337,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1363,7 +1363,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1395,7 +1395,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1444,7 +1444,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1470,7 +1470,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1496,7 +1496,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1524,7 +1524,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1550,7 +1550,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1576,7 +1576,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1608,7 +1608,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1648,7 +1648,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1674,7 +1674,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1700,7 +1700,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1728,7 +1728,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1754,7 +1754,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1780,7 +1780,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1812,7 +1812,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1851,7 +1851,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1877,7 +1877,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1903,7 +1903,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1931,7 +1931,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1957,7 +1957,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -1983,7 +1983,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2015,7 +2015,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2054,7 +2054,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2080,7 +2080,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2106,7 +2106,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2134,7 +2134,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2160,7 +2160,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2186,7 +2186,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2218,7 +2218,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2257,7 +2257,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2283,7 +2283,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2309,7 +2309,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2337,7 +2337,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2363,7 +2363,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2389,7 +2389,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2421,7 +2421,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2469,7 +2469,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2495,7 +2495,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2521,7 +2521,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2549,7 +2549,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2575,7 +2575,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2601,7 +2601,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2633,7 +2633,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2673,7 +2673,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2699,7 +2699,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2725,7 +2725,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2753,7 +2753,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2779,7 +2779,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2805,7 +2805,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2837,7 +2837,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2876,7 +2876,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2902,7 +2902,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2928,7 +2928,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2956,7 +2956,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -2982,7 +2982,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3008,7 +3008,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3040,7 +3040,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3079,7 +3079,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3105,7 +3105,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3131,7 +3131,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3159,7 +3159,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3185,7 +3185,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3211,7 +3211,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3243,7 +3243,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3282,7 +3282,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3308,7 +3308,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3334,7 +3334,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3362,7 +3362,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3388,7 +3388,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3414,7 +3414,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3446,7 +3446,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3496,7 +3496,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3522,7 +3522,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3548,7 +3548,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3576,7 +3576,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3602,7 +3602,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3628,7 +3628,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3660,7 +3660,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3700,7 +3700,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3726,7 +3726,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3752,7 +3752,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3780,7 +3780,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3806,7 +3806,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3832,7 +3832,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3864,7 +3864,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3903,7 +3903,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3929,7 +3929,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3955,7 +3955,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -3983,7 +3983,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4009,7 +4009,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4035,7 +4035,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4067,7 +4067,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4106,7 +4106,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4132,7 +4132,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4158,7 +4158,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4186,7 +4186,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4212,7 +4212,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4238,7 +4238,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4270,7 +4270,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4309,7 +4309,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4335,7 +4335,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4361,7 +4361,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4389,7 +4389,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4415,7 +4415,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4441,7 +4441,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4473,7 +4473,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4524,7 +4524,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4550,7 +4550,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4576,7 +4576,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4604,7 +4604,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4630,7 +4630,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4656,7 +4656,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4688,7 +4688,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4728,7 +4728,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4754,7 +4754,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4780,7 +4780,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4808,7 +4808,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4834,7 +4834,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4860,7 +4860,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4892,7 +4892,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4931,7 +4931,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4957,7 +4957,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -4983,7 +4983,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5011,7 +5011,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5037,7 +5037,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5063,7 +5063,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5095,7 +5095,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5134,7 +5134,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5160,7 +5160,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5186,7 +5186,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5214,7 +5214,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5240,7 +5240,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5266,7 +5266,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5298,7 +5298,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5337,7 +5337,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5363,7 +5363,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5389,7 +5389,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5417,7 +5417,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5443,7 +5443,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5469,7 +5469,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5501,7 +5501,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5550,7 +5550,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5576,7 +5576,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5602,7 +5602,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5630,7 +5630,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5656,7 +5656,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5682,7 +5682,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5714,7 +5714,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5754,7 +5754,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5780,7 +5780,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5806,7 +5806,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5834,7 +5834,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5860,7 +5860,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5886,7 +5886,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5918,7 +5918,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5957,7 +5957,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -5983,7 +5983,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6009,7 +6009,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6037,7 +6037,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6063,7 +6063,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6089,7 +6089,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6121,7 +6121,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6160,7 +6160,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6186,7 +6186,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6212,7 +6212,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6240,7 +6240,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6266,7 +6266,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6292,7 +6292,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6324,7 +6324,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6363,7 +6363,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6389,7 +6389,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6415,7 +6415,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6443,7 +6443,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6469,7 +6469,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6495,7 +6495,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6527,7 +6527,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6576,7 +6576,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6602,7 +6602,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6628,7 +6628,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6656,7 +6656,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6682,7 +6682,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6708,7 +6708,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6740,7 +6740,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6780,7 +6780,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6806,7 +6806,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6832,7 +6832,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6860,7 +6860,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6886,7 +6886,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6912,7 +6912,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6944,7 +6944,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -6989,7 +6989,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7015,7 +7015,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7041,7 +7041,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7069,7 +7069,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7095,7 +7095,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7121,7 +7121,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7153,7 +7153,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7192,7 +7192,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7218,7 +7218,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7244,7 +7244,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7272,7 +7272,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7298,7 +7298,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7324,7 +7324,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7356,7 +7356,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7405,7 +7405,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7431,7 +7431,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7457,7 +7457,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7485,7 +7485,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7511,7 +7511,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7537,7 +7537,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7569,7 +7569,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7609,7 +7609,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7635,7 +7635,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7661,7 +7661,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7689,7 +7689,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7715,7 +7715,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7741,7 +7741,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7773,7 +7773,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7812,7 +7812,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7838,7 +7838,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7864,7 +7864,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7892,7 +7892,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7918,7 +7918,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7944,7 +7944,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -7976,7 +7976,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8015,7 +8015,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8041,7 +8041,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8067,7 +8067,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8095,7 +8095,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8121,7 +8121,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8147,7 +8147,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8179,7 +8179,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8228,7 +8228,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8254,7 +8254,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8280,7 +8280,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8308,7 +8308,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8334,7 +8334,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8360,7 +8360,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8392,7 +8392,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8432,7 +8432,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8458,7 +8458,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8484,7 +8484,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8512,7 +8512,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8538,7 +8538,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8564,7 +8564,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8596,7 +8596,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8635,7 +8635,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8661,7 +8661,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8687,7 +8687,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8715,7 +8715,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8741,7 +8741,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8767,7 +8767,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8799,7 +8799,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8838,7 +8838,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8864,7 +8864,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8890,7 +8890,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8918,7 +8918,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8944,7 +8944,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -8970,7 +8970,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9002,7 +9002,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9041,7 +9041,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9067,7 +9067,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9093,7 +9093,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9121,7 +9121,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9147,7 +9147,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9173,7 +9173,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9205,7 +9205,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9254,7 +9254,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9280,7 +9280,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9306,7 +9306,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9334,7 +9334,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9360,7 +9360,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9386,7 +9386,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9418,7 +9418,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9458,7 +9458,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9484,7 +9484,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9510,7 +9510,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9538,7 +9538,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9564,7 +9564,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9590,7 +9590,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9622,7 +9622,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9661,7 +9661,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9687,7 +9687,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9713,7 +9713,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9741,7 +9741,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9767,7 +9767,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9793,7 +9793,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9825,7 +9825,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9864,7 +9864,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9890,7 +9890,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9916,7 +9916,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9944,7 +9944,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9970,7 +9970,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -9996,7 +9996,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10028,7 +10028,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10067,7 +10067,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10093,7 +10093,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10119,7 +10119,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10147,7 +10147,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10173,7 +10173,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10199,7 +10199,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10231,7 +10231,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10280,7 +10280,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10306,7 +10306,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10332,7 +10332,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10360,7 +10360,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10386,7 +10386,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10412,7 +10412,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10444,7 +10444,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10484,7 +10484,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10510,7 +10510,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10536,7 +10536,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10564,7 +10564,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10590,7 +10590,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10616,7 +10616,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10648,7 +10648,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10687,7 +10687,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10713,7 +10713,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10739,7 +10739,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10767,7 +10767,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10793,7 +10793,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10819,7 +10819,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10851,7 +10851,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10890,7 +10890,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10916,7 +10916,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10942,7 +10942,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10970,7 +10970,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -10996,7 +10996,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11022,7 +11022,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11054,7 +11054,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11093,7 +11093,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11119,7 +11119,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11145,7 +11145,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11173,7 +11173,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11199,7 +11199,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11225,7 +11225,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11257,7 +11257,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11306,7 +11306,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11332,7 +11332,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11358,7 +11358,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11386,7 +11386,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11412,7 +11412,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11438,7 +11438,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11470,7 +11470,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11510,7 +11510,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11536,7 +11536,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11562,7 +11562,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11590,7 +11590,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11616,7 +11616,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11642,7 +11642,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11674,7 +11674,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11713,7 +11713,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11739,7 +11739,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11765,7 +11765,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11793,7 +11793,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11819,7 +11819,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11845,7 +11845,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11877,7 +11877,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11916,7 +11916,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11942,7 +11942,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11968,7 +11968,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -11996,7 +11996,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12022,7 +12022,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12048,7 +12048,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12080,7 +12080,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12119,7 +12119,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12145,7 +12145,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12171,7 +12171,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12199,7 +12199,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12225,7 +12225,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12251,7 +12251,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12283,7 +12283,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12332,7 +12332,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12358,7 +12358,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12384,7 +12384,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12412,7 +12412,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12438,7 +12438,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12464,7 +12464,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12496,7 +12496,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12536,7 +12536,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12562,7 +12562,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12588,7 +12588,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12616,7 +12616,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12642,7 +12642,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12668,7 +12668,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12700,7 +12700,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12739,7 +12739,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12765,7 +12765,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12791,7 +12791,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12819,7 +12819,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12845,7 +12845,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12871,7 +12871,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12903,7 +12903,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12942,7 +12942,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12968,7 +12968,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -12994,7 +12994,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13022,7 +13022,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13048,7 +13048,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13074,7 +13074,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13106,7 +13106,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13145,7 +13145,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13171,7 +13171,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13197,7 +13197,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=1) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13225,7 +13225,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='1' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13251,7 +13251,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='2' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13277,7 +13277,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='3' || $row['groupType']!=0) continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';
@@ -13309,7 +13309,7 @@
 					echo "<option></option>";
 					while ($row = $coursedata->fetch(PDO::FETCH_ASSOC)){
 						if($row['semester'][0] !='4') continue;//這裡要改
-						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["userid"])->fetch(PDO::FETCH_ASSOC);
+						$professor = $conn->query("SELECT * FROM teachers WHERE teacherid = ".$row["teacherid"])->fetch(PDO::FETCH_ASSOC);
 						echo '<option>'. $row['courseName'] ."\<br>".$professor['teacher_name']."</option>";
 					}
 					echo '</select></font></td>';

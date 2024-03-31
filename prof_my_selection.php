@@ -76,7 +76,7 @@
                                             $teacherid=$id_result['teacherid'];
                                         }
                                         catch( PDOException $e ){ $e ; }
-                                        $query = $conn -> query( "select * from course_selection where userid = " . $teacherid . ";" ) ; 
+                                        $query = $conn -> query( "select * from course_selection where teacherid = " . $teacherid . ";" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>

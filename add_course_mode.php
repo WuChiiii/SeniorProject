@@ -33,7 +33,7 @@
 					<div class="control-group">
                         <label class="control-label" for="inputPassword">Period(hr)   ***   an integer in [0, 9]   ***</label>
                         <div class="controls">
-                        <input type="text" name="Period" pattern = "[0-9]" class = "form-control" value="e.g.3" required>
+                        <input type="text" name="Period" pattern = "[0-9]" class = "form-control" placeholder="e.g.3" required>
                         </div>              
                      </div>
 

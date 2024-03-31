@@ -81,7 +81,7 @@ public class info {
                     course.period[i] = rs.getInt("period");
                     course.priority[i]=rs.getInt("priority");
                     for (int cur = 0; cur < professorid.rownum; cur++) {
-                         if (rs.getInt("userid") == professorid.id[cur]) {
+                         if (rs.getInt("teacherid") == professorid.id[cur]) {
                               course.professor[i] = cur;
                          }
                     }

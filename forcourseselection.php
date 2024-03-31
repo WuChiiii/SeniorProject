@@ -91,7 +91,7 @@
                                             <td><?php if( $data['classroomType'] == 0 ) echo "未指定 Not sepecified" ; else echo "電腦教室 Computer Classroom";?> </td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td><?php 
-                                                    $query = $conn -> query( "select * from teachers where teacherid = " . $data['userid'] . ";" ) ; 
+                                                    $query = $conn -> query( "select * from teachers where teacherid = " . $data['teacherid'] . ";" ) ; 
                                                     $u = $query -> fetch( PDO::FETCH_ASSOC ) ; 
                                                     echo $u['teacher_name'] ; 
                                                 ?>

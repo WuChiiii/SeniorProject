@@ -70,7 +70,7 @@
                                 <tbody>
                                     <?php include('connect.php');
                                     //display the data of subjects from database
-                                        $query = $conn -> query( "select * from course_selection where userid = " . $_SESSION['id'] . ";" ) ; 
+                                        $query = $conn -> query( "select * from course_selection where teacherid = " . $_SESSION['id'] . ";" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>
