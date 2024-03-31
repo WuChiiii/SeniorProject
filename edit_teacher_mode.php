@@ -42,7 +42,7 @@
 								<div class="control-group">
                                     <label class="control-label" for="inputPassword">Department</label>
                                     <div class="controls">
-                                        <input type="text"  name="teacher_department" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['teacher_department'] ; ?>">
+                                        <input type="text"  name="teacher_department" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['teacher_department'] ; ?>" required>
                                     </div>
                                 </div>
 								

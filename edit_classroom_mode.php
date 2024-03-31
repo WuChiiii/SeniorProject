@@ -30,7 +30,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Department</label>
                                     <div class="controls">
-                                        <input type="text"  name="classroom_dept" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['classroom_dept'] ; ?>" >
+                                        <input type="text"  name="classroom_dept" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['classroom_dept'] ; ?>" required>
                                     </div>
                                 </div>
                                 <div class="control-group">

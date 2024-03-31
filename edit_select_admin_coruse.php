@@ -140,7 +140,7 @@
 
                                 // 生成下拉式選單
                                 echo '<select name=teacher class="form-control">';
-                                $sql1 ='select * from teachers where teacherid ='. $cur['userid'] .';';
+                                $sql1 ='select * from teachers where teacherid ='. $cur['teacherid'] .';';
                                 $result1 = $conn->query($sql1);
                                 $temp = $result1->fetch(PDO::FETCH_ASSOC);
                                 echo '<option>' .$temp ['teacher_name'] . '</option>';

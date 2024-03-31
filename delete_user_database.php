@@ -9,7 +9,7 @@
     $query = $conn -> query( $sqlteacher ) ; 
     $result = $query->fetch(PDO::FETCH_ASSOC);
     $sqlteacher="delete from teachers where teacherid = " . $result['teacherid'] . ";" ;
-    $sqlcourse = "delete from course_selection where userid = " . $result['teacherid'] . ";" ; 
+    $sqlcourse = "delete from course_selection where teacherid = " . $result['teacherid'] . ";" ; 
     $deleteschedule ="delete from professorschedule where professorid = (".$result['teacherid'].");";
 
     if( !empty( $id ) ) 
