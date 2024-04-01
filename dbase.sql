@@ -151,7 +151,7 @@ CREATE TABLE if not exists `users` (
   `userid` int AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
-  `account` varchar(255) NOT NULL PRIMARY KEY,
+  `account` varchar(255) NOT NULL ,
   `hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
 -- Set the column 'account' to be unique
