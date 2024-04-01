@@ -21,6 +21,8 @@
             echo "<script> location.href = 'forcourseselection.php' ; </script>" ; 
         }catch( PDOException $e ){ 
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
+            echo "<script> location.href = 'forcourseselection.php' ; </script>" ; 
         } 
     } 
 ?>

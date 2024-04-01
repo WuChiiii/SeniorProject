@@ -56,6 +56,8 @@
             echo "<script> window.location = 'prof_course_selection.php' ; </script>" ; 
         }catch( PDOException $e ){
             echo $e ;  
+            echo "<script> alert('Failed !'); </script>" ;
+            echo "<script> window.location = 'prof_course_selection.php' ; </script>" ; 
         }
     }
 ?> 

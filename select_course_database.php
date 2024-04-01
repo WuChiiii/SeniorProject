@@ -73,9 +73,9 @@
             $rc = $rc['max( id )'] ; 
             setcookie('course_id' , $rc , time() + 600 , '/') ;
             var_dump( $_COOKIE ) ;  
-            echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
         }catch( PDOException $e ){
             echo $e ;  
+            echo "<script> alert('Error !'); </script>" ;
         }
-    }
+    }echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
 ?> 

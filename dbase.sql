@@ -44,19 +44,20 @@ Alter Table classroom Add Unique( classroom_no ) ;
 
 INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `classroom_desc`, `classroom_no_seat`, `classroom_type`) VALUES
 (null, 'A325', 'CSIE', '', 0, 0),
-(null, 'A331', 'CSIE', '', 0, 0),
+(null, 'A331', 'CSIE', '', 80, 0),
 (null, 'A329', 'CSIE', '', 0, 0),
-(null, 'A337', 'CSIE', '', 0, 0),
-(null, 'B301', 'CSIE', '', 0, 0),
-(null, 'B303', 'CSIE', '', 0, 0),
-(null, 'B305', 'CSIE', '', 0, 1),
-(null, 'C303', 'CSIE', '', 0, 0),
+(null, 'A337', 'CSIE', '', 100, 0),
+(null, 'B204', 'CSIE', '', 0, 1),
+(null, 'B301', 'CSIE', '', 0, 1),
+(null, 'B303', 'CSIE', '', 0, 1),
+(null, 'B305', 'CSIE', '', 60, 1),
+(null, 'C303', 'CSIE', '', 60, 0),
 (null, 'C305', 'CSIE', '', 0, 0),
 (null, 'C309', 'CSIE', '', 0, 0),
 (null, 'E302', 'CSIE', '', 0, 0),
 (null, 'E307', 'CSIE', '', 0, 0),
-(null, 'D301', 'CSIE', '', 0, 0),
-(null, 'D309', 'CSIE', '', 0, 0),
+(null, 'D301', 'CSIE', '', 50, 1),
+(null, 'D309', 'CSIE', '', 0, 1),
 (null, 'E407', 'CSIE', '', 0, 0),
 (null, 'B101', 'CSIE', '工二講堂', 0, 0),
 (null, 'C101', 'CSIE', '工三講堂', 0, 0),
@@ -150,7 +151,7 @@ CREATE TABLE if not exists `users` (
   `userid` int AUTO_INCREMENT PRIMARY KEY,
   `name` varchar(255) NOT NULL,
   `department` varchar(255) NOT NULL,
-  `account` varchar(255) NOT NULL,
+  `account` varchar(255) NOT NULL PRIMARY KEY,
   `hash` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
 -- Set the column 'account' to be unique

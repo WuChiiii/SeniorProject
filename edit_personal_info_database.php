@@ -25,6 +25,7 @@
             $conn -> query( $sql ) ; 
         }catch( PDOException $e ){
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
         }
     }
 

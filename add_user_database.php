@@ -28,5 +28,7 @@
         echo "<script> window.location = 'foruser.php' ; </script>" ; 
     }catch( PDOException $e ){
         echo $e ;  
+        echo "<script> alert('Duplicate account is invalid !'); </script>" ;
+        echo "<script> window.location = 'foruser.php' ; </script>" ; 
     }
 ?>

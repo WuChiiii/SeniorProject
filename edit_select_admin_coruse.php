@@ -98,7 +98,7 @@
 
                      <div class="control-group">
                         <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)</label>
-                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>">       
+                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>" required>       
                     </div>
 
                     <div class="control-group">
