@@ -17,7 +17,7 @@
     $sql = 'select * from teachers where userid =' . $userid .';';
     $query = $conn -> query( $sql ) ;
     $id_result = $query->fetch(PDO::FETCH_ASSOC);
-    $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
+    $teacherid=$id_result['teacherid'];//find userid在teacherdb中的id是什麼
     $time;
     $priority=1;//1代表教授,0代表kiki
     $classroom;

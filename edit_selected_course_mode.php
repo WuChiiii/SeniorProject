@@ -62,9 +62,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective)   ***</label>
+                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系   ***</label>
                         <div class="controls">
-                        <input type="text" name="SClass_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective)' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
+                        <input type="text" name="SClass_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective) or 支援外系' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
                         </div>              
                      </div>
 

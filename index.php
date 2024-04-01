@@ -176,14 +176,16 @@ margin-top:300px;
                                                             {
                                                                 $hash = ( (array)$row )['hash'] ; 
                                                                 if( password_verify( $password , $hash ) ){ 
-
-                                                                session_start() ; 
-                                                                $_SESSION['id'] = ((array)$row)['userid'] ; 
-                                                                $_SESSION['name'] = ((array)$row)['name'] ; 
-                                                                $_SESSION['account'] = ((array)$row)['account'] ; 
-                                                                $_SESSION['department'] = ((array)$row)['department'] ; 
-                                                                $_SESSION['last_stamp'] = time() ; 
-                                                                header("location:home.php") ;
+                                                                    $newhash = password_hash( $password , PASSWORD_DEFAULT );
+                                                                    $sql = "update users set hash = '" . $newhash . "' where account = '" . $account . "';" ; 
+                                                                    $query = $conn -> query( $sql ) ; 
+                                                                    session_start() ; 
+                                                                    $_SESSION['id'] = ((array)$row)['userid'] ; 
+                                                                    $_SESSION['name'] = ((array)$row)['name'] ; 
+                                                                    $_SESSION['account'] = ((array)$row)['account'] ; 
+                                                                    $_SESSION['department'] = ((array)$row)['department'] ; 
+                                                                    $_SESSION['last_stamp'] = time() ; 
+                                                                    header("location:home.php") ;
                                                             
                                                                 }
                                                             

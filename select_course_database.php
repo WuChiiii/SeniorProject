@@ -40,7 +40,7 @@
     $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
     $time;
     $priority=1;//1代表教授,0代表kiki
-    $classroom;
+    $classroom="";
 
     var_dump( $courseNumber ) ; 
     var_dump( $groupType ) ; 

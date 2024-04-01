@@ -52,7 +52,7 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective)   ***</label>
+                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系   ***</label>
                         <div class="controls">
                         <input type="text" name="subjectClassType" pattern="[01]*" class = "form-control" placeholder="e.g.1" required>
                         </div>              

@@ -14,7 +14,7 @@
     $sql = $sql . "', period = '" . $_POST['Period'] . "', semester = '" . $_POST['Semester'] . "', groupType = '" . $_POST['Group_Type'] ;  
     $sql = $sql . "', classType = '" . $_POST['Class_Type'] . "', remarks = '" . $_POST['Remarks'] . "', program = '" . $_POST['Program'] ; 
     $sql = $sql . "', classroomType = '" . $_POST['Classroom_Type'] . "', studentNumber = '" . $_POST['Student_Number'] ."', time = '" . $_POST['time'] ;
-    $sql = $sql . "', priority = '" . $priority ."', classroom = '" . $_POST['classroom'] ."', userid = '" . $teacherid ."' where id = " . $id . ";" ; 
+    $sql = $sql . "', priority = '" . $priority ."', classroom = '" . $_POST['classroom'] ."', teacherid = '" . $teacherid ."' where id = " . $id . ";" ; 
 
     try{
         $conn -> query( $sql ) ; 

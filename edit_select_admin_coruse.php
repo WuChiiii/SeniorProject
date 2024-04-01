@@ -62,9 +62,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective)   ***</label>
+                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系  ***</label>
                         <div class="controls">
-                        <input type="text" name="Class_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective)' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
+                        <input type="text" name="Class_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective) or 支援外系' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
                         </div>              
                      </div>
 
@@ -98,7 +98,7 @@
 
                      <div class="control-group">
                         <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)</label>
-                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>" required>       
+                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>">       
                     </div>
 
                     <div class="control-group">
@@ -140,7 +140,7 @@
 
                                 // 生成下拉式選單
                                 echo '<select name=teacher class="form-control">';
-                                $sql1 ='select * from teachers where teacherid ='. $cur['userid'] .';';
+                                $sql1 ='select * from teachers where teacherid ='. $cur['teacherid'] .';';
                                 $result1 = $conn->query($sql1);
                                 $temp = $result1->fetch(PDO::FETCH_ASSOC);
                                 echo '<option>' .$temp ['teacher_name'] . '</option>';
