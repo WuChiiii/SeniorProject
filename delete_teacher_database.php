@@ -4,7 +4,7 @@
     include "connect.php" ; 
     $id = intval( $_COOKIE['delete_teacher_id'] ) ; 
     $sql = "delete from teachers where teacherid = " . $id ;
-    $sqlcourse = "delete from course_selection where userid = " . $id . ";" ; 
+    $sqlcourse = "delete from course_selection where teacherid = " . $id . ";" ; 
     $deleteschedule ="delete from professorschedule where professorid = (". $id .");";
     //echo "id = " . $id ; 
     if( !empty( $id ) )

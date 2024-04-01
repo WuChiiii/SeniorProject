@@ -26,7 +26,7 @@
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Credit   ***   An integer in [0, 9]   ***</label>
                             <div class="controls">
-                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" placeholder="e.g.3" >
+                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" placeholder="e.g.3" required>
                             </div>
                     </div>
 

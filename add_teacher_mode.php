@@ -33,7 +33,7 @@
 					<div class="control-group">
                         <label class="control-label" for="inputPassword">Department</label>
                         <div class="controls">
-                        <input type="text" name="department" pattern="[^'\\\x22;]*" class="form-control" placeholder="CSIE">
+                        <input type="text" name="department" pattern="[^'\\\x22;]*" class="form-control" placeholder="CSIE" required>
                         </div>              
                      </div>
 
