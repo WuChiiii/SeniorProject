@@ -13,11 +13,12 @@
             $conn -> query( $deleteschedule ) ;
             $conn -> query( $sqlcourse ) ;
             $conn -> query( $sql ) ;
-            echo "<script> window.location = 'forteacher.php' ; </script>" ; 
+            
         }catch( PDOException $e ){
             echo $e ;
+            echo "<script> alert('Error !'); </script>" ;
         }
-    }
+    }echo "<script> window.location = 'forteacher.php' ; </script>" ; 
     
 
 ?>

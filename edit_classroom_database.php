@@ -8,7 +8,6 @@
     $desc = $_POST['classroom_desc'] ; 
     $seats = $_POST['classroom_no_seat'] ; 
     $type = $_POST['classroom_type'] ; 
-
     $sql = "update classroom set classroom_no = '" . $no . "', classroom_dept = '" . $dept . "', classroom_desc = '" . $desc . "', classroom_no_seat = '" . $seats . "', classroom_type = '" . $type . "' where classroomid = " . $id . " ; " ; 
     echo $sql ; 
     if( !empty( $id ) )
@@ -18,6 +17,7 @@
             
         }catch( PDOException $e ){
             echo $e ; 
+            echo "<script> alert('Duplicate classroom no !'); </script>" ; 
         } 
     }else{
         echo "<script> alert('The classroom dosen't exist !'); </script>" ; 

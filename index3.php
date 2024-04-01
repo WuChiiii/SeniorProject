@@ -175,6 +175,9 @@ margin-top:300px;
                                     //var_dump( $row ) ; 
                                     if( password_verify( $password , $hash ) ){
                                         session_start() ; 
+                                        $newhash = password_hash( $password , PASSWORD_DEFAULT );
+                                        $sql = "update users set hash = '" . $newhash . "' where account = '" . $account . "';" ; 
+                                        $query = $conn -> query( $sql ) ; 		
                                         $_SESSION['id'] = ((array)$row)['userid'] ; 
                                         $_SESSION['name'] = ((array)$row)['name'] ; 
                                         $_SESSION['last_stamp'] = time() ; 

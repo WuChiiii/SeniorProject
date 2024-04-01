@@ -85,10 +85,10 @@
                                             <td><?php echo $data['period'] ?></td>    
                                             <td><?php echo $data['semester'] ?></td> 
                                             <td><?php if( $data['groupType'] == 0 ) echo'國際組 International Group' ; else if( $data['groupType'] == 1 ) echo '資工組 Local Group' ; else echo $data['groupType'] ; ?></td>    
-                                            <td><?php if( $data['classType'] == 0 ) echo '選(elective)' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
+                                            <td><?php if( $data['classType'] == 0 ) echo '選(elective) or 支援外系' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
-                                            <td><?php if( $data['classroomType'] == 0 ) echo "未指定 Not sepecified" ; else echo "電腦教室 Computer Classroom";?> </td>
+                                            <td><?php if( $data['classroomType'] == 0 ) echo "一般教室 General classroom" ; else if( $data['classroomType'] == 1 ) echo "電腦教室 Computer Classroom";?> </td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td><?php 
                                                     $query = $conn -> query( "select * from teachers where teacherid = " . $data['teacherid'] . ";" ) ; 

@@ -3,6 +3,11 @@
 <?php
     include "connect.php" ; 
     $id = $_COOKIE['delete_user_id'] ; 
+    if( $id == 1 )
+    {
+        echo "<script> alert('You cannot delete the admin account !'); </script>" ; 
+        echo "<script> location.href = 'foruser.php' ; </script>" ; 
+    }
     /***Since the data of user is modified, the courses selected by the user should be deleted as well***/
     $sql = "delete from users where userid = " . $id . ";";
     $sqlteacher = "select *  from teachers where userid = " . $id . ";";
@@ -19,11 +24,12 @@
             $conn -> query( $sqlcourse ) ;
             $conn -> query( $sqlteacher ) ;
             $conn -> query( $sql ) ; 
-            echo "<script> location.href = 'foruser.php' ; </script>" ; 
+            
         }catch( PDOException $e ){ 
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
         } 
-    } 
+    } echo "<script> location.href = 'foruser.php' ; </script>" ; 
     
     
 ?>

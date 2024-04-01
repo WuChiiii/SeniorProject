@@ -40,7 +40,7 @@
     $teacherid=$id_result['teacherid'];//find id在teacherdb中的id是什麼
     $time;
     $priority=1;//1代表教授,0代表kiki
-    $classroom;
+    $classroom="";
 
     var_dump( $courseNumber ) ; 
     var_dump( $groupType ) ; 
@@ -73,9 +73,9 @@
             $rc = $rc['max( id )'] ; 
             setcookie('course_id' , $rc , time() + 600 , '/') ;
             var_dump( $_COOKIE ) ;  
-            echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
         }catch( PDOException $e ){
             echo $e ;  
+            echo "<script> alert('Error !'); </script>" ;
         }
-    }
+    }echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
 ?> 

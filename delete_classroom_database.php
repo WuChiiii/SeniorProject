@@ -14,7 +14,10 @@
             echo "<script> location.href = 'forclassroom.php' ; </script>" ; 
         }catch( PDOException $e ){
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
+            echo "<script> location.href = 'forclassroom.php' ; </script>" ; 
         }        
+        
     }
 
 ?>

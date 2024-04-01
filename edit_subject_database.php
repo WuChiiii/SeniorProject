@@ -17,13 +17,13 @@
     if( !empty( $id ) )
     {
         try{
-            $conn -> query( $sql ) ; 
-            echo "<script> window.location = 'forsubject.php' ; </script> "; 
+            $conn -> query( $sql ) ;        
         }catch( PDOException $e ){
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
         }
     }else{
         echo "<script> alert('The subject has been deleted !'); </script>" ;
-    }
+    }echo "<script> window.location = 'forsubject.php' ; </script> "; 
     
 ?>
