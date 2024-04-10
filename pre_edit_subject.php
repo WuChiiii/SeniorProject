@@ -79,7 +79,7 @@
                                             <td><?php echo $data['period'] ?></td>    
                                             <td><?php echo $data['semester'] ?></td>   
                                             <td><?php echo $data['groupType'] == 1 ? 'Local Group': 'International Group'  ?></td>    
-                                            <td><?php echo $data['classType'] == 1 ? '必(required)' : '選(elective)' ?></td>
+                                            <td><?php echo $data['classType'] == 1 ? '必(required)' : '選(elective) or 支援外系' ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
                                             <td width="160" >

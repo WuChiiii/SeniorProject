@@ -8,9 +8,10 @@
     { 
         try{ 
             $conn -> query( $sql ) ; 
-            echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
+            
         }catch( PDOException $e ){ 
             echo $e ; 
+            echo "<script> alert('Error !'); </script>" ;
         } 
-    } 
+    } echo "<script> location.href = 'prof_my_selection.php' ; </script>" ; 
 ?> 
