@@ -7,7 +7,7 @@
     $sql = "update course_selection set courseName = '" . $_POST['SCourse_Name'] . "', courseNumber = '" . $_POST['SCourse_Number'] . "',  credit = '" .  $_POST['SCredit'] ;
     $sql = $sql . "', period = '" . $_POST['SPeriod'] . "', semester = '" . $_POST['SSemester'] . "', groupType = '" . $_POST['SGroup_Type'] ;  
     $sql = $sql . "', classType = '" . $_POST['SClass_Type'] . "', remarks = '" . $_POST['SRemarks'] . "', program = '" . $_POST['SProgram'] ; 
-    $sql = $sql . "', classroomType = '" . $_POST['SClassroom_Type'] . "', studentNumber = '" . $_POST['SStudent_Number'] . "' where id = " . $id . ";" ; 
+    $sql = $sql . "', classroomType = '" . $_POST['SClassroom_Type'] . "', studentNumber = '" . $_POST['SStudent_Number'] . "', classroom = '" . $_POST['SClassroom'] . "' where id = " . $id . ";" ; 
 
     try{
         $conn -> query( $sql ) ; 

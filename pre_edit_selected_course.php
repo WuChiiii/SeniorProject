@@ -62,6 +62,7 @@
                                         <th>Remarks</th>
                                         <th>Program</th>
                                         <th>Classroom Type</th>
+                                        <th>Classroom</th>
                                         <th>Student Number</th>
                                         <th>Action</th>
                                     </tr>
@@ -70,7 +71,13 @@
                                 <tbody>
                                     <?php include('connect.php');
                                     //display the data of subjects from database
-                                        $query = $conn -> query( "select * from course_selection where teacherid = " . $_SESSION['id'] . ";" ) ; 
+                                        $sql="select * from teachers where userid =". $_SESSION['id'] .";";
+                                        try{ $query = $conn -> query($sql);
+                                            $id_result = $query->fetch(PDO::FETCH_ASSOC);
+                                            $teacherid=$id_result['teacherid'];
+                                        }
+                                        catch( PDOException $e ){ $e ; }
+                                        $query = $conn -> query( "select * from course_selection where teacherid = " . $teacherid . ";" ) ; 
                                         $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ;
                                         foreach( $r as $data ):
                                     ?>
@@ -85,6 +92,7 @@
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
                                             <td><?php if( $data['classroomType'] == 0 ) echo "未指定 Not sepecified" ; else echo "電腦教室 Computer Classroom";?> </td>
+                                            <td><?php if( $data['classroom'] == null) echo "未指定 Not sepecified" ;else echo $data['classroom'] ?></td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td width="160" >
                                                 <!--<h1><?php echo $data['id'] ?></h1>-->

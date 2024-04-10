@@ -80,6 +80,34 @@
                      </div>
 
                      <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom *** not required ***</label>
+                        <?php
+                        
+                            include "connect.php" ;
+                            try{
+                                // 擷取資料
+                                $sql = 'select * from classroom;';
+                                $result = $conn->query($sql);
+
+                                // 生成下拉式選單
+                                echo '<select name=Classroom class="form-control">';
+                                echo '<option></option>';
+                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                    echo '<option>' . $row['classroom_no'] . '</option>';
+                                }
+
+                                echo '</select>';
+
+                                // 釋放結果集
+                               
+                            }
+                            catch( PDOException $e ){
+                                echo $e ; 
+                            }
+                        ?>      
+                    </div>
+
+                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Student Number</label>
                         <div class="controls">
                         <input type="text" name="Student_Number" pattern="[0-9]+" class = "form-control" placeholder="e.g.80" required>

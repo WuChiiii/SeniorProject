@@ -137,7 +137,6 @@ public class writebackdb {
         
             for(int i=0;i<info.course.cnt;i++){
                 rs=st.executeQuery("SELECT * FROM mapping_id WHERE class_id = "+info.course.id[i]);
-                rs.next();
                 if(!rs.next()){
                     st.executeUpdate("INSERT INTO  mapping_id VALUES ("+info.course.id[i]+","+info.professorid.id[info.course.professor[i]]+","+info.course.tempclassroom[i]+",-1,-1,-1,-1)");
                 }

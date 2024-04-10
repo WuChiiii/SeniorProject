@@ -90,6 +90,41 @@
                      </div>
 
                      <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom Type   ***   Computer Classroom:1;    0:Otherwise   ***</label>
+                        <div class="controls">
+                        <input type="text" name="SClassroom_Type" pattern="[01]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
+                        </div>              
+                     </div>
+
+                     <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom *** not required ***</label>
+                        <?php
+                        
+                            include "connect.php" ;
+                            try{
+                                // 擷取資料
+                                $sql = 'select * from classroom;';
+                                $result = $conn->query($sql);
+
+                                // 生成下拉式選單
+                                echo '<select name=SClassroom class="form-control">';
+                                echo '<option></option>';
+                                while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
+                                    echo '<option>' . $row['classroom_no'] . '</option>';
+                                }
+
+                                echo '</select>';
+
+                                // 釋放結果集
+                               
+                            }
+                            catch( PDOException $e ){
+                                echo $e ; 
+                            }
+                        ?>      
+                    </div>
+
+                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Student Number</label>
                         <div class="controls">
                         <input type="text" name="SStudent_Number" pattern="[0-9]+" class = "form-control" value="<?php echo $cur['studentNumber'] ?>" required>

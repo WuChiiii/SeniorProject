@@ -214,7 +214,7 @@ CREATE TABLE if not exists `professorschedule` (
 -- INSERT INTO professorschedule VALUES ();
 
 CREATE TABLE if not exists `pre1_csie` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -252,7 +252,7 @@ INSERT INTO pre1_csie VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , 
 ;
 
 CREATE TABLE if not exists `pre2_csie` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -290,7 +290,7 @@ INSERT INTO pre2_csie VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , 
 ;
 
 CREATE TABLE if not exists `pre3_csie` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -328,7 +328,7 @@ INSERT INTO pre3_csie VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , 
 ;
 
 CREATE TABLE if not exists `pre4_csie` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -366,7 +366,7 @@ INSERT INTO pre4_csie VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , 
 ;
 
 CREATE TABLE if not exists `pre1_international` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -404,7 +404,7 @@ INSERT INTO pre1_international VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -
 ;
 
 CREATE TABLE if not exists `pre2_international` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -443,7 +443,7 @@ INSERT INTO pre2_international VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -
 
 
 CREATE TABLE if not exists `pre3_international` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -482,7 +482,7 @@ INSERT INTO pre3_international VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -
 
 
 CREATE TABLE if not exists `pre4_international` (
-  `grade` INT,
+  `grade` INT PRIMARY KEY,
   `1-1` INT DEFAULT -1,`1-2` INT DEFAULT -1,`1-3` INT DEFAULT -1,`1-4` INT DEFAULT -1,`1-5` INT DEFAULT -1,`1-6` INT DEFAULT -1,`1-7` INT DEFAULT -1,
   `1-8` INT DEFAULT -1,`1-9` INT DEFAULT -1,`1-10` INT DEFAULT -1,`1-11` INT DEFAULT -1,`1-12` INT DEFAULT -1,`1-13` INT DEFAULT -1,`1-14` INT DEFAULT -1,
   `1-15` INT DEFAULT -1,`1-16` INT DEFAULT -1,`2-1` INT DEFAULT -1,`2-2` INT DEFAULT -1,`2-3` INT DEFAULT -1,`2-4` INT DEFAULT -1,`2-5` INT DEFAULT -1,
@@ -521,7 +521,7 @@ INSERT INTO pre4_international VALUES ( 1 , -1 , -1 , -1 , -1 , -1 , -1 , -1 , -
 
 
 CREATE TABLE if not exists `mapping_id`(
-  `class_id` INT, 
+  `class_id` INT PRIMARY KEY, 
   `professor_id` INT,
   `classroom_id` INT,
   `pre1_classroom_id` INT,
@@ -536,7 +536,7 @@ CREATE TABLE if not exists `mapping_id`(
 -- ------------------------------------
 
 CREATE TABLE if not exists `normalschedule`(
-  `grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
+  `grade` INT PRIMARY KEY,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
   `1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,
   `1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,
   `2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,
@@ -549,7 +549,7 @@ CREATE TABLE if not exists `normalschedule`(
 ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
 
 CREATE TABLE if not exists `internationalschedule`(
-  `grade` INT,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
+  `grade` INT PRIMARY KEY,`1-1` INT,`1-2` INT,`1-3` INT,`1-4` INT,`1-5` INT,`1-6` INT,`1-7` INT,
   `1-8` INT,`1-9` INT,`1-10` INT,`1-11` INT,`1-12` INT,`1-13` INT,`1-14` INT,`1-15` INT,
   `1-16` INT ,`2-1` INT,`2-2` INT,`2-3` INT,`2-4` INT,`2-5` INT,`2-6` INT,`2-7` INT,
   `2-8` INT,`2-9` INT,`2-10` INT,`2-11` INT,`2-12` INT,`2-13` INT,`2-14` INT,`2-15` INT,

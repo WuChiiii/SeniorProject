@@ -10,11 +10,12 @@
     $query = $conn -> query( $sql ) ;
     $id_result = $query->fetch(PDO::FETCH_ASSOC);
     $teacherid=$id_result['teacherid'];
+    $classroomtype=$_POST['Classroom_Type'];
     $sql = "update course_selection set courseName = '" . $_POST['Course_Name'] . "', courseNumber = '" . $_POST['Course_Number'] . "',  credit = '" .  $_POST['Credit'] ;
     $sql = $sql . "', period = '" . $_POST['Period'] . "', semester = '" . $_POST['Semester'] . "', groupType = '" . $_POST['Group_Type'] ;  
     $sql = $sql . "', classType = '" . $_POST['Class_Type'] . "', remarks = '" . $_POST['Remarks'] . "', program = '" . $_POST['Program'] ; 
-    $sql = $sql . "', classroomType = '" . $_POST['Classroom_Type'] . "', studentNumber = '" . $_POST['Student_Number'] ."', time = '" . $_POST['time'] ;
-    $sql = $sql . "', priority = '" . $priority ."', classroom = '" . $_POST['classroom'] ."', userid = '" . $teacherid ."' where id = " . $id . ";" ; 
+    $sql = $sql . "', classroomType = '" . $classroomtype . "', studentNumber = '" . $_POST['Student_Number'] ."', time = '" . $_POST['time'] ;
+    $sql = $sql . "', priority = '" . $priority ."', classroom = '" . $_POST['classroom'] ."', teacherid = '" . $teacherid ."' where id = " . $id . ";" ; 
 
     try{
         $conn -> query( $sql ) ; 

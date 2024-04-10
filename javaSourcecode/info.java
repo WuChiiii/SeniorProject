@@ -8,16 +8,19 @@ public class info {
 
      info(String password) {
           String driver = "com.mysql.cj.jdbc.Driver";
-          Connection conn = null;
-          Statement st = null;
+          Connection conn = null, conn2=null;
+          Statement st = null,st2=null;
           ResultSet rs = null;
+          ResultSet result = null;
           int rowcount;
           String url = "jdbc:mysql://localhost:3306/undergraduate_project";
           String user = "root";
           try {
                Class.forName(driver);               
                conn = DriverManager.getConnection(url, user, password);
+               conn2 = DriverManager.getConnection(url, user, password);
                st = conn.createStatement();
+               st2 = conn2.createStatement();
 
                rs = st.executeQuery("SELECT COUNT(*) FROM teachers");
                rs.next();
@@ -66,6 +69,8 @@ public class info {
 
                rs = st.executeQuery("SELECT COUNT(*) FROM course_selection");
                rs.next();
+               // result = st.executeQuery("SELECT COUNT(*) FROM course_selection");
+               // result.next();
                rowcount = rs.getInt(1);
                rs = st.executeQuery("select  * from course_selection");
                course = new classinfo(rowcount);
@@ -75,11 +80,34 @@ public class info {
                     course.name[i] = rs.getString("courseName");
                     course.classtype[i] = rs.getInt("classType");
                     course.classroomtype[i] = rs.getInt("classroomType");
+                    course.classroomflag[i]=0;
+                    temp=rs.getString("classroom");
+                    if(temp!=null && temp.length()>1){
+                         String sql;
+                         int tmp;
+                         sql="select * from classroom where classroom_no = '" + temp + "' ;";
+                         result = st2.executeQuery(sql);
+                         result.next();
+                         tmp = result.getInt("classroomid");
+                         System.out.println(temp);
+                         for(int k=0;k<classroomid.rownum;k++){
+                              if(classroomid.id[k]==tmp){
+                              course.preclassroom[i] = k;
+                              tmp=k;
+                              course.classroomflag[i]=1;
+                              break;
+                              }
+                         }
+                    }
                     temp = rs.getString("semester");
                     temp = temp.substring(0, 1);
                     course.semester[i] = Integer.parseInt(temp) - 1;
+                    temp = rs.getString("time");
+                    if(temp!=null && temp.length()>1)
+                         course.priority[i]=1;
+                    else 
+                         course.priority[i]=0;
                     course.period[i] = rs.getInt("period");
-                    course.priority[i]=rs.getInt("priority");
                     for (int cur = 0; cur < professorid.rownum; cur++) {
                          if (rs.getInt("teacherid") == professorid.id[cur]) {
                               course.professor[i] = cur;
@@ -97,6 +125,7 @@ public class info {
                     }
                }
                conn.close();
+               conn2.close();
           } catch (ClassNotFoundException e) {
                System.out.println("can't find driver for reading files, please check info.java");
                e.printStackTrace();
@@ -140,12 +169,14 @@ public class info {
 
      public class classinfo {
           public int id[], professor[], period[], classroomtype[], classtype[], semester[], classify[][][][][],
-                    priority[];
+                    priority[],classroomflag[];
           public String name[];
-          public int tempclassroom[], group[], cnt;
+          public int tempclassroom[], group[], cnt,preclassroom[];
 
           classinfo(int rowcount) {
                cnt = rowcount;
+               classroomflag = new int[rowcount];
+               preclassroom = new int[rowcount];
                id = new int[rowcount];
                professor = new int[rowcount];
                group = new int[rowcount];

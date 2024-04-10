@@ -98,7 +98,7 @@
 
                      <div class="control-group">
                         <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)</label>
-                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>" required>       
+                        <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>">       
                     </div>
 
                     <div class="control-group">
@@ -113,7 +113,9 @@
 
                                 // 生成下拉式選單
                                 echo '<select name=classroom class="form-control">';
-                                echo '<option>' . $cur['classroom'] . '</option>';
+                                if($cur['classroom']!=null)
+                                    echo '<option>' . $cur['classroom'] . '</option>';
+                                echo '<option></option>';
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                     echo '<option>' . $row['classroom_no'] . '</option>';
                                 }
