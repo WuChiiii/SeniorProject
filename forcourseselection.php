@@ -88,7 +88,7 @@
                                             <td><?php if( $data['classType'] == 0 ) echo '選(elective) or 支援外系' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
-                                            <td><?php if( $data['classroomType'] == 0 ) echo "一般教室 General classroom" ; else if( $data['classroomType'] == 1 ) echo "電腦教室 Computer Classroom";?> </td>
+                                            <td><?php if( $data['classroomType'] == 0 ) echo "一般教室 General classroom" ; else if( $data['classroomType'] == 1 ) echo "電腦教室 Computer Classroom"; else if( $data['classroomType'] == 2 ) echo "專用教室 Specific Classroom" ; ?> </td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td><?php 
                                                     $query = $conn -> query( "select * from teachers where teacherid = " . $data['teacherid'] . ";" ) ; 

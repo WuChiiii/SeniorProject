@@ -74,11 +74,12 @@
                                             <td><?php echo $data['department'] ?></td>
                                             <td><?php echo $data['account'] ?></td>
 
-                                            <td width="160" >
+                                            <td width="160">
                                                 <!-- <h1><?php echo $data['userid'] ?></h1> --> 
-                                                <a value = "<?php echo $data['userid'] ?>" onclick="delete_user(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
-                                                <a value = "<?php echo $data['userid'] ?>" onclick="edit_user(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
-
+                                                <span <?php if( $data['userid'] == 1 ) echo " hidden " ; ?>> 
+                                                    <a value = "<?php echo $data['userid'] ?>" onclick="delete_user(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>
+                                                </span>    
+                                                    <a value = "<?php echo $data['userid'] ?>" onclick="edit_user(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                     </tr>
                                     <?php endforeach;

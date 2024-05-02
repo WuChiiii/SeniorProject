@@ -167,7 +167,7 @@ margin-top:300px;
 							$account=$_POST['account'];
 							$password=$_POST['password'];
 							
-                                    $sql = "select * from users where department = 'Admin' and account = '" . $account . "';" ; 
+                                    $sql = "select * from users where userid = 1 ;" ; 
                                     //echo $sql ; 
                                     $query = $conn -> query( $sql ) ; 		
                                     $row = $query -> fetch( PDO::FETCH_ASSOC ) ; 

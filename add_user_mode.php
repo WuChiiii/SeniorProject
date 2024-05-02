@@ -19,7 +19,7 @@
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Department</label>
                         <div class="controls">
-                            <input type="text" class="form-control" pattern="[^'\\\x22;]*" name="department" placeholder="e.g.CSIE">
+                            <input type="text" class="form-control" pattern="[^'\\\x22;]*" value="CSIE" name="department" placeholder="e.g.CSIE">
                         </div>
                     </div>
                                

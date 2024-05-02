@@ -48,9 +48,9 @@
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Classroom Type   ***   ( Computer Classroom:1; Otherwise:0 )   ***</label>
+                                    <label class="control-label" for="inputPassword">Classroom Type <br>  ***   ( Computer Classroom:1; General Classroom:0; Specific Classroom:2 )   ***</label>
                                     <div class="controls">
-                                        <input type="text"  name="classroom_type" pattern="[01]" class ="form-control" value="<?php echo $cur['classroom_type'] ; ?>" required>
+                                        <input type="text"  name="classroom_type" pattern="[012]" class ="form-control" value="<?php echo $cur['classroom_type'] ; ?>" required>
                                     </div>
                                 </div>
 

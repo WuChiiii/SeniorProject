@@ -9,7 +9,17 @@
     $sql = "insert into users values( null, '" . $name . "', '" . $department . "', '" . $account . "', '" . password_hash( $password , PASSWORD_DEFAULT )  . "') ;" ;
     echo $sql;
     
-    try{
+    //check if the professor has been added to the teacher then the admin wants to add his/her account
+    $query = $conn -> query("select * from `teachers` where `teacher_name`='".$name."';") ;
+    $res = $query -> fetch(PDO::FETCH_ASSOC) ; 
+    var_dump( $res ) ; 
+
+    if( $res )
+    {
+        echo "<script> alert('You are trying to add an account for a professor from another department ! Please delete the professor's record in teacher section first !'); </script>" ;
+        echo "<script> window.location = 'foruser.php' ; </script>" ; 
+    }
+    try{// add both teacher and user 
         $conn -> query( $sql ) ;
         $position = " "; 
         $email = " ";
