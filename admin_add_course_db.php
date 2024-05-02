@@ -39,7 +39,7 @@
     {
         $classroom = $classroomName ; 
     }else{
-        $classroom=substr( $classroomName , 0 , $i - 1 ) ;
+        $classroom=substr( $classroomName , 0 , $i ) ;
 
     }
 

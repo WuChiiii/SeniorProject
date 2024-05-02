@@ -49,7 +49,7 @@ INSERT INTO `classroom` (`classroomid`, `classroom_no`, `classroom_dept`, `class
 (null, 'A337', 'CSIE', '', 100, 0),
 (null, 'B204', 'CSIE', '', 0, 1),
 (null, 'B301', 'CSIE', '', 0, 1),
-(null, 'B303', 'CSIE', '', 0, 1),
+(null, 'B303', 'CSIE', '', 0, 2),
 (null, 'B305', 'CSIE', '', 60, 1),
 (null, 'C303', 'CSIE', '', 60, 0),
 (null, 'C305', 'CSIE', '', 0, 0),
