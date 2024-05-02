@@ -111,7 +111,7 @@
             exp.setTime( exp.getTime() + 1000 * 10 ) ; 
             exp = exp.toString() ; 
             document.cookie='delete_teacher_id='+teacher_id+';expires=' + exp + ';path=/;' ; 
-            if( confirm('Are you sure to delete this teacher?\n') )
+            if( confirm('Are you sure to delete this teacher? Note: If the teacher has an account, the account would be deleted as well.\n') )
                 location.href='delete_teacher_database.php';
             else{
                 //alert('deletion is canceled') ; 

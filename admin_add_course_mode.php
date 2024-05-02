@@ -83,6 +83,13 @@
                         <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)</label>
                         <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" placeholder="e.g.1-1/1-2/1-3">       
                     </div>
+                    
+                    <div class="control-group">
+                        <label class="control-label" for="inputPassword">Classroom Type <br>  ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2   ***</label>
+                        <div class="controls">
+                        <input type="text" name="Classroom_Type" pattern="[012]" class = "form-control" placeholder="Computer Classroom:1; 0:General Classroom; 2:Specific Classroom" required>
+                        </div>              
+                    </div>
 
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Classroom</label>
@@ -95,10 +102,10 @@
                                 $result = $conn->query($sql);
 
                                 // 生成下拉式選單
-                                echo '<select name=classroom class="form-control">';
+                                echo '<select name="classroom" class="form-control">';
                                 echo '<option></option>';
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo '<option>' . $row['classroom_no'] . ( $row['classroom_type'] ? " ( computer classroom )" : " " ) . '</option>';
+                                    echo '<option>' . $row['classroom_no'] ;  if( $row['classroom_type'] == 1 )  echo " ( computer classroom )" ; else if( $row['classroom_type'] == 2 ) echo " ( specific classroom )"; else echo " " ; echo  '</option>';
                                 }
 
                                 echo '</select>';

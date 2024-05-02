@@ -156,6 +156,7 @@ CREATE TABLE if not exists `users` (
 ) ENGINE=InnoDB DEFAULT CHARACTER SET = utf8mb4 ;
 -- Set the column 'account' to be unique
 Alter Table users Add Unique( account ) ;
+Alter Table users Add Unique( `name` ) ;
 
 -- --
 -- -- Dumping data for table `users`

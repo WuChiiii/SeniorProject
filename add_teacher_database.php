@@ -10,7 +10,7 @@
     $sql = "insert into teachers values( null, '" . $name . "', '" . $email . "', '" . $position . "', '" . $department  . "', '" . $userid  . "') ;" ;
     echo $sql ; 
 
-    try{
+    try{// add both user and teacher 
         $conn -> query( $sql ) ; 
         $sql = "select * from teachers where teacher_name ='" . $name  . "' ;" ;
         $query = $conn -> query( $sql ) ;

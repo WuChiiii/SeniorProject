@@ -73,9 +73,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type   ***   Computer Classroom:1;    0:Otherwise   ***</label>
+                        <label class="control-label" for="inputPassword">Classroom Type <br> ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2     ***</label>
                         <div class="controls">
-                        <input type="text" name="Classroom_Type" pattern="[01]" class = "form-control" placeholder="Computer Classroom:1; 0:Otherwise" required>
+                        <input type="text" name="Classroom_Type" pattern="[012]" class = "form-control" placeholder="0" required>
                         </div>              
                      </div>
 
@@ -90,7 +90,7 @@
                                 $result = $conn->query($sql);
 
                                 // 生成下拉式選單
-                                echo '<select name=Classroom class="form-control">';
+                                echo '<select name="Classroom" class="form-control">';
                                 echo '<option></option>';
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
                                     echo '<option>' . $row['classroom_no'] . '</option>';

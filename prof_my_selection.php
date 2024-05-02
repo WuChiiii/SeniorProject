@@ -91,13 +91,13 @@
                                             <td><?php if( $data['classType'] == 0 ) echo '選(elective) or 支援外系' ; else if( $data['classType'] == 1 ) echo '必(required)' ; else echo $data['classType'] ; ?></td>
                                             <td><?php echo $data['remarks'] ?></td>
                                             <td><?php echo $data['program'] ?></td>
-                                            <td><?php if( $data['classroomType'] == 0 ) echo "一般教室 General Classroom" ; else echo "電腦教室 Computer Classroom";?> </td>
+                                            <td><?php if( $data['classroomType'] == 0 ) echo "一般教室 General classroom" ; else if( $data['classroomType'] == 1 ) echo "電腦教室 Computer Classroom"; else if( $data['classroomType'] == 2 ) echo "專用教室 Specific Classroom" ;?> </td>
                                             <td><?php if( $data['classroom'] == null) echo "未指定 Not sepecified" ;else echo $data['classroom'] ?></td>
                                             <td><?php echo $data['studentNumber'];?></td>
                                             <td width="160" >
                                                 <!--<h1><?php echo $data['id'] ?></h1>-->
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="deselect(this);" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Deselect</a>
-                                                <a value = "<?php echo $data['teacherid'] ?>" onclick="edit_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
+                                                <a value = "<?php echo $data['id'] ?>" onclick="deselect(this);" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Deselect</a>
+                                                <a value = "<?php echo $data['id'] ?>" onclick="edit_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Edit</a>
                                             </td>
                                         </tr>
                                     <?php endforeach;

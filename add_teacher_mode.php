@@ -10,6 +10,8 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
+                *** It's recommended to only add the professors from other departments.
+                You cannot create an account with the same professor name unless you delete his/her record in teacher section.***
                 <form  method="post" enctype="multipart/form-data" action="add_teacher_database.php"> <hr>			
 				    <div class="control-group">
                         <label class="control-label" for="inputEmail">Name</label>
@@ -26,7 +28,7 @@
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Position</label>
                             <div class="controls">
-                                <input type="text" name="position" pattern="[^'\\\x22;]*" class="form-control" placeholder="e.g.Prof." required>
+                                <input type="text" name="position" pattern="[^'\\\x22;]*" class="form-control" placeholder="e.g.Prof." >
                             </div>
                     </div>
 

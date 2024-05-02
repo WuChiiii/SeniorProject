@@ -83,16 +83,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type   ***   Computer Classroom:1;    0:Otherwise   ***</label>
+                        <label class="control-label" for="inputPassword">Classroom Type <br>  ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2     ***</label>
                         <div class="controls">
-                        <input type="text" name="SClassroom_Type" pattern="[01]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
-                        </div>              
-                     </div>
-
-                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type   ***   Computer Classroom:1;    0:Otherwise   ***</label>
-                        <div class="controls">
-                        <input type="text" name="SClassroom_Type" pattern="[01]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
+                        <input type="text" name="SClassroom_Type" pattern="[012]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
                         </div>              
                      </div>
 

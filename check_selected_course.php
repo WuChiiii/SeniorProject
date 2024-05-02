@@ -39,7 +39,7 @@
                         <div class="hero-unit-table">   
                           <div class="hero-unit-table">   
                             <div class="alert alert-info"><strong><center>Check The Selected Course</center></strong></div>
-                            <strong>***You can specify the classroom type and the number of students or edit other info***</strong>
+                            <strong>***You can specify the classroom type and the number of students or edit other info, if you want to choose the classroom, please go to the my selection section to edit.***</strong>
                             <?php include ('connect.php');
                             // get data from database
                                 $id = $_COOKIE['course_id'] ; 
@@ -91,7 +91,7 @@
                      <div class="control-group">
                         <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系  ***</label>
                         <div class="controls">
-                        <input type="text" name="SClass_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective)' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
+                        <input type="text" name="SClass_Type" pattern="[01]" class = "form-control" value="<?php if( $cur['classType'] == '選(elective)' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
                         </div>              
                      </div>
 
@@ -110,9 +110,9 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type   ***   Computer Classroom:1;    0:Otherwise   ***</label>
+                        <label class="control-label" for="inputPassword">Classroom Type <br>  ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2   ***</label>
                         <div class="controls">
-                        <input type="text" name="SClassroom_Type" pattern="[01]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
+                        <input type="text" name="SClassroom_Type" pattern="[012]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
                         </div>              
                      </div>
 
