@@ -7,67 +7,13 @@ public class initsol {
     initsol() {
     }
 
-    void createfun(info info,String password) {
+    int createfun(info info,String password) {
         String driver = "com.mysql.cj.jdbc.Driver";
         Connection conn = null;
         Statement st = null;
         ResultSet rs = null;
         String url = "jdbc:mysql://localhost:3306/undergraduate_project";
         String user = "root";
-        // for (int i = 0; i < info.course.cnt; i++) {// admin
-        //     if (info.course.priority[i] == 0) {// admin加的
-        //         try {
-        //             String time, classroomstr,sql;
-        //             int classroomtemp, count = 0;
-        //             int numarr[] = new int[info.course.period[i]];
-        //             Class.forName(driver);
-        //             conn = DriverManager.getConnection(url, user, password);
-        //             st = conn.createStatement();// connection
-                    
-        //             sql="select * from course_selection where id =" + info.course.id[i] + ";";
-        //             rs = st.executeQuery(sql);
-        //             rs.next();
-        //             time = rs.getString("time");
-        //             classroomstr = rs.getString("classroom");
-        //             sql="select * from classroom where classroom_no ='" + classroomstr + "';";
-        //             rs = st.executeQuery(sql);
-        //             rs.next();
-        //             classroomtemp = rs.getInt("classroomid");
-        //             for(int k=0;k<info.classroomid.rownum;k++){
-        //                 if(info.classroomid.id[k]==classroomtemp){
-        //                     info.course.tempclassroom[i] = classroomtemp;
-        //                     classroomtemp=k;
-        //                     break;
-        //                 }
-        //             }
-        //             for (int current = 0; current < time.length(); current++) {
-        //                 int tmp = Integer.parseInt(time.substring(current, current + 1)) - 1;
-        //                 tmp = tmp * 16;
-        //                 current += 2;
-        //                 if (current == time.length() - 1 || time.charAt(current + 1) == '/') {
-        //                     tmp = tmp + Integer.parseInt(time.substring(current, current + 1)) - 1;
-        //                     current++;
-        //                 } else {
-        //                     tmp = tmp + Integer.parseInt(time.substring(current, current + 2)) - 1;
-        //                     current+=2;
-        //                 }
-        //                 numarr[count++] = tmp;
-        //             }
-        //             for (int k = 0; k < count; k++) {
-        //                 info.tempans.ans[info.course.semester[i]][info.course.group[i]][numarr[k]] = info.course.id[i];
-        //                 info.classroomid.timetable[classroomtemp][numarr[k]] = 1;
-        //                 info.professorid.timetable[info.course.professor[i]][numarr[k]] = 1;
-        //             }
-        //             conn.close();
-        //         } catch (ClassNotFoundException e) {
-        //             System.out.println("can't find driver for reading files, please check initsol.java");
-        //             e.printStackTrace();
-        //         } catch (SQLException e) {
-        //             e.printStackTrace();
-        //             System.out.println("SQL access denied, please check initsol.java");
-        //         }
-        //     }
-        // }
         for (int i = 0; i < info.course.cnt; i++){//priority 先
             if (info.course.priority[i] == 1){
                 try{
@@ -148,13 +94,24 @@ public class initsol {
                 }
                 ThreadLocalRandom random = ThreadLocalRandom.current();
                 int randomnumber = random.nextInt(80);
-                int routine=randomnumber;
                 int remain=randomnumber % 16,finish=1;
+                if (remain != 3 && remain != 8) {
+                    if (remain < 3) {
+                        randomnumber = randomnumber + 3 - remain;
+                        if (info.course.period[i] == 2)
+                            randomnumber++;
+                        remain = 3;
+                    } else {
+                        randomnumber = randomnumber + 8 - remain;
+                        remain = 8;
+                    }
+                }
+                int routine=randomnumber;
                 while(true){
                     randomnumber=findTheTime(routine,info.course.semester[i], info.course.group[i],randomnumber,i,remain,info);
                     if (randomnumber == -1) {
-                        info.course.classroomflag[i]=0;
-                        break;
+                        System.out.println("you can't assign classroom for "+info.course.name[i]+" please check Course_Selection");
+                        return 0;
                     }
                     if(randomnumber%16+info.course.period[i]>12 || (randomnumber<=39 && randomnumber+info.course.period[i]-1>=38)){//找課堂在13堂內的且不能周三的78
                         continue;
@@ -185,7 +142,7 @@ public class initsol {
                         continue;
                     int temp = funt(grade, group, 1, 1, cur, info);
                     if (temp == 0)
-                        cur--;
+                        return 0;
                 }
             }
         }
@@ -196,7 +153,7 @@ public class initsol {
                         continue;
                     int temp = funt(grade, group, 1, 0, cur, info);
                     if (temp == 0)
-                        cur--;
+                        return 0;
                 }
             }
         }
@@ -207,7 +164,7 @@ public class initsol {
                         continue;
                     int temp = funt(grade, group, 0, 1, cur, info);
                     if (temp == 0)
-                        cur--;
+                        return 0;
                 }
             }
         }
@@ -218,11 +175,12 @@ public class initsol {
                         continue;
                     int temp = funt(grade, group, 0, 0, cur, info);
                     if (temp == 0)
-                        cur--;
+                        return 0;
                 }
             }
         }
         show(info);
+        return 1;
     }
 
     int funt(int grade, int group, int classroomtype, int classtype, int cur, info info) {
@@ -245,28 +203,18 @@ public class initsol {
             randomnumber = findTheTime(firstRandomnum, grade, group, randomnumber, id, remain, info);
             remain = randomnumber % 16;
             if (randomnumber == -1) {
-                System.out.println("here is "+info.course.name[id]);
-                remainclass(info, grade, group, id);
-                break;
+                int fail=remainclass(info, grade, group, id);
+                if(fail==1){
+                    System.out.println("fail to put all the course in timetable");
+                    return 0;
+                }
+                return 1;
             }
             if(randomnumber%16+info.course.period[id]>12 || (randomnumber<=39 && randomnumber+info.course.period[id]-1>=38)){//找課堂在13堂內的且不能周三的78
                 continue;
             }
             classroomnum = findTheClassroom(info, randomnumber, id);
             if (classroomnum == -1) {// 當下時間沒有空教室
-                // if (remain == 3) {
-                //     randomnumber += 5;
-                //     remain = 8;
-                //     if (info.course.period[id] == 2)
-                //         randomnumber--;
-                // } else {
-                //     randomnumber += 11;
-                //     remain = 3;
-                //     if (randomnumber > 79)
-                //         randomnumber = 3;
-                //     if (info.course.period[id] == 2)
-                //         randomnumber++;
-                // }
                 continue;
             }
             info.tempans.ans[grade][group][randomnumber] = info.course.id[id];// 到這邊表示教室 教授 同年級必修 空間皆符合要求
@@ -329,7 +277,7 @@ public class initsol {
 
     int findTheClassroom(info info, int randomnumber, int id) {
         for (int classnum = 0; classnum < info.classroomid.rownum; classnum++) {
-            if (info.classroomid.department[classnum] == 1)
+            if (info.classroomid.department[classnum] == 1 || info.classroomid.computer[classnum] == 2)
                 continue;
             if ((info.course.period[id] == 3 &&
                     info.classroomid.timetable[classnum][randomnumber] == 0
@@ -347,8 +295,7 @@ public class initsol {
         return -1;
     }
 
-    void remainclass(info info, int grade, int group, int id) {// 未完成刪除當下年級的資料
-        System.out.println("comeon"+info.course.name[id]);
+    int remainclass(info info, int grade, int group, int id) {// 未完成刪除當下年級的資料
         for (int i = 0; i < 80; i++) {
             if(i%16+info.course.period[id]>12 || (i<=39 && i+info.course.period[id]-1>=38)){//找課堂在13堂內的且不能周三的78
                 continue;
@@ -384,8 +331,10 @@ public class initsol {
                 info.professorid.timetable[info.course.professor[id]][i + 2] = 1;
                 info.classroomid.timetable[classroomnum][i + 2] = 1;
             }
-            break;
+            return 0;
         }
+        
+        return 1;
     }
 
     void show(info info) {

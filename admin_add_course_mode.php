@@ -105,7 +105,8 @@
                                 echo '<select name="classroom" class="form-control">';
                                 echo '<option></option>';
                                 while ($row = $result->fetch(PDO::FETCH_ASSOC)) {
-                                    echo '<option>' . $row['classroom_no'] ;  if( $row['classroom_type'] == 1 )  echo " ( computer classroom )" ; else if( $row['classroom_type'] == 2 ) echo " ( specific classroom )"; else echo " " ; echo  '</option>';
+                                    echo '<option>' . $row['classroom_no'] .'</option>';
+                                    //  echo '<option>' . $row['classroom_no'] ;  if( $row['classroom_type'] == 1 )  echo " ( computer classroom )" ; else if( $row['classroom_type'] == 2 ) echo " ( specific classroom )"; else echo " " ; echo  '</option>';
                                 }
 
                                 echo '</select>';

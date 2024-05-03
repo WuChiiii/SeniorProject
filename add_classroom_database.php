@@ -18,7 +18,7 @@
         $add_classroom_sql ="insert into classroomschedule (classroomid) values (".$result['classroomid'].");"; 
         $conn -> query( $add_classroom_sql ) ;
     }catch( PDOException $e ){
-        echo "<script> alert('The operation is failed ! You may tr to add a duplicate classroom !') ; </script>" ;  
+        echo "<script> alert('The operation is failed ! You may try to add a duplicate classroom !') ; </script>" ;  
         // echo $e ; 
     }
     

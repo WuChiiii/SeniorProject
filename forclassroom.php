@@ -76,7 +76,7 @@
                                             <td><?php echo $data['classroom_dept'] ?></td>
                                             <td><?php echo $data['classroom_desc'] ?></td>
                                             <td><?php echo $data['classroom_no_seat'] ?></td>
-                                            <td><?php if( $data['classroom_type'] == 1 ) echo '電腦教室( Computer Classroom )' ; else if( $data['classroom_type'] == 0 ) echo '一般教室(General Classroom)'; ?></td>
+                                            <td><?php if( $data['classroom_type'] == 1 ) echo '電腦教室( Computer Classroom )' ; else if( $data['classroom_type'] == 0 ) echo '一般教室( General Classroom )';else echo '專任教室( Specialist Classroom )' ?></td>
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['classroomid'] ?></h1> -->
                                                 <a value = "<?php echo $data['classroomid'] ?>" onclick="delete_classroom(this);" data-toggle="modal" class="btn btn-danger"><i class="icon-trash icon-large"></i>&nbsp;Delete</a>

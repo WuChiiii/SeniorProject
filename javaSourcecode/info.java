@@ -78,18 +78,20 @@ public class info {
                     String temp;
                     course.id[i] = rs.getInt("id");
                     course.name[i] = rs.getString("courseName");
+                    //System.out.println(course.name[i]);
                     course.classtype[i] = rs.getInt("classType");
                     course.classroomtype[i] = rs.getInt("classroomType");
                     course.classroomflag[i]=0;
                     temp=rs.getString("classroom");
                     if(temp!=null && temp.length()>1){
+                         //System.out.println(temp);
                          String sql;
                          int tmp;
                          sql="select * from classroom where classroom_no = '" + temp + "' ;";
                          result = st2.executeQuery(sql);
                          result.next();
                          tmp = result.getInt("classroomid");
-                         System.out.println(temp);
+                         //System.out.println(temp);
                          for(int k=0;k<classroomid.rownum;k++){
                               if(classroomid.id[k]==tmp){
                               course.preclassroom[i] = k;
@@ -187,13 +189,13 @@ public class info {
                tempclassroom = new int[rowcount];
                classtype = new int[rowcount];
                semester = new int[rowcount];
-               classify = new int[4][2][2][2][rowcount];
+               classify = new int[4][2][3][2][rowcount];
                for (int i = 0; i < rowcount; i++) {
                     tempclassroom[i] = -1;
                }
                for (int i = 0; i < 4; i++) {
                     for (int j = 0; j < 2; j++) {
-                         for (int k = 0; k < 2; k++) {
+                         for (int k = 0; k < 3; k++) {
                               for (int m = 0; m < 2; m++) {
                                    for (int n = 0; n < rowcount; n++) {
                                         classify[i][j][k][m][n] = -1;
@@ -207,7 +209,7 @@ public class info {
           void show(int rowcount) {
                for (int i = 0; i < 4; i++) {
                     for (int j = 0; j < 2; j++) {
-                         for (int k = 0; k < 2; k++) {
+                         for (int k = 0; k < 3; k++) {
                               for (int m = 0; m < 2; m++) {
                                    for (int n = 0; n < rowcount; n++) {
                                         System.out.print(classify[i][j][k][m][n] + " ");

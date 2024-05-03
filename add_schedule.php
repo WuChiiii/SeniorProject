@@ -2,45 +2,21 @@
 <?php
 if (isset($_POST['add_schedule_submit'])) {
     //translate for the table--------------------------------------------------------------------------------------
-    $deleteSql = "DELETE FROM pre4_international";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre4_international SELECT * FROM pre3_international";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre3_international";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre3_international SELECT * FROM pre2_international";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre2_international";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre2_international SELECT * FROM pre1_international";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre1_international";
-    $conn->exec($deleteSql);
-    $checkTableSql = "SHOW TABLES LIKE 'internationalschedule'";
-    $result = $conn->query($checkTableSql);
+    $conn->exec("DELETE FROM pre4_international");$conn->exec("INSERT INTO pre4_international SELECT * FROM pre3_international");
+    $conn->exec("DELETE FROM pre3_international");$conn->exec("INSERT INTO pre3_international SELECT * FROM pre2_international");
+    $conn->exec("DELETE FROM pre2_international");$conn->exec("INSERT INTO pre2_international SELECT * FROM pre1_international");
+    $conn->exec("DELETE FROM pre1_international");
+    $result = $conn->query("SHOW TABLES LIKE 'internationalschedule'");
     if ($result->rowCount() > 0) 
         $conn->exec("INSERT INTO pre1_international SELECT * FROM internationalschedule");
-    $deleteSql = "DELETE FROM pre4_csie";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre4_csie SELECT * FROM pre3_csie";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre3_csie";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre3_csie SELECT * FROM pre2_csie";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre2_csie";
-    $conn->exec($deleteSql);
-    $dumpSql = "INSERT INTO pre2_csie SELECT * FROM pre1_csie";
-    $conn->exec($dumpSql);
-    $deleteSql = "DELETE FROM pre1_csie";
-    $conn->exec($deleteSql);
-    $checkTableSql = "SHOW TABLES LIKE 'normalschedule'";
-    $result = $conn->query($checkTableSql);
+    $conn->exec("DELETE FROM pre4_csie"); $conn->exec("INSERT INTO pre4_csie SELECT * FROM pre3_csie");
+    $conn->exec("DELETE FROM pre3_csie");$conn->exec("INSERT INTO pre3_csie SELECT * FROM pre2_csie");
+    $conn->exec("DELETE FROM pre2_csie");$conn->exec("INSERT INTO pre2_csie SELECT * FROM pre1_csie");
+    $conn->exec("DELETE FROM pre1_csie");
+    $result = $conn->query("SHOW TABLES LIKE 'normalschedule'");
     if ($result->rowCount() > 0) 
         $conn->exec("INSERT INTO pre1_csie SELECT * FROM normalschedule");
-    
-    $checkTableSql = "SHOW TABLES LIKE 'mapping_id'";
-    $result = $conn->query($checkTableSql);
+    $result = $conn->query("SHOW TABLES LIKE 'mapping_id'");
     if ($result->rowCount() > 0) {
         $conn->exec("UPDATE mapping_id
         SET pre4_classroom_id = pre3_classroom_id,
@@ -62,11 +38,13 @@ if (isset($_POST['add_schedule_submit'])) {
     $output = shell_exec( $path_to_java_bin . "\java.exe -jar "."$path_to_source"."\mainclass.jar" );
     var_dump($output);
 
-    // echo $path_to_java_bin . "\javac.exe -encoding utf-8 " .getcwd()."\javaSourcecode\*.java<br/>" ; 
-    // echo  "cd "."$path_to_source"." && " . $path_to_java_bin . "\jar.exe -cvfm mainclass.jar MANIFEST.MF *.class<br/>" ;
-    // echo "cd ". $path_back . "<br/>" ; 
-    // echo $path_to_java_bin . "\java.exe -jar "."$path_to_source"."\mainclass.jar" ; 
-
+    // $path_back =getcwd();
+    // $path_to_source =getcwd() ."\javaSourcecode"; 
+    // shell_exec( "javac -encoding utf-8 ".getcwd()."\javaSourcecode\*.java" );
+    // shell_exec("cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class");
+    // shell_exec("cd "."$path_back");
+    // $output = shell_exec( "java -jar "."$path_to_source"."\mainclass.jar" );
+    // var_dump($output);
     echo "<script> window.location = 'forschedule.php' ; </script>" ;
 }
 else 
