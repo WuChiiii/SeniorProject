@@ -36,7 +36,12 @@ if (isset($_POST['add_schedule_submit'])) {
     shell_exec("cd "."$path_to_source"." && " . $path_to_java_bin . "\jar.exe -cvfm mainclass.jar MANIFEST.MF *.class");
     shell_exec("cd "."$path_back");
     $output = shell_exec( $path_to_java_bin . "\java.exe -jar "."$path_to_source"."\mainclass.jar" );
-    var_dump($output);
+    if($output!=null){
+        var_dump($output);
+    }
+    else{
+    echo "<script> window.location = 'forschedule.php' ; </script>" ;
+    }
 
     // $path_back =getcwd();
     // $path_to_source =getcwd() ."\javaSourcecode"; 
@@ -44,8 +49,12 @@ if (isset($_POST['add_schedule_submit'])) {
     // shell_exec("cd "."$path_to_source"." && jar -cvfm mainclass.jar MANIFEST.MF *.class");
     // shell_exec("cd "."$path_back");
     // $output = shell_exec( "java -jar "."$path_to_source"."\mainclass.jar" );
-    // var_dump($output);
-    echo "<script> window.location = 'forschedule.php' ; </script>" ;
+    // if($output!=null){
+    //     var_dump($output);
+    // }
+    // else{
+    // echo "<script> window.location = 'forschedule.php' ; </script>" ;
+    // }
 }
 else 
 {

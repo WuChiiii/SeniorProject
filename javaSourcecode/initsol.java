@@ -179,7 +179,7 @@ public class initsol {
                 }
             }
         }
-        show(info);
+        //show(info);
         return 1;
     }
 
