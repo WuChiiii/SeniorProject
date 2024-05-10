@@ -60,6 +60,26 @@
                                                     課程表
                                                 </button>	
                                             </a>
+                                            <a href="table_freshman.php" target="_blank">
+                                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                                    一年級課表
+                                                </button>	
+                                            </a>
+                                            <a href="table_sophomore.php" target="_blank">
+                                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                                    二年級課表
+                                                </button>	
+                                            </a>
+                                            <a href="table_junior.php" target="_blank">
+                                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                                    三年級課表
+                                                </button>	
+                                            </a>
+                                            <a href="table_graduate.php" target="_blank">
+                                                <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                                    研究所課表
+                                                </button>	
+                                            </a>
                                         </td>
 										<td>
                                             <button class="btn btn-success btn-lg" onclick="ToEditLink()">
@@ -74,6 +94,26 @@
                                             歷史課表1
                                         </button>	
                                         </a>
+                                        <a href="table_freshman1.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史一年級課表1
+                                        </button>	
+                                        </a>
+                                        <a href="table_sophomore1.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史二年級課表1
+                                        </button>	
+                                        </a>
+                                        <a href="table_junior1.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史三年級課表1
+                                        </button>	
+                                        </a>
+                                        <a href="table_graduate1.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史研究所課表1
+                                        </button>	
+                                        </a>
                                         </td>
 										<td>
 
@@ -86,9 +126,28 @@
                                         歷史課表2
                                         </button>	
                                         </a>
+                                        <a href="table_freshman2.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史一年級課表2
+                                        </button>	
+                                        </a>
+                                        <a href="table_sophomore2.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史二年級課表2
+                                        </button>	
+                                        </a>
+                                        <a href="table_junior2.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史三年級課表2
+                                        </button>	
+                                        </a>
+                                        <a href="table_graduate2.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史研究所課表2
+                                        </button>	
+                                        </a>
                                         </td>
 										<td>
-
                                         </td>                                      
                                     </tr>
                                     <tr>
@@ -96,6 +155,26 @@
                                         <a href="table_pre3.php" target="_blank">
                                         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
                                         歷史課表3
+                                        </button>	
+                                        </a>
+                                        <a href="table_freshman3.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史一年級課表3
+                                        </button>	
+                                        </a>
+                                        <a href="table_sophomore3.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史二年級課表3
+                                        </button>	
+                                        </a>
+                                        <a href="table_junior3.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史三年級課表3
+                                        </button>	
+                                        </a>
+                                        <a href="table_graduate3.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史研究所課表3
                                         </button>	
                                         </a>
                                         </td>
@@ -108,6 +187,26 @@
                                         <a href="table_pre4.php" target="_blank">
                                         <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
                                         歷史課表4
+                                        </button>	
+                                        </a>
+                                        <a href="table_freshman4.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史一年級課表4
+                                        </button>	
+                                        </a>
+                                        <a href="table_sophomore4.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史二年級課表4
+                                        </button>	
+                                        </a>
+                                        <a href="table_junior4.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史三年級課表4
+                                        </button>	
+                                        </a>
+                                        <a href="table_graduate4.php" target="_blank">
+                                        <button class="btn btn-primary btn-lg" data-toggle="modal" data-target="#room">
+                                            歷史研究所課表4
                                         </button>	
                                         </a>
                                         </td>

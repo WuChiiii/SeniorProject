@@ -62,7 +62,7 @@
                                         <th>Remarks</th>
                                         <th>Program</th>
                                         <th>Classroom Type</th>
-                                        <th>Student Number</th>
+                                        <th>Student Maximum</th>
                                         <th>Professor</th>
                                         <th>time</th>
                                         <th>domain</th>
