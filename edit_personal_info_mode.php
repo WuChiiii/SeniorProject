@@ -26,6 +26,7 @@
                         $department = "CSIE" ; 
                     }
                 ?>
+                            <strong>* indicates required</strong>
                             <form class="form-horizontal" method="post" action="edit_personal_info_database.php" enctype="multipart/form-data">
                                 <!-- <div class="alert alert-info"><strong>Account Info</strong> </div> 
                                 <hr> -->
@@ -42,9 +43,9 @@
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="inputPassword">Department</label>
+                                        <label class="control-label" for="inputPassword">Department*</label>
                                         <div class="controls">
-                                            <input name="department" type="text" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $department ; ?>">
+                                            <input name="department" type="text" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $department ; ?>"required>
                                         </div>
                                     </div>
 								<hr/>

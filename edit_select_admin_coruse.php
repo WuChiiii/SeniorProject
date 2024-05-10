@@ -19,50 +19,50 @@
                     $cur = $query -> fetch( PDO::FETCH_ASSOC ) ; 
                     if( !$cur ) echo "<script> location.href = 'forcourseselection.php' ; </script>" ; 
                 ?>
-                
+                <strong>* indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="edit_select_admin_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Course Name</label>
+                        <label class="control-label" for="inputEmail">Course Name*</label>
                         <input type="text" name="Course_Name" class = "form-control" pattern="[^'\\\x22;]*" value="<?php echo $cur['courseName'] ?>" required>       
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Course Number</label>
                         <div class="controls">
-                            <input type="text" class = "form-control" pattern="[^'\\\x22;]*" name="Course_Number" value="<?php echo $cur['courseNumber'] ?>"required>
+                            <input type="text" class = "form-control" pattern="[^'\\\x22;]*" name="Course_Number" value="<?php echo $cur['courseNumber'] ?>">
                         </div>
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Credit   ***   An integer in [0, 9]   ***</label>
+                        <label class="control-label" for="inputPassword">Credit<br>(An integer in [0, 9])</label>
                             <div class="controls">
-                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" value="<?php echo $cur['credit'] ;?>" required>
+                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" value="<?php echo $cur['credit'] ;?>">
                             </div>
                     </div>
 
 					<div class="control-group">
-                        <label class="control-label" for="inputPassword">Period(hr)   ***   an integer in [0, 9]   ***</label>
+                        <label class="control-label" for="inputPassword">Period(hr)*<br>(an integer in [0, 9])</label>
                         <div class="controls">
                         <input type="text" name="Period" pattern = "[0-9]" class = "form-control" value="<?php echo $cur['period'] ;?>" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester ( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
+                        <label class="control-label" for="inputPassword">Semester*<br>( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
                         <div class="controls">
                         <input type="text" name="Semester" pattern="[1234][AB]" class = "form-control" value="<?php echo $cur['semester'] ;?>" required>
                         </div>              
                      </div>
                 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Group Type   ***   Local Group:1;   International Group:0   ***</label>
+                        <label class="control-label" for="inputPassword">Group Type*<br>(Local Group:1;International Group:0)</label>
                         <div class="controls">
                         <input type="text" name="Group_Type" pattern="[01]" class = "form-control" value="<?php if( $cur['groupType'] == 'International Group' ) echo 0 ; else if( $cur['groupType'] == 'Local Group' ) echo 1 ; else echo $cur['groupType'] ;?>" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系  ***</label>
+                        <label class="control-label" for="inputPassword">Class Type*<br>(1:必(Required); 0:選(elective) or 支援外系)</label>
                         <div class="controls">
                         <input type="text" name="Class_Type" pattern="[01]*" class = "form-control" value="<?php if( $cur['classType'] == '選(elective) or 支援外系' ) echo 0 ; else if( $cur['classType'] == '必(required)' ) echo 1 ; else echo $cur['classType'] ;?>" required>
                         </div>              
@@ -83,21 +83,21 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type  <br> ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2   ***</label>
+                        <label class="control-label" for="inputPassword">ClassroomType*<br>(Computer Classroom:1;General Classroom:0;Specific Classroom:2)</label>
                         <div class="controls">
                         <input type="text" name="Classroom_Type" pattern="[012]" class = "form-control" value="<?php echo $cur['classroomType'] ;?>" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Student Maximum</label>
+                        <label class="control-label" for="inputPassword">Maximum Student Number*</label>
                         <div class="controls">
                         <input type="text" name="Student_Number" pattern="[0-9]+" class = "form-control" value="<?php echo $cur['studentNumber'] ;?>" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課) e.g.  1-1/1-2/1-3</label>
+                        <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)e.g.1-4/1-5/1-6為星期一第四節至第六節(9a.m.-12p.m.)</label>
                         <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" value="<?php echo $cur['time'] ;?>">       
                     </div>
 

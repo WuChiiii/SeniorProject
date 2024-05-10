@@ -20,6 +20,7 @@
                     $department = ((array)$cur)['department'] ;
                     $account = ((array)$cur)['account'] ;   
                 ?>
+                <strong>* indicates required</strong>
                             <form class="form-horizontal" method="post" action="edit_account_info_database.php" enctype="multipart/form-data">
                                 <!-- <div class="alert alert-info"><strong>Account Info</strong> </div> 
                                 <hr> -->
@@ -36,19 +37,19 @@
                                         </div>
                                     </div>-->
                                     <div class="control-group">
-                                        <label class="control-label" for="inputPassword">Account</label>
+                                        <label class="control-label" for="inputPassword">Account*</label>
                                         <div class="controls">
                                             <input type="text"  name="account" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['account'] ; ?>" required>
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="inputPassword">Old Password</label>
+                                        <label class="control-label" for="inputPassword">Old Password*</label>
                                         <div class="controls">
                                             <input name="old_password" type="password" pattern="[^'\\\x22;]*" class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>" required>
                                         </div>
                                     </div>
                                     <div class="control-group">
-                                        <label class="control-label" for="inputPassword">New Password</label>
+                                        <label class="control-label" for="inputPassword">New Password*</label>
                                         <div class="controls">
                                             <input name="new_password" type="password" pattern="[^'\\\x22;]*" class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>" required>
                                         </div>

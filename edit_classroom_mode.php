@@ -22,13 +22,13 @@
                                 <div class="alert alert-info"><strong>Edit Classroom</strong> </div>
                                 <hr>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Classroom No.</label>
+                                    <label class="control-label" for="inputPassword">Classroom No.*</label>
                                     <div class="controls">
                                         <input type="text" name="classroom_no" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['classroom_no'] ; ?>" required>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Department</label>
+                                    <label class="control-label" for="inputPassword">Department*</label>
                                     <div class="controls">
                                         <input type="text"  name="classroom_dept" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['classroom_dept'] ; ?>" required>
                                     </div>
@@ -41,19 +41,22 @@
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">No. of Seats</label>
+                                    <label class="control-label" for="inputPassword">No. of Seats*</label>
                                     <div class="controls">
                                         <input type="text"  name="classroom_no_seat" pattern="[0-9]+" class ="form-control" value="<?php echo $cur['classroom_no_seat'] ; ?>" required>
                                     </div>
                                 </div>
 
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Classroom Type <br>  ***   ( Computer Classroom:1; General Classroom:0; Specific Classroom:2 )   ***</label>
+                                    <label class="control-label" for="inputPassword">ClassroomType*</label>
+                                    <br>
+                                    <strong>( General Classroom:0; Computer Classroom:1; Specific Classroom:2 )<strong>
                                     <div class="controls">
                                         <input type="text"  name="classroom_type" pattern="[012]" class ="form-control" value="<?php echo $cur['classroom_type'] ; ?>" required>
                                     </div>
                                 </div>
 
+                                <div class="control-group">
 
 									<hr/>
 

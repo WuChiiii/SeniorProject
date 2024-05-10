@@ -85,7 +85,7 @@
                                             <td width="160" >
                                                 <!-- <h1><?php echo $data['id'] ?></h1> -->
                                                 <a value = "<?php echo $data['id'] ?>" onclick="select_course(this);" class="btn btn-success" role="botton"><i class="icon-pencil icon-large"></i>&nbsp;Select</a>
-                                                <div style="font-size:13px;"><em> * You can specify the Maximum of students and the classroom type after selecting</em> </div>
+                                                <div style="font-size:13px;"><em> * You can specify the Maximum nuumber of students and the classroom type after selecting in 'My Selection' section</em> </div>
                                             </td>
                                     </tr>
                                     <?php endforeach;

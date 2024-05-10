@@ -21,28 +21,28 @@
                                 if( !$cur ) echo "<script> location.href = 'foruser.php' ; </script>" ; 
                             ?>
                             <form class="form-horizontal" method="post" action="edit_user_database.php" enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Edit User</strong> </div>
+                                <strong>* indicates required</strong>
                                 <hr>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Name</label>
+                                    <label class="control-label" for="inputPassword">Name(readonly)</label>
                                     <div class="controls">
-                                        <input type="text" name="name" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['name'] ; ?>" required>
+                                        <input type="text" name="name" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['name'] ; ?>" required readonly>
                                     </div>
                                 </div>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Department</label>
+                                    <label class="control-label" for="inputPassword">Department(readonly)</label>
                                     <div class="controls">
-                                        <input type="text" name="department" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['department'] ; ?>">
+                                        <input type="text" name="department" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['department'] ; ?>" required readonly>
                                     </div>
                                 </div>
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Account</label>
+                                    <label class="control-label" for="inputPassword">Account*</label>
                                     <div class="controls">
                                         <input type="text"  name="account" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['account'] ; ?>" required>
                                     </div>
                                 </div>
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Password</label>
+                                    <label class="control-label" for="inputPassword">Password*</label>
                                     <div class="controls">
                                         <input name="password" type="password" pattern="[^'\\\x22;]*" class ="form-control" value="<?php /*echo $cur['hash'] ;*/?>" required>
                                     </div>

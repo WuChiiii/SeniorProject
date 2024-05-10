@@ -10,18 +10,20 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
-                *** It's recommended to only add the professors from other departments.
-                You cannot create an account with the same professor name unless you delete his/her record in teacher section.***
+                Note:&nbsp;It's recommended to only add the professors from other departments.
+                You cannot create an account with the same professor name unless you delete his/her record in teacher section.
+                <br/>* 
+                <strong>indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="add_teacher_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Name</label>
-                        <input type="text" name="name" pattern="[^'\\\x22;]*" class = "form-control" placeholder="e.g.Brian Koo">       
+                        <label class="control-label" for="inputEmail">Name*</label>
+                        <input type="text" name="name" pattern="[^'\\\x22;]*" class = "form-control" placeholder="e.g.Brian Koo" required>       
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Email</label>
                         <div class="controls">
-                            <input type="text" class="form-control" pattern="[^'\\\x22;]+[@][^'\\\x22;]+" name="email" placeholder="e.g.abc123@gmail.com" required>
+                            <input type="text" class="form-control" pattern="[^'\\\x22;]+[@][^'\\\x22;]+" name="email" placeholder="e.g.abc123@gmail.com">
                         </div>
                     </div>
                                
@@ -33,7 +35,7 @@
                     </div>
 
 					<div class="control-group">
-                        <label class="control-label" for="inputPassword">Department</label>
+                        <label class="control-label" for="inputPassword">Department*</label>
                         <div class="controls">
                         <input type="text" name="department" pattern="[^'\\\x22;]*" class="form-control" placeholder="CSIE" required>
                         </div>              
