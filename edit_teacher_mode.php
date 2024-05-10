@@ -19,10 +19,10 @@
                                 if( !$cur ) echo "<script> location.href = 'forteacher.php'; </script>" ; 
                             ?>
                             <form class="form-horizontal" method="post" action="edit_teacher_database.php" enctype="multipart/form-data">
-                                <div class="alert alert-info"><strong>Edit Teacher</strong> </div>
+                                <strong>* indicates required</strong>
                                 <hr>
                                 <div class="control-group">
-                                    <label class="control-label" for="inputPassword">Name</label>
+                                    <label class="control-label" for="inputPassword">Name*</label>
                                     <div class="controls">
                                         <input type="text" name="teacher_name" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['teacher_name'] ; ?>" required>
                                     </div>
@@ -30,7 +30,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Email</label>
                                     <div class="controls">
-                                        <input type="text" name="teacher_email" pattern="[^'\\\x22;]*[@][^'\\\x22;]*" class="form-control" value="<?php echo $cur['teacher_email'] ; ?>" required>
+                                        <input type="text" name="teacher_email" pattern="[^'\\\x22;]*[@][^'\\\x22;]*" class="form-control" value="<?php echo $cur['teacher_email'] ; ?>">
                                     </div>
                                 </div>
 								<div class="control-group">
@@ -40,7 +40,7 @@
                                     </div>
                                 </div>
 								<div class="control-group">
-                                    <label class="control-label" for="inputPassword">Department</label>
+                                    <label class="control-label" for="inputPassword">Department*</label>
                                     <div class="controls">
                                         <input type="text"  name="teacher_department" pattern="[^'\\\x22;]*" class ="form-control" value="<?php echo $cur['teacher_department'] ; ?>" required>
                                     </div>

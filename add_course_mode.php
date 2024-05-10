@@ -10,49 +10,51 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
+                <strong>* indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="add_course_database.php"> <hr>			
-				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Course Name</label>
+				    
+                    <div class="control-group">
+                        <label class="control-label" for="inputEmail">Course Name*</label>
                         <input type="text" name="Course_Name" class = "form-control" pattern="[^'\\\x22;]*" placeholder="e.g.Calculus" required>       
                     </div>
                                
                     <div class="control-group">
                         <label class="control-label" for="inputPassword">Course Number</label>
                         <div class="controls">
-                            <input type="text" class = "form-control" pattern="[^'\\\x22;]*" name="Course_Number" placeholder="e.g.GC__10000" required>
+                            <input type="text" class = "form-control" pattern="[^'\\\x22;]*" name="Course_Number" placeholder="e.g.GC__10000">
                         </div>
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Credit   ***   An integer in [0, 9]   ***</label>
+                        <label class="control-label" for="inputPassword">Credit<br>(An integer in [0, 9])</label>
                             <div class="controls">
-                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" placeholder="e.g.3" required>
+                                <input type="text" name="Credit" pattern="[0-9]+[.]*[0-9]*" class = "form-control" placeholder="e.g.3">
                             </div>
                     </div>
 
 					<div class="control-group">
-                        <label class="control-label" for="inputPassword">Period(hr)   ***   an integer in [0, 9]   ***</label>
+                        <label class="control-label" for="inputPassword">Period(hr)*<br>(an integer in [0, 9])</label>
                         <div class="controls">
                         <input type="text" name="Period" pattern = "[0-9]" class = "form-control" placeholder="e.g.3" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Semester ( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
+                        <label class="control-label" for="inputPassword">Semester* <br>( 1A:一上 ; 1B:一下 ; 2A:二上 ; 2B:二下 ; 3A:三上 ; 3B:三下 ; 4A:四上 ; 4B:四下 )</label>
                         <div class="controls">
                         <input type="text" name="Semester" pattern="[1234][AB]" class = "form-control" placeholder="e.g.3B" required>
                         </div>              
                      </div>
                 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Group Type   ***   Local Group:1;   International Group:0   ***</label>
+                        <label class="control-label" for="inputPassword">Group Type*<br>Local Group:1;International Group:0)</label>
                         <div class="controls">
                         <input type="text" name="Group_Type" pattern="[01]" class = "form-control" placeholder="e.g.0" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Type   ***   1:必(Required)/0:選(elective) or 支援外系  ***</label>
+                        <label class="control-label" for="inputPassword">Class Type*<br>(1:必(Required); 0:選(elective) or 支援外系)</label>
                         <div class="controls">
                         <input type="text" name="Class_Type" pattern="[01]*" class = "form-control" placeholder="e.g.1" required>
                         </div>              
@@ -73,14 +75,14 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type <br> ***   Computer Classroom:1;    General Classroom:0;     Specific Classroom:2     ***</label>
+                        <label class="control-label" for="inputPassword">Classroom Type* <br>(General Classroom:0; Computer Classroom:1; Specific Classroom:2)</label>
                         <div class="controls">
-                        <input type="text" name="Classroom_Type" pattern="[012]" class = "form-control" placeholder="0" required>
+                        <input type="text" name="Classroom_Type" pattern="[012]" class = "form-control" placeholder="e.g.0" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom *** not required ***</label>
+                        <label class="control-label" for="inputPassword">Classroom(NOT required)</label>
                         <?php
                         
                             include "connect.php" ;
@@ -108,7 +110,7 @@
                     </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Student Maximum</label>
+                        <label class="control-label" for="inputPassword">Maximum Student Number*</label>
                         <div class="controls">
                         <input type="text" name="Student_Number" pattern="[0-9]+" class = "form-control" placeholder="e.g.80" required>
                         </div>              

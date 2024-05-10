@@ -10,14 +10,15 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
+                <strong>* indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="add_classroom_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Classroom No.</label>
+                        <label class="control-label" for="inputEmail">Classroom No.*</label>
                         <input type="text" name="classroom_no" class = "form-control" pattern="[^'\\\x22;]*" placeholder="e.g.B101" required>       
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Department   ***   ( 資工系必須為"CSIE" )   *** </label>
+                        <label class="control-label" for="inputPassword">Department*( 資工系必須為"CSIE" ) </label>
                         <div class="controls">
                             <input type="text" class = "form-control" name="classroom_dept" value="CSIE" pattern="[^'\\\x22;]*" placeholder="e.g.CSIE" required >
                         </div>
@@ -31,16 +32,16 @@
                     </div>
 
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">No. of Seats</label>
+                        <label class="control-label" for="inputPassword">No. of Seats*</label>
                             <div class="controls">
                                 <input type="text" name="classroom_no_seat" class = "form-control" pattern="[0-9]+" placeholder="e.g.80" required>
                             </div>
                     </div>
     
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Classroom Type <br>  ***   ( Computer Classroom:1;  General Classroom:0;  Specific Classroom:2 )   ***</label>
+                        <label class="control-label" for="inputPassword">ClassroomType* <br>( General Classroom:0; Computer Classroom:1; Specific Classroom:2 )</label>
                             <div class="controls">
-                                <input type="text" name="classroom_type" class = "form-control" pattern="[012]*" placeholder="1:Computer Classroom; 0:General Classroom; 2:Specific Classroom" required>
+                                <input type="text" name="classroom_type" class = "form-control" pattern="[012]" placeholder="0:General Classroom; 1:Computer Classroom; 2:Specific Classroom" required>
                             </div>
                     </div>
                               

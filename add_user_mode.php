@@ -10,28 +10,29 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
+                <strong>* indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="add_user_database.php"> <hr>			
 				    <div class="control-group">
-                        <label class="control-label" for="inputEmail">Name</label>
+                        <label class="control-label" for="inputEmail">Name*</label>
                         <input type="text" name="name" pattern="[^'\\\x22;]*" class="form-control" placeholder="e.g.Brian Koo" required>       
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Department</label>
+                        <label class="control-label" for="inputPassword">Department*</label>
                         <div class="controls">
                             <input type="text" class="form-control" pattern="[^'\\\x22;]*" value="CSIE" name="department" placeholder="e.g.CSIE">
                         </div>
                     </div>
                                
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">Account</label>
+                        <label class="control-label" for="inputPassword">Account*</label>
                             <div class="controls">
                                 <input type="text" name="account" pattern="[^'\\\x22;]*" class = "form-control" placeholder="e.g.brian_koo123" required>
                             </div>
                     </div>
 
 					<div class="control-group">
-                        <label class="control-label" for="inputPassword">Password</label>
+                        <label class="control-label" for="inputPassword">Password*</label>
                         <div class="controls">
                         <input type="password" name="password" class="form-control" pattern="[^'\\\x22;]*" placeholder="e.g.briankoo@123" required>
                         </div>              

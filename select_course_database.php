@@ -52,7 +52,7 @@
     $r = $query -> fetchAll( PDO::FETCH_ASSOC ) ; 
     $flag = 0 ; //*** php executes all code even after redirect 
     foreach( $r as $data ):
-        if( $data['courseNumber'] == $courseNumber && $data['groupType'] == $groupType && $data['userid'] == $userid )
+        if( $data['courseNumber'] == $courseNumber && $data['groupType'] == $groupType && $data['teacherid'] == $teacherid )
         {
             $flag = 1 ; 
             echo "<script> alert('You have already selected this course ! Please check in My Selection'); </script>" ;
@@ -77,5 +77,5 @@
             echo $e ;  
             echo "<script> alert('Error !'); </script>" ;
         }
-    }echo "<script> window.location = 'check_selected_course.php' ; </script>" ; 
+    }echo "<script> window.location = 'prof_course_selection.php' ; </script>" ; 
 ?> 
