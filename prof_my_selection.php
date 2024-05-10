@@ -63,7 +63,7 @@
                                         <th>Program</th>
                                         <th>Classroom Type</th>
                                         <th>Classroom</th>
-                                        <th>Student Number</th>
+                                        <th>Student Maximum</th>
                                         <th>Action</th>
                                     </tr>
                                     

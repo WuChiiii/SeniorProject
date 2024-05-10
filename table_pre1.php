@@ -20,7 +20,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>History curriculum 1</title>
+<title>History Curriculum 1</title>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
 </head>
 <header>
@@ -52,7 +52,7 @@
 	<h4 align="center">
 		資工系課程表</br>
 	</h4>
-	<table border="1" style="border-collapse:collapse;" id=pre1_Table>
+	<table border="1" style="border-collapse:collapse;" id=pre1_table>
 		<thead>
 			<tr>
 				<thead>
@@ -415,11 +415,13 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -438,11 +440,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-1"] == -1)//當下沒課
@@ -460,11 +463,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -485,11 +489,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -508,11 +513,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-1"] == -1)//當下沒課
@@ -530,11 +536,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -559,11 +566,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}	
 				?>
@@ -596,11 +604,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -619,11 +628,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-1"] == -1)//當下沒課
@@ -641,11 +651,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -666,11 +677,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -689,11 +701,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-1"] == -1)//當下沒課
@@ -711,11 +724,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -740,11 +754,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}	
 				?>
@@ -776,11 +791,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -799,11 +815,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-1"] == -1)//當下沒課
@@ -821,11 +838,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -846,11 +864,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -869,11 +888,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-1"] == -1)//當下沒課
@@ -891,11 +911,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -920,11 +941,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}	
 				?>
@@ -956,11 +978,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -979,11 +1002,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-1"] == -1)//當下沒課
@@ -1001,11 +1025,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1026,11 +1051,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1049,11 +1075,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-1"] == -1)//當下沒課
@@ -1071,11 +1098,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1100,11 +1128,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}	
 				?>
@@ -1136,11 +1165,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1159,11 +1189,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-1"] == -1)//當下沒課
@@ -1181,11 +1212,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1206,11 +1238,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1229,11 +1262,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-1"] == -1)//當下沒課
@@ -1251,11 +1285,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1280,11 +1315,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}	
 				?>
@@ -1326,11 +1362,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1349,11 +1386,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-2"] == -1)//當下沒課
@@ -1371,11 +1409,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1396,11 +1435,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1419,11 +1459,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-2"] == -1)//當下沒課
@@ -1441,11 +1482,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1470,11 +1512,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -1507,11 +1550,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1530,11 +1574,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-2"] == -1)//當下沒課
@@ -1552,11 +1597,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1577,11 +1623,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1600,11 +1647,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-2"] == -1)//當下沒課
@@ -1622,11 +1670,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1651,11 +1700,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -1687,11 +1737,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1710,11 +1761,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-2"] == -1)//當下沒課
@@ -1732,11 +1784,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1757,11 +1810,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1780,11 +1834,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-2"] == -1)//當下沒課
@@ -1802,11 +1857,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1831,11 +1887,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -1867,11 +1924,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1890,11 +1948,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-2"] == -1)//當下沒課
@@ -1912,11 +1971,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -1937,11 +1997,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -1960,11 +2021,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-2"] == -1)//當下沒課
@@ -1982,11 +2044,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2011,11 +2074,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2047,11 +2111,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2070,11 +2135,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-2"] == -1)//當下沒課
@@ -2092,11 +2158,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2117,11 +2184,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2140,11 +2208,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-2"] == -1)//當下沒課
@@ -2162,11 +2231,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2191,11 +2261,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2236,11 +2307,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2259,11 +2331,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-3"] == -1)//當下沒課
@@ -2281,11 +2354,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2306,11 +2380,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2329,11 +2404,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-3"] == -1)//當下沒課
@@ -2351,11 +2427,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2380,11 +2457,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2417,11 +2495,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2440,11 +2519,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-3"] == -1)//當下沒課
@@ -2462,11 +2542,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2487,11 +2568,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2510,11 +2592,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-3"] == -1)//當下沒課
@@ -2532,11 +2615,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2561,11 +2645,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2597,11 +2682,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2620,11 +2706,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-3"] == -1)//當下沒課
@@ -2642,11 +2729,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2667,11 +2755,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2690,11 +2779,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-3"] == -1)//當下沒課
@@ -2712,11 +2802,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2741,11 +2832,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2777,11 +2869,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2800,11 +2893,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-3"] == -1)//當下沒課
@@ -2822,11 +2916,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2847,11 +2942,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2870,11 +2966,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-3"] == -1)//當下沒課
@@ -2892,11 +2989,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -2921,11 +3019,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -2957,11 +3056,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -2980,11 +3080,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-3"] == -1)//當下沒課
@@ -3002,11 +3103,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3027,11 +3129,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3050,11 +3153,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-3"] == -1)//當下沒課
@@ -3072,11 +3176,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3101,11 +3206,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -3148,11 +3254,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3171,11 +3278,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-4"] == -1)//當下沒課
@@ -3193,11 +3301,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3218,11 +3327,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3241,11 +3351,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-4"] == -1)//當下沒課
@@ -3263,11 +3374,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3292,11 +3404,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -3329,11 +3442,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3352,11 +3466,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-4"] == -1)//當下沒課
@@ -3374,11 +3489,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3399,11 +3515,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3422,11 +3539,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-4"] == -1)//當下沒課
@@ -3444,11 +3562,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3473,11 +3592,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -3509,11 +3629,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3532,11 +3653,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-4"] == -1)//當下沒課
@@ -3554,11 +3676,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3579,11 +3702,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3602,11 +3726,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-4"] == -1)//當下沒課
@@ -3624,11 +3749,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3653,11 +3779,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -3689,11 +3816,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3712,11 +3840,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-4"] == -1)//當下沒課
@@ -3734,11 +3863,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3759,11 +3889,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3782,11 +3913,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-4"] == -1)//當下沒課
@@ -3804,11 +3936,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3833,11 +3966,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -3869,11 +4003,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3892,11 +4027,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-4"] == -1)//當下沒課
@@ -3914,11 +4050,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -3939,11 +4076,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -3962,11 +4100,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-4"] == -1)//當下沒課
@@ -3984,11 +4123,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4013,11 +4153,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4061,11 +4202,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4084,11 +4226,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-5"] == -1)//當下沒課
@@ -4106,11 +4249,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4131,11 +4275,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4154,11 +4299,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-5"] == -1)//當下沒課
@@ -4176,11 +4322,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4205,11 +4352,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4242,11 +4390,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4265,11 +4414,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-5"] == -1)//當下沒課
@@ -4287,11 +4437,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4312,11 +4463,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4335,11 +4487,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-5"] == -1)//當下沒課
@@ -4357,11 +4510,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4386,11 +4540,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4422,11 +4577,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4445,11 +4601,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-5"] == -1)//當下沒課
@@ -4467,11 +4624,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4492,11 +4650,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4515,11 +4674,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-5"] == -1)//當下沒課
@@ -4537,11 +4697,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4566,11 +4727,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4602,11 +4764,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4625,11 +4788,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-5"] == -1)//當下沒課
@@ -4647,11 +4811,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4672,11 +4837,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4695,11 +4861,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-5"] == -1)//當下沒課
@@ -4717,11 +4884,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4746,11 +4914,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4782,11 +4951,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4805,11 +4975,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-5"] == -1)//當下沒課
@@ -4827,11 +4998,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4852,11 +5024,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4875,11 +5048,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-5"] == -1)//當下沒課
@@ -4897,11 +5071,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -4926,11 +5101,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -4972,11 +5148,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -4995,11 +5172,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-6"] == -1)//當下沒課
@@ -5017,11 +5195,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5042,11 +5221,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5065,11 +5245,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-6"] == -1)//當下沒課
@@ -5087,11 +5268,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5116,11 +5298,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -5153,11 +5336,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5176,11 +5360,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-6"] == -1)//當下沒課
@@ -5198,11 +5383,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5223,11 +5409,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5246,11 +5433,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-6"] == -1)//當下沒課
@@ -5268,11 +5456,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5297,11 +5486,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -5333,11 +5523,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5356,11 +5547,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-6"] == -1)//當下沒課
@@ -5378,11 +5570,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5403,11 +5596,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5426,11 +5620,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-6"] == -1)//當下沒課
@@ -5448,11 +5643,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5477,11 +5673,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -5513,11 +5710,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5536,11 +5734,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-6"] == -1)//當下沒課
@@ -5558,11 +5757,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5583,11 +5783,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5606,11 +5807,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-6"] == -1)//當下沒課
@@ -5628,11 +5830,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5657,11 +5860,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -5693,11 +5897,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5716,11 +5921,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-6"] == -1)//當下沒課
@@ -5738,11 +5944,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5763,11 +5970,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5786,11 +5994,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-6"] == -1)//當下沒課
@@ -5808,11 +6017,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5837,11 +6047,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -5883,11 +6094,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5906,11 +6118,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-7"] == -1)//當下沒課
@@ -5928,11 +6141,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -5953,11 +6167,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -5976,11 +6191,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-7"] == -1)//當下沒課
@@ -5998,11 +6214,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6027,11 +6244,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6064,11 +6282,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6087,11 +6306,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-7"] == -1)//當下沒課
@@ -6109,11 +6329,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6134,11 +6355,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6157,11 +6379,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-7"] == -1)//當下沒課
@@ -6179,11 +6402,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6208,11 +6432,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6250,11 +6475,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6273,11 +6499,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-7"] == -1)//當下沒課
@@ -6295,11 +6522,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6320,11 +6548,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6343,11 +6572,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-7"] == -1)//當下沒課
@@ -6365,11 +6595,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6394,11 +6625,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6430,11 +6662,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6453,11 +6686,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-7"] == -1)//當下沒課
@@ -6475,11 +6709,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6500,11 +6735,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6523,11 +6759,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-7"] == -1)//當下沒課
@@ -6545,11 +6782,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6574,11 +6812,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6620,11 +6859,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6643,11 +6883,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-8"] == -1)//當下沒課
@@ -6665,11 +6906,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6690,11 +6932,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6713,11 +6956,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-8"] == -1)//當下沒課
@@ -6735,11 +6979,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6764,11 +7009,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6801,11 +7047,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6824,11 +7071,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-8"] == -1)//當下沒課
@@ -6846,11 +7094,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6871,11 +7120,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -6894,11 +7144,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-8"] == -1)//當下沒課
@@ -6916,11 +7167,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -6945,11 +7197,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -6981,11 +7234,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7004,11 +7258,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-8"] == -1)//當下沒課
@@ -7026,11 +7281,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7051,11 +7307,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7074,11 +7331,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-8"] == -1)//當下沒課
@@ -7096,11 +7354,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7125,11 +7384,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -7161,11 +7421,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7184,11 +7445,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-8"] == -1)//當下沒課
@@ -7206,11 +7468,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7231,11 +7494,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7254,11 +7518,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-8"] == -1)//當下沒課
@@ -7276,11 +7541,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7305,11 +7571,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -7351,11 +7618,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7374,11 +7642,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-9"] == -1)//當下沒課
@@ -7396,11 +7665,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7421,11 +7691,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7444,11 +7715,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-9"] == -1)//當下沒課
@@ -7466,11 +7738,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7495,11 +7768,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -7532,11 +7806,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7555,11 +7830,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-9"] == -1)//當下沒課
@@ -7577,11 +7853,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7602,11 +7879,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7625,11 +7903,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-9"] == -1)//當下沒課
@@ -7647,11 +7926,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7676,11 +7956,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -7712,11 +7993,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7735,11 +8017,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-9"] == -1)//當下沒課
@@ -7757,11 +8040,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7782,11 +8066,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7805,11 +8090,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-9"] == -1)//當下沒課
@@ -7827,11 +8113,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7856,11 +8143,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -7892,11 +8180,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7915,11 +8204,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-9"] == -1)//當下沒課
@@ -7937,11 +8227,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -7962,11 +8253,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -7985,11 +8277,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-9"] == -1)//當下沒課
@@ -8007,11 +8300,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8036,11 +8330,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8072,11 +8367,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8095,11 +8391,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-9"] == -1)//當下沒課
@@ -8117,11 +8414,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8142,11 +8440,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8165,11 +8464,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-9"] == -1)//當下沒課
@@ -8187,11 +8487,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8216,11 +8517,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8262,11 +8564,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8285,11 +8588,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-10"] == -1)//當下沒課
@@ -8307,11 +8611,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8332,11 +8637,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8355,11 +8661,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-10"] == -1)//當下沒課
@@ -8377,11 +8684,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8406,11 +8714,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8443,11 +8752,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8466,11 +8776,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-10"] == -1)//當下沒課
@@ -8488,11 +8799,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8513,11 +8825,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8536,11 +8849,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-10"] == -1)//當下沒課
@@ -8558,11 +8872,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8587,11 +8902,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8623,11 +8939,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8646,11 +8963,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-10"] == -1)//當下沒課
@@ -8668,11 +8986,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8693,11 +9012,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8716,11 +9036,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-10"] == -1)//當下沒課
@@ -8738,11 +9059,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8767,11 +9089,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8803,11 +9126,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8826,11 +9150,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-10"] == -1)//當下沒課
@@ -8848,11 +9173,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8873,11 +9199,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -8896,11 +9223,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-10"] == -1)//當下沒課
@@ -8918,11 +9246,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -8947,11 +9276,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -8983,11 +9313,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9006,11 +9337,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-10"] == -1)//當下沒課
@@ -9028,11 +9360,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9053,11 +9386,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9076,11 +9410,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-10"] == -1)//當下沒課
@@ -9098,11 +9433,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9127,11 +9463,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -9173,11 +9510,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9196,11 +9534,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-11"] == -1)//當下沒課
@@ -9218,11 +9557,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9243,11 +9583,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9266,11 +9607,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-11"] == -1)//當下沒課
@@ -9288,11 +9630,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9317,11 +9660,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -9354,11 +9698,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9377,11 +9722,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-11"] == -1)//當下沒課
@@ -9399,11 +9745,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9424,11 +9771,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9447,11 +9795,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-11"] == -1)//當下沒課
@@ -9469,11 +9818,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9498,11 +9848,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -9534,11 +9885,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9557,11 +9909,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-11"] == -1)//當下沒課
@@ -9579,11 +9932,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9604,11 +9958,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9627,11 +9982,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-11"] == -1)//當下沒課
@@ -9649,11 +10005,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9678,11 +10035,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -9714,11 +10072,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9737,11 +10096,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-11"] == -1)//當下沒課
@@ -9759,11 +10119,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9784,11 +10145,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9807,11 +10169,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-11"] == -1)//當下沒課
@@ -9829,11 +10192,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9858,11 +10222,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -9894,11 +10259,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9917,11 +10283,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-11"] == -1)//當下沒課
@@ -9939,11 +10306,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -9964,11 +10332,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -9987,11 +10356,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-11"] == -1)//當下沒課
@@ -10009,11 +10379,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10038,11 +10409,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10084,11 +10456,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10107,11 +10480,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-12"] == -1)//當下沒課
@@ -10129,11 +10503,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10154,11 +10529,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10177,11 +10553,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-12"] == -1)//當下沒課
@@ -10199,11 +10576,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10228,11 +10606,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10265,11 +10644,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10288,11 +10668,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-12"] == -1)//當下沒課
@@ -10310,11 +10691,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10335,11 +10717,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10358,11 +10741,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-12"] == -1)//當下沒課
@@ -10380,11 +10764,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10409,11 +10794,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10445,11 +10831,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10468,11 +10855,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-12"] == -1)//當下沒課
@@ -10490,11 +10878,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10515,11 +10904,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10538,11 +10928,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-12"] == -1)//當下沒課
@@ -10560,11 +10951,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10589,11 +10981,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10625,11 +11018,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10648,11 +11042,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-12"] == -1)//當下沒課
@@ -10670,11 +11065,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10695,11 +11091,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10718,11 +11115,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-12"] == -1)//當下沒課
@@ -10740,11 +11138,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10769,11 +11168,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10805,11 +11205,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10828,11 +11229,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-12"] == -1)//當下沒課
@@ -10850,11 +11252,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10875,11 +11278,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -10898,11 +11302,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-12"] == -1)//當下沒課
@@ -10920,11 +11325,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -10949,11 +11355,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -10995,11 +11402,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11018,11 +11426,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["1-13"] == -1)//當下沒課
@@ -11040,11 +11449,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11065,11 +11475,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11088,11 +11499,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["1-13"] == -1)//當下沒課
@@ -11110,11 +11522,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11139,11 +11552,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -11176,11 +11590,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11199,11 +11614,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["2-13"] == -1)//當下沒課
@@ -11221,11 +11637,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11246,11 +11663,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11269,11 +11687,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["2-13"] == -1)//當下沒課
@@ -11291,11 +11710,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11320,11 +11740,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -11356,11 +11777,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11379,11 +11801,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["3-13"] == -1)//當下沒課
@@ -11401,11 +11824,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11426,11 +11850,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11449,11 +11874,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["3-13"] == -1)//當下沒課
@@ -11471,11 +11897,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11500,11 +11927,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -11536,11 +11964,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11559,11 +11988,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["4-13"] == -1)//當下沒課
@@ -11581,11 +12011,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11606,11 +12037,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11629,11 +12061,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["4-13"] == -1)//當下沒課
@@ -11651,11 +12084,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11680,11 +12114,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -11716,11 +12151,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11739,11 +12175,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($normal3["5-13"] == -1)//當下沒課
@@ -11761,11 +12198,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11786,11 +12224,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 					//剩下的當下有課而且跟上一堂一樣
@@ -11809,11 +12248,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 					if($international3["5-13"] == -1)//當下沒課
@@ -11831,11 +12271,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					} 
 				?>
@@ -11860,11 +12301,12 @@
 						}
 						echo "<td rowspan='".$cnt."'><font size='1' class='center-text'>";
 						$idrow = $conn->query("SELECT * FROM mapping_id WHERE class_id =".$temp)->fetch(PDO::FETCH_ASSOC);
-						$classroomid=$idrow["pre1_classroom_id"];$professorid=$idrow["professor_id"]; 
+						$classroomid=$idrow["classroom_id"];$professorid=$idrow["professor_id"]; 
 						$name=$row["courseName"];
+						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
 						
 					}
 				?>
@@ -11887,9 +12329,9 @@
 
 <script>
 function exportToExcel() {
-  var table = document.getElementById("pre1_Table");
+  var table = document.getElementById("pre1_table");
   var wb = XLSX.utils.table_to_book(table, {sheet:"Sheet1"});
-  XLSX.writeFile(wb, "previous_curriculum.xlsx");
+  XLSX.writeFile(wb, "History_Curriculum1.xlsx");
 }
 </script>
 

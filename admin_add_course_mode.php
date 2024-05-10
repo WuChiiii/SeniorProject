@@ -73,14 +73,14 @@
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Student Number</label>
+                        <label class="control-label" for="inputPassword">Student Maximum</label>
                         <div class="controls">
                         <input type="text" name="Student_Number" pattern="[0-9]+" class = "form-control" placeholder="e.g.80" required>
                         </div>              
                      </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課)</label>
+                        <label class="control-label" for="inputPassword">Class Time (星期幾-第幾堂課/星期幾-第幾堂課) e.g.  1-1/1-2/1-3</label>
                         <input type="text" name="time" class = "form-control" pattern="([1-5]-[1-9]|[1-5]-1[0-6])(\/([1-5]-[1-9]|[1-5]-1[0-6]))*" placeholder="e.g.1-1/1-2/1-3">       
                     </div>
                     

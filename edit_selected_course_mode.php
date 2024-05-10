@@ -118,7 +118,7 @@
                     </div>
 
                      <div class="control-group">
-                        <label class="control-label" for="inputPassword">Student Number</label>
+                        <label class="control-label" for="inputPassword">Student Maximum</label>
                         <div class="controls">
                         <input type="text" name="SStudent_Number" pattern="[0-9]+" class = "form-control" value="<?php echo $cur['studentNumber'] ?>" required>
                         </div>              
