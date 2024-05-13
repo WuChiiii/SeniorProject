@@ -30,7 +30,7 @@
                                 <div class="control-group">
                                     <label class="control-label" for="inputPassword">Email</label>
                                     <div class="controls">
-                                        <input type="text" name="teacher_email" pattern="[^'\\\x22;]*[@][^'\\\x22;]*" class="form-control" value="<?php echo $cur['teacher_email'] ; ?>">
+                                        <input type="text" name="teacher_email" class="form-control" value="<?php echo $cur['teacher_email'] ; ?>">
                                     </div>
                                 </div>
 								<div class="control-group">
