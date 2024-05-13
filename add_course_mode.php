@@ -10,6 +10,8 @@
             <!-- body -->
             <div class="modal-body">
                 <!-- form -->
+                The course will be added to your selection, see in 'My Selection'.
+                <br/>
                 <strong>* indicates required</strong>
                 <form  method="post" enctype="multipart/form-data" action="add_course_database.php"> <hr>			
 				    

@@ -131,7 +131,7 @@
                         ?>      
                     </div>
                     <div class="control-group">
-                        <label class="control-label" for="inputPassword">professor</label>
+                        <label class="control-label" for="inputPassword">professor*</label>
                         <?php
                         
                             include "connect.php" ;
