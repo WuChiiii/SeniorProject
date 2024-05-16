@@ -421,7 +421,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 
 						
 					}
@@ -450,7 +453,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'> </font></td>"; 
@@ -498,7 +504,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -526,7 +535,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -573,7 +585,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -601,7 +616,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -648,7 +666,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -676,7 +697,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -723,7 +747,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -751,7 +778,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -808,7 +838,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -836,7 +869,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -884,7 +920,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -912,7 +951,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -959,7 +1001,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -987,7 +1032,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>";
@@ -1034,7 +1082,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1062,7 +1113,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1109,7 +1163,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1137,7 +1194,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1193,7 +1253,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1221,7 +1284,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1269,7 +1335,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1297,7 +1366,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1344,7 +1416,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1372,7 +1447,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1419,7 +1497,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1447,7 +1528,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1494,7 +1578,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1522,7 +1609,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1580,7 +1670,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1608,7 +1701,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1656,7 +1752,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1684,7 +1783,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1731,7 +1833,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1759,7 +1864,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1806,7 +1914,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1834,7 +1945,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>";
@@ -1881,7 +1995,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1909,7 +2026,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1968,7 +2088,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -1996,7 +2119,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2044,7 +2170,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2072,7 +2201,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2119,7 +2251,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2147,7 +2282,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2194,7 +2332,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2222,7 +2363,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2269,7 +2413,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2297,7 +2444,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2354,7 +2504,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2382,7 +2535,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2430,7 +2586,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2458,7 +2617,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2505,7 +2667,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2533,7 +2698,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2580,7 +2748,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2608,7 +2779,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2655,7 +2829,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2683,7 +2860,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2740,7 +2920,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2768,7 +2951,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2816,7 +3002,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2844,7 +3033,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2897,7 +3089,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2925,7 +3120,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -2972,7 +3170,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3000,7 +3201,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3057,7 +3261,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>";
@@ -3085,7 +3292,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3133,7 +3343,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3161,7 +3374,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3208,7 +3424,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3236,7 +3455,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3283,7 +3505,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3311,7 +3536,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3368,7 +3596,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3396,7 +3627,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3444,7 +3678,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3472,7 +3709,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3519,7 +3759,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
                     echo "<td><font size='1' class='center-text'></font></td>";
@@ -3547,7 +3790,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3594,7 +3840,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3622,7 +3871,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3669,7 +3921,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3697,7 +3952,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3754,7 +4012,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3782,7 +4043,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3830,7 +4094,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3858,7 +4125,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3905,7 +4175,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3933,7 +4206,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -3980,7 +4256,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4008,7 +4287,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4055,7 +4337,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4083,7 +4368,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4140,7 +4428,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4168,7 +4459,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4216,7 +4510,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4244,7 +4541,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4291,7 +4591,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4319,7 +4622,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4366,7 +4672,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4394,7 +4703,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4441,7 +4753,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4469,7 +4784,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4526,7 +4844,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4554,7 +4875,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4602,7 +4926,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4630,7 +4957,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4677,7 +5007,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4705,7 +5038,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4752,7 +5088,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4780,7 +5119,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4827,7 +5169,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4855,7 +5200,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4912,7 +5260,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4940,7 +5291,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -4988,7 +5342,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5016,7 +5373,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5063,7 +5423,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5091,7 +5454,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5138,7 +5504,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5166,7 +5535,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5213,7 +5585,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
@@ -5241,7 +5616,10 @@
 						$maximum=$row["studentNumber"];
 						$row = $conn->query("SELECT * FROM classroom WHERE classroomid = $classroomid")->fetch(PDO::FETCH_ASSOC);
 						$row1 = $conn->query("SELECT * FROM teachers WHERE teacherid = $professorid")->fetch(PDO::FETCH_ASSOC);
-						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"]."<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>"."</font></td>";
+						echo $row["classroom_no"]."<br>".$name."\<br>".$row1["teacher_name"];
+						if($maximum!=999)
+							echo"<br>"."(".$maximum."/".$row["classroom_no_seat"].")<br>";
+						echo "</font></td>";
 						
 					}
 					echo "<td><font size='1' class='center-text'></font></td>"; 
